@@ -1,0 +1,219 @@
+{
+  "version": "1.0.0",
+  "type": "enum",
+  "describe": "项目相关定义  品牌中心/创新项目/整合营销",
+  "enums": [
+    {
+      "name": "BusinessType",
+      "describe": "业务类型",
+      "items": [
+        {
+          "key": "marketing",
+          "label": "营销业务",
+          "value": 1
+        },
+        {
+          "key": "s2b2c",
+          "label": "创新项目",
+          "value": 5
+        },
+        {
+          "key": "taobao",
+          "label": "淘宝店播",
+          "value": 2
+        },
+        {
+          "key": "douyin",
+          "label": "抖音店播",
+          "value": 3
+        },
+        {
+          "key": "locallife",
+          "label": "本地生活",
+          "value": 7
+        },
+        {
+          "key": "taobaopick",
+          "label": "淘宝甄选",
+          "value": 8
+        },
+        {
+          "key": "supplyChain",
+          "label": "供应链",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "name": "ProjectType",
+      "describe": "项目类型",
+      "items": [
+        {
+          "key": "douyin",
+          "label": "抖音店播",
+          "value": 3
+        },
+        {
+          "key": "locallife",
+          "label": "本地生活",
+          "value": 7
+        },
+        {
+          "key": "taobaopick",
+          "label": "淘宝甄选",
+          "value": 8
+        },
+        {
+          "key": "s2b2c",
+          "label": "创新项目",
+          "value": 5
+        },
+        {
+          "key": "marketing",
+          "label": "营销业务",
+          "value": 1
+        },
+        {
+          "key": "supplyChain",
+          "label": "供应链",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "name": "SmartSelectionLibAddWay",
+      "describe": "智能选品库添加方式",
+      "items": [
+        {
+          "key": "replaceLib",
+          "label": "新建商品库",
+          "value": 0
+        },
+        {
+          "key": "addGoods",
+          "label": "新增商品"
+        }
+      ]
+    },
+    {
+      "name": "SelectionCondition",
+      "describe": "选品条件",
+      "items": [
+        {
+          "key": "HighPotentialGoods",
+          "label": "高潜力商品",
+          "value": 0
+        },
+        {
+          "key": "HotSaleRecently",
+          "label": "最近热销（7日）"
+        },
+        {
+          "key": "NewProduct",
+          "label": "新品（3天内上架）"
+        },
+        {
+          "key": "PopularGoods",
+          "label": "受欢迎商品"
+        },
+        {
+          "key": "MeasurementIndexHigh",
+          "label": "测款指数高"
+        },
+        {
+          "key": "InventoryMuch",
+          "label": "库存多"
+        }
+      ]
+    },
+    {
+      "name": "LiveToolGoodsSortType",
+      "describe": "直播工具商品排序类型",
+      "items": [
+        {
+          "key": "Sales",
+          "label": "销量",
+          "value": 0
+        },
+        {
+          "key": "SalesAmount",
+          "label": "销售额"
+        },
+        {
+          "key": "ClickRate",
+          "label": "点击率"
+        },
+        {
+          "key": "PayRate",
+          "label": "转化率"
+        },
+        {
+          "key": "MeasurementIndex",
+          "label": "短视频测款指数"
+        },
+        {
+          "key": "PotentialIndex",
+          "label": "潜力指数"
+        },
+        {
+          "key": "PopularIndex",
+          "label": "受欢迎指数"
+        },
+        {
+          "key": "Stock",
+          "label": "当前库存"
+        }
+      ]
+    },
+    {
+      "name": "LiveToolGoodsSelectType",
+      "describe": "选品方式",
+      "items": [
+        {
+          "key": "HistoryDisplay",
+          "label": "历史场次",
+          "value": 0
+        },
+        {
+          "key": "SmartSelection",
+          "label": "智能选品"
+        },
+        {
+          "key": "CustomSelection",
+          "label": "自定义选品"
+        }
+      ]
+    },
+    {
+      "name": "ProprietorType",
+      "describe": "归属主体",
+      "items": [
+        {
+          "key": "goumee",
+          "label": "构美",
+          "value": 0
+        },
+        {
+          "key": "yufeng",
+          "label": "煜丰",
+          "value":  1
+        },
+        {
+          "key": "xingyao",
+          "label": "星耀",
+          "value": 2
+        },
+        {
+          "key": "goumao",
+          "label": "构茂",
+          "value": 3
+        },
+        {
+          "key": "laimao",
+          "label": "莱茂",
+          "value": 4
+        }
+      ]
+    }
+  ]
+}

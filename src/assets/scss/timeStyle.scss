@@ -1,0 +1,101 @@
+/*
+* 引用方式 @import '~@/assets/scss/timeStyle.scss';
+*/
+
+/*时间选择器--固定时间点*/
+.time-select-item {
+  font-size: 14px;
+  color: #6a7b92;
+}
+.time-select-item:hover {
+  background-color: rgba(var(--theme-rgb-color), 0.06);
+  font-size: 14px;
+  color:var(--theme-color)!important;
+}
+.time-select-item.selected:not(.disabled) {
+  font-size: 14px;
+  color: var(--theme-color);
+}
+
+/*时间选择器--任意时间点*/
+.el-time-spinner__item {
+  font-size: 14px;
+  color: #6a7b92;
+}
+.el-time-spinner__item.active:not(.disabled) {
+  font-size: 16px;
+  color: var(--theme-color);
+}
+.el-time-panel__btn {
+  font-size: 14px;
+  color: #6a7b92;
+}
+.el-time-panel__btn.confirm {
+
+  font-size: 14px;
+  color: var(--theme-color);
+}
+
+/*日期选择器*/
+.el-date-table td span {
+  line-height: 32px;
+}
+.el-date-table td.start-date span {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin-top: -2px;
+  margin-left: 4px;
+}
+.el-date-table td.end-date span {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+.el-date-table td.current:not(.disabled) span {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+.el-date-table .available {
+  font-size: 14px;
+}
+.el-date-table .prev-month {
+  font-size: 14px;
+  color: #a4b2c2;
+}
+.el-date-table .next-month {
+  font-size: 14px;
+  color: #a4b2c2;
+}
+.el-date-table td.start-date span {
+  background-color: var(--theme-color);
+}
+.el-date-table td.end-date span {
+  background-color: var(--theme-color);
+}
+.el-date-table .el-picker-panel {
+  color: var(--text-color);
+}
+.el-picker-panel__footer {
+  height: 34px;
+}
+.el-picker-panel__link-btn {
+  margin-top: 2px;
+  font-size: 14px;
+  &.el-button--text {
+    color: #6a7b92;
+  }
+  &.el-button.el-button--default.is-disabled {
+    border: none;
+    color: var(--theme-color);
+  }
+  &.is-plain {
+    border: none;
+    color: var(--theme-color);
+  }
+}

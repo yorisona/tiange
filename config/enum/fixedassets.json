@@ -1,0 +1,290 @@
+{
+	"name": "fixedassets",
+	"describe": "资产管理",
+	"version": "1.0.1",
+	"enums": [
+		{
+			"items": [
+				{
+					"key": "expire",
+					"label": "使用年限已满，且无继续使用价值",
+					"value": 1
+				},
+				{
+					"key": "replace",
+					"label": "更新换代导致资产无法继续满足使用需求",
+					"value": 2
+				},
+				{
+					"key": "high_cost",
+					"label": "主要部分残缺，破损严重，再修理在经济上不合算;",
+					"value": 3
+				},
+				{
+					"key": "not_required",
+					"label": "一年以上或计划不再有使用需求;",
+					"value": 4
+				},
+				{
+					"key": "other",
+					"label": "其他",
+					"value": 5
+				}
+			],
+			"name": "reasonForScrapping",
+			"describe": "报废原因"
+		},
+		{
+			"items": [
+				{
+					"key": "leave_unused",
+					"label": "闲置",
+					"value": 1
+				},
+				{
+					"key": "lock",
+					"label": "锁定",
+					"value": 2
+				},
+				{
+					"key": "is_use",
+					"label": "在用",
+					"value": 3
+				},
+				{
+					"key": "maintenance",
+					"label": "维修",
+					"value": 4
+				},
+				{
+					"key": "scrapped",
+					"label": "报废",
+					"value": 5
+				}
+			],
+			"name": "FixedAssetStatus",
+			"describe": "资产状态"
+		},
+		{
+			"items": [
+				{
+					"key": "not_receive",
+					"label": "未领用",
+					"value": 0
+				},
+				{
+					"key": "receive",
+					"label": "已领用",
+					"value": 1
+				},
+				{
+					"key": "rejected",
+					"label": "已拒绝",
+					"value": 2
+				}
+			],
+			"name": "ReceiveStatusEnum",
+			"describe": "资产领用状态"
+		},
+		{
+			"items": [
+				{
+					"key": "not_returned",
+					"label": "未归还",
+					"value": 0
+				},
+				{
+					"key": "returned",
+					"label": "已归还",
+					"value": 1
+				},
+				{
+					"key": "rejected",
+					"label": "已拒绝",
+					"value": 2
+				}
+			],
+			"name": "ReturnStatusEnum",
+			"describe": "资产归还状态"
+		},
+		{
+			"items": [
+				{
+					"key": "in_maintenance",
+					"label": "维修中",
+					"value": 1
+				},
+				{
+					"key": "completed_maintenance",
+					"label": "维修完成",
+					"value": 2
+				}
+			],
+			"name": "MaintenanceStatusEnum",
+			"describe": "资产维修状态"
+		},
+		{
+			"items": [
+				{
+					"key": "sell",
+					"label": "出售",
+					"value": 1
+				},
+				{
+					"key": "discard",
+					"label": "废弃",
+					"value": 2
+				},
+				{
+					"key": "displace",
+					"label": "置换",
+					"value": 3
+				},
+				{
+					"key": "other",
+					"label": "其他方式",
+					"value": 4
+				}
+			],
+			"name": "ScrappedTypeEnum",
+			"describe": "报废类型"
+		},
+		{
+			"items": [
+				{
+					"key": "not_returned",
+					"label": "未完成",
+					"value": 0
+				},
+				{
+					"key": "returned",
+					"label": "已完成",
+					"value": 1
+				}
+			],
+			"name": "AssetCompletionStatusEnum",
+			"describe": "资产完成状态"
+		},
+		{
+			"items": [
+				{
+					"key": "depreciation",
+					"label": "折旧",
+					"value": 1
+				},
+				{
+					"key": "balls",
+					"label": "公摊",
+					"value": 2
+				}
+			],
+			"name": "AssetExpenseType",
+			"describe": "资产费用类型"
+		},
+		{
+			"items": [
+				{
+					"key": "partialDisc",
+					"label": "部分盘",
+					"value": 1
+				},
+				{
+					"key": "overall",
+					"label": "全盘",
+					"value": 2
+				}
+			],
+			"name": "InventoryRange",
+			"describe": "盘点范围"
+		},
+		{
+			"items": [
+				{
+					"key": "not_returned",
+					"label": "盘点中",
+					"value": 0
+				},
+				{
+					"key": "returned",
+					"label": "盘点完成",
+					"value": 1
+				}
+			],
+			"name": "InventoryStatus",
+			"describe": "盘点状态"
+		},
+		{
+			"items": [
+				{
+					"key": "noDifference",
+					"label": "无差异",
+					"value": 0
+				},
+				{
+					"key": "thereAreDifferences",
+					"label": "有差异",
+					"value": 1
+				}
+			],
+			"name": "InventoryResult",
+			"describe": "盘点结果"
+		},
+		{
+			"items": [
+				{
+					"key": "add",
+					"label": "新增",
+					"value": 1
+				},
+				{
+					"key": "collective",
+					"label": "领用",
+					"value": 2
+				},
+				{
+					"key": "return",
+					"label": "归还",
+					"value": 3
+				},
+				{
+					"key": "allocation",
+					"label": "分配",
+					"value": 4
+				},
+				{
+					"key": "repair",
+					"label": "维修",
+					"value": 5
+				},
+				{
+					"key": "scrap",
+					"label": "报废",
+					"value": 6
+				}
+			],
+			"name": "OperationType",
+			"describe": "操作类型"
+		},
+		{
+			"items": [
+				{
+					"key": "noDifference",
+					"label": "正常",
+					"value": 1
+				},
+				{
+					"key": "diskSurplus",
+					"label": "盘盈",
+					"value": 2
+				},
+				{
+					"key": "inventoryLoss",
+					"label": "盘亏",
+					"value": 3
+				}
+			],
+			"name": "AssetCountStatus",
+			"describe": "资产盘点状态"
+		}
+	]
+}

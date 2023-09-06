@@ -1,0 +1,100 @@
+@import './utils/index.less';
+
+.make-margin(@len: 5){
+  .mg-@{len}{
+    .mg(@len * 1px);
+  }
+  .mgt-@{len}{
+    .mgt(@len * 1px);
+  }
+  .mgr-@{len}{
+    .mgr(@len * 1px);
+  }
+  .mgb-@{len}{
+    .mgb(@len * 1px);
+  }
+  .mgl-@{len}{
+    .mgl(@len * 1px);
+  }
+  .pd-@{len}{
+    .pd(@len * 1px);
+  }
+  .pdt-@{len}{
+    .pdt(@len * 1px);
+  }
+  .pdr-@{len}{
+    .pdr(@len * 1px);
+  }
+  .pdb-@{len}{
+    .pdb(@len * 1px);
+  }
+  .pdl-@{len}{
+    .pdl(@len * 1px);
+  }
+}
+
+
+// * 一些小样式
+
+// * 前景色
+// * 等待
+@fg_waiting: var(--warning-color);
+@fg_pending: #ff7a36;
+// * 审批中/审核中
+@fg_processing: var(--warning-color);
+// * 成功
+@fg_success: var(--success-color);
+// * 正常
+@fg_normal: @fg_success;
+// * 失败
+@fg_failure: var(--error-color);
+// * 取消
+@fg_cancel: var(--tip-icon-color);
+// * 作废
+@fg_invalid: @fg_cancel;
+
+// * 背景色
+// * 等待
+@bg_waiting: #fff9f4;
+@bg_pending: transparent;
+// * 审批中/审核中
+@bg_processing: @bg_waiting;
+// * 成功
+@bg_success: #f9Fcfb;
+// * 正常
+@bg_normal: @bg_success;
+// * 失败
+@bg_failure: #fff2F4;
+// * 取消
+@bg_cancel: #fbfbfb;
+// * 作废
+@bg_invalid: @bg_cancel;
+
+.fg-color-tag-maker(@name){
+  @fgColor: ~'fg_@{name}';
+  @bgColor: ~'bg_@{name}';
+  // * 纯前景色
+  .fg-@{name}{
+    color: @@fgColor;
+  }
+  // * 标签式
+  .color-tag-@{name}{
+    .d-ib();
+    .fc(12px, @@fgColor);
+    .brd(@@fgColor);
+    .bgc(@@bgColor);
+    .brdr(4px);
+    .pd(0 8px);
+    .hlh(20px, 18px);
+    user-select: none;
+  }
+}
+
+.fg-color-tag-maker(waiting);
+.fg-color-tag-maker(processing);
+.fg-color-tag-maker(success);
+.fg-color-tag-maker(normal);
+.fg-color-tag-maker(failure);
+.fg-color-tag-maker(cancel);
+.fg-color-tag-maker(invalid);
+.fg-color-tag-maker(pending);

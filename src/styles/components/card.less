@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+
+.tg-card {
+  display: flex;
+  flex-direction: column;
+  .bgc(white);
+  .brdr(2px);
+  &.inner-overflow {
+    overflow-y: auto;
+    overflow-y: overlay;
+    > .tg-card-bd {
+      overflow-y: auto;
+      overflow-y: overlay;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  > .tg-card-hd {
+    height: 60px;
+    flex: none;
+    align-self: center;
+    .fc(20px, var(--text-color));
+  }
+  > .tg-card-bd {
+    flex: auto;
+  }
+}

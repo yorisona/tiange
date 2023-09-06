@@ -1,0 +1,229 @@
+{
+	"name": "design",
+	"describe": "设计模块",
+	"version": "1.0.0",
+	"enums": [
+		{
+			"name": "AppointmentStatus",
+			"describe": "预约状态",
+			"items": [
+				{
+					"key": "PENDING_ORDER",
+					"label": "待接单",
+					"value": 1
+				},
+				{
+					"key": "TOBE_COMPLETED",
+					"label": "待完成"
+				},
+				{
+					"key": "COMMENT",
+					"label": "待评价"
+				},
+				{
+					"key": "PENDING_UPLOAD",
+					"label": "待上传"
+				},
+				{
+					"key": "INVOICED",
+					"label": "已结单"
+				},
+				{
+					"key": "WITHDRAWN",
+					"label": "已撤回"
+				},
+				{
+					"key": "CHARGED_BACK",
+					"label": "已退单"
+				}
+			]
+		},
+		{
+			"name": "AppointmentSubject",
+			"describe": "预约主体类型",
+			"items": [
+				{
+					"key": "ANCHOR",
+					"label": "主播",
+					"value": 1
+				},
+				{
+					"key": "MODEL",
+					"label": "模特"
+				}
+			]
+		},
+		{
+			"name": "ServiceType",
+			"describe": "服务类型",
+			"items": [
+				{
+					"key": "MAKEUP_HAIRSTYLE",
+					"label": "妆造+发型",
+					"value": 1
+				},
+				{
+					"key": "HAIRSTYLE",
+					"label": "发型"
+				}
+			]
+		},
+		{
+			"name": "Satisfaction",
+			"describe": "满意度",
+			"items": [
+				{
+					"key": "VERY_SATISFIED",
+					"label": "很满意",
+					"value": 1
+				},
+				{
+					"key": "SATISFIED",
+					"label": "满意"
+				},
+				{
+					"key": "DISSATISFIED",
+					"label": "不满意"
+				}
+			]
+		},
+		{
+			"name": "ImageDesignType",
+			"describe": "妆造类型",
+			"items": [
+				{
+					"key": "TRIAL_SEEDING",
+					"label": "新人试播妆",
+					"value": 1
+				},
+				{
+					"key": "ACTIVITY",
+					"label": "活动大场妆造"
+				},
+				{
+					"key": "DAILY",
+					"label": "日常开播妆"
+				},
+				{
+					"key": "SHORT_VIDEO",
+					"label": "短视频拍摄"
+				},
+				{
+					"key": "DESIGN_REOPTIMIZATION",
+					"label": "直播妆容再优化"
+				},
+				{
+					"key": "DESIGN_TEACH",
+					"label": "活动妆造教学"
+				},
+				{
+					"key": "DESIGN_CHANGE",
+					"label": "补妆改造型"
+				},
+				{
+					"key": "FOLLOW_UP",
+					"label": "外出跟拍"
+				},
+				{
+					"key": "PROMOTE_SELF",
+					"label": "提升个人妆造能力教学"
+				},
+				{
+					"key": "INTERNAL",
+					"label": "公司内部需求"
+				},
+				{
+					"key": "AUDITION",
+					"label": "试镜妆"
+				}
+			]
+		},
+		{
+			"name": "AppointmentTimeInterval",
+			"describe": "预约时段",
+			"items": [
+				{
+					"key": "FIRST",
+					"label": "10:00-11:30",
+					"value": 1
+				},
+				{
+					"key": "SECOND",
+					"label": "11:30-13:00"
+				},
+				{
+					"key": "THIRD",
+					"label": "13:00-14:30"
+				},
+				{
+					"key": "FOURTH",
+					"label": "15:30-17:00"
+				},
+				{
+					"key": "FIFTH",
+					"label": "17:00-18:30"
+				}
+			]
+		},
+		{
+			"name": "PieChartType",
+			"describe": "饼图类型",
+			"items": [
+				{
+					"key": "CLOSED",
+					"label": "各妆造师结单统计",
+					"value": 1
+				},
+				{
+					"key": "APPOINTMENT_SUBJECT",
+					"label": "预约主体统计",
+					"value": 3
+				},
+				{
+					"key": "IMAGE_TYPE",
+					"label": "妆造类型统计",
+					"value": 4
+				}
+			]
+		},
+		{
+			"name": "GraphicDesignStatus",
+			"describe": "平面设计外部接单类型",
+			"items": [
+				{
+					"key": "INIT",
+					"label": "待接单",
+					"value": 0
+				},
+				{
+					"key": "DESIGN",
+					"label": "设计中"
+				},
+				{
+					"key": "AUDIT",
+					"label": "审核中"
+				},
+				{
+					"key": "DELIVERY",
+					"label": "已交付"
+				},
+				{
+					"key": "REFUSE",
+					"label": "已拒绝"
+				},
+				{
+					"key": "CANCEL",
+					"label": "已取消"
+				},
+				{
+					"key": "FINISH",
+					"label": "已完成"
+				},
+				{
+					"key": "PADDING",
+					"label": "未提交"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,297 @@
+/**
+ * @author Jerry <superzcj_001@163.com>
+ * @since  2020-10-22 11:50:07
+ */
+@import "variable.less";
+@import './utils/index.less';
+@import './animation.less';
+
+@fontFamily: PingFang SC, Microsoft Yahei, AlibabaPuHuiTi_2_55_Regular, Microsoft Sans Serif, Hiragino Sans GB, Tahoma, Arial;
+// 工具样式
+.bgc-list();
+.bg-list();
+/*
+
+[class*='bg-'] * {
+  color: white !important;
+}
+[class*='bg-white'] * {
+  color: #333 !important;
+}
+*/
+
+// 基础设置
+.tg-page-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overflow: overlay;
+  > .tg-breadcrumbs {
+    flex: none;
+  }
+  flex-direction: column;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@font-face {
+  font-family: 'webfont';
+  font-display: swap;
+  src: url('//tiange-oss.goumee.com/prod/fonts/puhui-number/webfont_usw88e03dbb.eot'); /* IE9*/
+  src: url('//tiange-oss.goumee.com/prod/fonts/puhui-number/webfont_usw88e03dbb.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('//tiange-oss.goumee.com/prod/fonts/puhui-number/webfont_usw88e03dbb.woff2')
+      format('woff2'),
+    url('//tiange-oss.goumee.com/prod/fonts/puhui-number/webfont_usw88e03dbb.woff') format('woff'),
+    /* chrome、firefox */
+      url('//tiange-oss.goumee.com/prod/fonts/puhui-number/webfont_usw88e03dbb.ttf')
+      format('truetype'),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url('//tiange-oss.goumee.com/prod/fonts/puhui-number/webfont_usw88e03dbb.svg#Alibaba-PuHuiTi-Regular')
+      format('svg'); /* iOS 4.1- */
+}
+
+body {
+  font-family: webfont, @fontFamily;
+}
+
+// * 组件样式
+@import './components/index.less';
+// * 非正式组件样式
+@import './widgets.less';
+
+@import './others.less';
+
+.make-margin(6);
+.make-margin(8);
+.make-margin(10);
+.make-margin(12);
+.make-margin(14);
+.make-margin(16);
+.make-margin(18);
+.make-margin(20);
+.make-margin(24);
+.make-margin(32);
+
+// icon font
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+:not(.tg-btn-content) > svg.icon {
+  &:not(.ico-btn-delete):not(.ico-delete):not([disabled]):hover {
+    .fgc(var(--theme-color));
+  }
+
+  &.ico-delete:not([disabled]),
+  &.ico-btn-delete:not([disabled]) {
+    &:hover {
+      .fgc(var(--error-color));
+    }
+  }
+
+  &[disabled] {
+    color: var(--disabled-color);
+    cursor: not-allowed !important;
+  }
+}
+
+[disabled] {
+  svg.icon {
+    &.ico-delete:not([disabled]),
+    &.ico-btn-delete:not([disabled]) {
+      color: inherit;
+      cursor: inherit;
+    }
+  }
+}
+
+// // 自定义 tooltip 皮肤
+// .make_tooltip_popper_theme(@placement) {
+//   .el-tooltip__popper.tg-tooltip-theme[x-placement^='@{placement}'] {
+//     // .lh(30px);
+//     .pd(18px);
+//     .bgc(white);
+//     .brd(1px; solid; rgba(var(--tip-icon-rgb-color), 0.5));
+//     box-shadow: 0 1px 4px 0 rgba(var(--theme-rgb-color), 0.06);
+
+//     .fc(14px, #3c5269);
+//     > .popper__arrow {
+//       border-@{placement}-color: var(--tip-icon-color);
+//       &:after {
+//         border-@{placement}-color: white;
+//       }
+//     }
+//   }
+// }
+
+// .make_tooltip_popper_theme(top);
+// .make_tooltip_popper_theme(right);
+// .make_tooltip_popper_theme(bottom);
+// .make_tooltip_popper_theme(left);
+
+// // 自定义 tooltip 皮肤
+// .make_tooltip_popper_theme_thead_ver(@placement) {
+//   .el-tooltip__popper.tg-tooltip-thead-theme[x-placement^='@{placement}'] {
+//     // .lh(30px);
+//     .pd(18px);
+//     .bgc(white);
+//     .brd(1px; solid; rgba(var(--tip-icon-rgb-color), 0.5));
+//     box-shadow: 0 1px 4px 0 rgba(var(--theme-rgb-color), 0.06);
+
+//     .fc(14px, #3c5269);
+//     font-weight: normal;
+//     > .popper__arrow {
+//       border-@{placement}-color: var(--tip-icon-color);
+//       &:after {
+//         border-@{placement}-color:white;
+//       }
+//     }
+//   }
+// }
+
+// .make_tooltip_popper_theme_thead_ver(top);
+// .make_tooltip_popper_theme_thead_ver(right);
+// .make_tooltip_popper_theme_thead_ver(bottom);
+// .make_tooltip_popper_theme_thead_ver(left);
+
+.tg-field {
+  > .tg-field-label {
+    .fc(var(--default-font-size), var(--text-des-color));
+    .hlh(20px, 18px);
+  }
+
+  > .tg-field-content {
+    .fc(var(--default-font-size), var(--text-color));
+    .lh(18px);
+  }
+}
+
+a.underline-link {
+  .fc(var(--default-font-size), #396fff);
+  line-height: 18px;
+  .td(underline);
+  cursor: pointer;
+}
+
+// 详情信息对 label + content
+.base-grid-item {
+  display: inline-flex;
+  > .base-grid-item-lbl {
+    .fc(var(--default-font-size), var(--text-third-color));
+    .ta-rt();
+  }
+  > .base-grid-item-content {
+    font-size: var(--default-font-size);
+    color: var(--text-color);
+  }
+}
+
+.el-form {
+  .el-form-item__label {
+    .pdr(0);
+  }
+
+  .el-textarea {
+    font-size: var(--default-font-size);
+    > textarea {
+      resize: none;
+    }
+  }
+}
+
+// * 表格
+.el-table {
+  // * 金额类单元格
+  th.col-money,
+  td.col-money {
+    > .cell {
+      display: flex;
+      justify-content: center;
+      > .col-money-9bit {
+        width: 110px;
+        .pdr(10px);
+        .ta-rt();
+      }
+    }
+  }
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-auto {
+  flex: auto;
+}
+.flex-fill {
+  flex: 1;
+}
+
+.talt {
+  .ta-lt();
+}
+.tart {
+  .ta-rt();
+}
+.tac {
+  .ta-c();
+}
+
+// * 客户合同 - 新增编辑对话框
+.statement-dialog,
+.contract-form-modal {
+  .sub-form-item {
+    .bgc(#f6f6f6);
+    .brdr(4px);
+    .pd(10px 16px);
+    .mgt(-23px);
+    .mgl(134px);
+  }
+}
+.tg-customer-contract-form-annex-dialog {
+  .sub-form-item {
+    .bgc(#f6f6f6);
+    .brdr(4px);
+    .pd(10px 16px);
+    .mgt(-23px);
+    .mgl(130px);
+  }
+}
+
+// * --
+._-- {
+  .fgc(var(--text-color));
+}
+
+.line-clamp-1 {
+  .line-clamp(1);
+}
+.line-clamp-2 {
+  .line-clamp(2);
+}
+.line-clamp-3 {
+  .line-clamp(3);
+}
+
+// * 页面样式
+@import './pages/index.less';
+
+.el-table {
+  td {
+    .operation {
+      display: inline-grid;
+      grid-auto-flow: column;
+      column-gap: 12px;
+    }
+  }
+}
+
+.fill {
+  flex: 1 1 0%;
+}

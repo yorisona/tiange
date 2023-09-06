@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+
+.tg-live-project-dialog-collection-refund-write-off {
+    .el-table {
+        &::before {
+            height: 0;
+        }
+        .el-table__header-wrapper {
+            padding: 0 24px;
+        }
+        .el-table__body-wrapper {
+            padding: 0 24px;
+        }
+        .el-table td.gutter, .el-table th.gutter {
+            display: none;
+        }
+        .el-table__header > thead > tr > th > .cell > .el-checkbox {
+            display: none;
+        }
+        .el-checkbox > .el-checkbox__input.is-checked > .el-checkbox__inner {
+            background-color: rgba(var(--theme-rgb-color), 0.8);
+            border-color: rgba(var(--theme-rgb-color), 0.8);
+        }
+    }
+    .el-input {
+        > input {
+            text-align: right;
+        }
+        .el-input__prefix {
+            color: var(--text-color);
+            left: 12px;
+            display: flex;
+            align-items: center;
+        }
+        &.is-disabled {
+            .el-input__prefix {
+                color: var(--text-third-color);
+            }
+        }
+    }
+
+    .write-off-amount {
+        padding: 18px 24px;
+        > span {
+            &:first-of-type {
+                color: var(--text-color);
+                margin-right: 12px;
+            }
+            &:last-of-type {
+                font-weight: 600;
+                color: #FF7A36;
+            }
+        }
+    }
+}

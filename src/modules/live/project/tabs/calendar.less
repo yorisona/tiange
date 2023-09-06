@@ -1,0 +1,42 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.tg-live-project-detail-tab-calendar {
+  .pd(18px);
+  > .calendar-hd {
+    flex: none;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+    > .calendar-hd-left {
+      display: flex;
+      align-items: center;
+      > .btn-circle {
+        display: inline-flex;
+        @size: 28px;
+        .wh(@size, @size);
+        .brd(#e3e4e6);
+        .brdr(50%);
+        .bgc(white);
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        > svg.icon {
+          .brdr(50%);
+          .fc(18px, #666);
+        }
+        &:hover {
+          > svg.icon {
+            .fgc(var(--theme-color));
+          }
+        }
+      }
+
+      > .calendar-date-range {
+        .fc(14px, var(--text-color));
+
+        font-weight: 400;
+      }
+    }
+  }
+}

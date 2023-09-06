@@ -1,0 +1,114 @@
+/**
+ * mixins/position
+ * 定位相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-18
+ * @copyright 2017
+ */
+
+// 相对定位
+.pos-r(){
+	position: relative;
+}
+
+/**
+ * 绝对定位
+ * 以左上角为基准偏移
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ * @param  {Number} @zIndex  堆叠层级
+ * @param  {Number} @top     与顶部距离
+ * @param  {Number} @left    与左边距离
+ */
+.pos-a(@zIndex: 1; @top: 0; @left: 0) when (isnumber(@zIndex)){
+	position: absolute;
+	z-index: @zIndex;
+	top: @top;
+	left: @left;
+}
+
+/**
+ * 绝对定位
+ * 以右上角为基准偏移
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ * @param  {Number} @zIndex  堆叠层级
+ * @param  {Number} @top     与顶部距离
+ * @param  {Number} @right   与右边距离
+ */
+.pos-atr(@zIndex: 1; @top: 0; @right: 0) when (isnumber(@zIndex)){
+	position: absolute;
+	z-index: @zIndex;
+	top: @top;
+	right: @right;
+}
+
+/**
+ * 绝对定位
+ * 以左下角为基准偏移
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ * @param  {Number} @zIndex  堆叠层级
+ * @param  {Number} @bottom  与底部距离
+ * @param  {Number} @left    与左边距离
+ */
+.pos-abl(@zIndex: 1; @bottom: 0; @left: 0) when (isnumber(@zIndex)){
+	position: absolute;
+	z-index: @zIndex;
+	bottom: @bottom;
+	left: @left;
+}
+
+/**
+ * 绝对定位
+ * 以右下角为基准偏移
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ * @param  {Number} @zIndex  堆叠层级
+ * @param  {Number} @bottom  与底部距离
+ * @param  {Number} @left    与右边距离
+ */
+.pos-abr(@zIndex: 1; @bottom: 0; @right: 0) when (isnumber(@zIndex)){
+	position: absolute;
+	z-index: @zIndex;
+	bottom: @bottom;
+	right: @right;
+}
+
+/**
+ * 绝对定位
+ * 不带参数，仅设定绝对定位
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.pos-a() when (default()){
+	position: absolute;
+}
+
+/**
+ * 绝对定位 fixed
+ * 以左上角为基准偏移
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ * @param  {Number} @zIndex  堆叠层级
+ * @param  {Number} @top     与顶部距离
+ * @param  {Number} @left    与左边距离
+ */
+.pos-f(@zIndex; @top: 0; @left: 0) when (isnumber(@zIndex)){
+	position: fixed;
+	z-index: @zIndex;
+	top: @top;
+	left: @left;
+}
+
+/**
+ * 绝对定位 fixed
+ * 不带参数，仅设定绝对定位
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.pos-f() when (default()){
+	position: fixed;
+}

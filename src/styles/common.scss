@@ -1,0 +1,1033 @@
+@import './vars.scss';
+$color-primary: var(--theme-color);
+ul,
+li,
+p {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// 点击选中样式
+// 临时加回来防止影响其他页面
+// 排除掉新增和维护中的页面
+.router-view-content:not(.tg-page-container) {
+  .child-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+  }
+
+  .page-section {
+    min-width: 800px;
+    padding-bottom: 0;
+  }
+
+  .el-form-item__error {
+    right: 0;
+    text-align: right;
+  }
+
+  .el-form-item.is-success .el-input__inner {
+    border-color: #dcdfe6 !important;
+  }
+
+  .el-dialog__header {
+    padding-top: 10px;
+
+    i:hover {
+      color: #fff;
+    }
+  }
+
+  .el-dialog__header {
+    text-align: left !important;
+  }
+
+  .el-dialog__footer {
+    text-align: center;
+    padding: 20px 20px 10px;
+  }
+
+  .el-message-box {
+    border: none !important;
+
+    .el-message-box__header {
+      text-align: center;
+      background: $color-primary;
+
+      span,
+      i {
+        color: #fff;
+      }
+
+      i:hover {
+        color: #fff;
+      }
+    }
+
+    .el-message-box__content {
+      position: relative;
+      height: 116px;
+
+      .el-message-box__message {
+        padding-left: 12px;
+        text-align: center;
+        position: relative;
+        top: 76px;
+      }
+
+      .warning-icon {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background: url('~@/assets/img/delete_icon1.png');
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        margin-left: -18px;
+      }
+    }
+
+    .el-message-box__btns {
+      text-align: center;
+      border-top: 1px solid #f2f2f2;
+      padding: 20px 15px 10px;
+
+      .el-button {
+        width: 100px;
+      }
+    }
+  }
+
+  .tip-box {
+    .el-dialog__header {
+      span,
+      i {
+        color: #fff;
+      }
+
+      i:hover {
+        color: #fff;
+      }
+    }
+
+    .el-dialog__body {
+      padding: 30px 15px 10px;
+
+      .tip-box-text {
+        margin-top: 48px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .tip-box-icon {
+        position: relative;
+        margin: 14px;
+
+        i {
+          display: inline-block;
+          width: 38px;
+          height: 38px;
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          margin-left: -19px;
+        }
+
+        .i-true {
+          background: url('~@/assets/img/star_info_sprite1.png') -61px -8px;
+        }
+
+        .i-false {
+          background: url('~@/assets/img/delete_icon1.png') 0 0 no-repeat;
+        }
+      }
+    }
+  }
+
+  .addDisplay-dialog,
+  .add-display-form {
+    .el-dialog__body {
+      padding: 16px 20px;
+    }
+  }
+
+  .text-overflow-cls {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .dialog-min-width {
+    min-width: 500px;
+  }
+
+  .dialog-min-width-tip {
+    min-width: 320px;
+  }
+
+  .dialog-min-width-import {
+    min-width: 400px;
+  }
+
+  .gm-icon {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .gm-icon-detail {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/icon_css_sprites.png') -10px -118px;
+
+    &:hover {
+      background-position: -64px -118px;
+    }
+  }
+
+  .gm-icon-edit {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/icon_css_sprites.png') -10px -10px;
+
+    &:hover {
+      background-position: -64px -10px;
+    }
+  }
+
+  .gm-icon-delete {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/icon_css_sprites.png') -118px -10px;
+
+    &:hover {
+      background-position: -118px -64px;
+    }
+  }
+
+  .gm-icon-download {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/icon_css_sprites.png') -118px -118px;
+
+    &:hover {
+      background-position: -172px -10px;
+    }
+  }
+
+  .gm-icon-preview {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/qp_tabe_icon2_default.png') 5px 5px no-repeat;
+
+    &:hover {
+      background-image: url('~@/assets/images/qp_tabe_icon2_hover.png');
+    }
+  }
+
+  .gm-icon-download2 {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/qp_tabe_icon3_default.png') 5px 5px no-repeat;
+
+    &:hover {
+      background-image: url('~@/assets/images/qp_tabe_icon3_hover.png');
+    }
+  }
+
+  .display-product-icon {
+    width: 34px;
+    height: 34px;
+    background: url('~@/assets/images/icon_css_sprites.png') -10px -64px;
+
+    &:hover {
+      background-position: -64px -64px;
+    }
+  }
+
+  .gm-icon-editable {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url('~@/assets/img/display_sprite.png') -43px -10px;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+
+  .gm-btn-shadow {
+    box-shadow: $color-box-shadow;
+  }
+
+  .gm-icon-link {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(~@/assets/img/display_sprite.png) -12px -216px;
+  }
+
+  .gm-scrollBar-style2::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .gm-icon-percent {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(~@/assets/img/icon-percent.png);
+  }
+
+  .el-table {
+    border-color: #e8eaef;
+  }
+
+  .el-table::before {
+    background: #fff;
+  }
+
+  // 方案生成成功 confirm
+  .g-plan-success {
+    .el-message-box__content {
+      text-align: center;
+
+      .el-icon-success {
+        margin-left: -10px;
+        position: relative;
+        bottom: -70px;
+      }
+    }
+  }
+
+  .el-message-box {
+    padding-bottom: 30px;
+
+    .el-message-box__header {
+      background: #fff;
+
+      i {
+        font-size: 24px;
+        color: #666;
+
+        &:hover {
+          color: #666;
+        }
+      }
+    }
+
+    .el-message-box__content {
+      padding-top: 0;
+      height: 126px;
+
+      .warning-icon {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        width: 118px;
+        height: 105px;
+        margin-left: -59px;
+        background: url('~@/assets/images/zb_icon_warning.png') no-repeat;
+      }
+
+      .warning-icon2 {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        width: 118px;
+        height: 105px;
+        margin-left: -59px;
+        background: url('~@/assets/images/zb_icon_warning-2.jpg') no-repeat;
+      }
+
+      .success-icon {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        width: 118px;
+        height: 105px;
+        margin-left: -59px;
+        background: url('~@/assets/images/zb_icon_success.png') no-repeat;
+      }
+
+      .el-message-box__message {
+        top: 100px;
+      }
+    }
+
+    .el-message-box__btns {
+      border-top: 0;
+    }
+  }
+
+  // 所有列表
+  .el-table td,
+  .el-table th {
+    border-bottom: none;
+  }
+
+  // 成本安排列表、供应商列表、公司库、业绩登记表
+  .cost-list,
+  .personal-library-list,
+  .Customer-contract,
+  .list-left,
+  .list-left1,
+  .company {
+    .el-table td,
+    .el-table th {
+      text-align: left;
+    }
+  }
+
+  .list-right {
+    .el-table td,
+    .el-table th {
+      text-align: right;
+    }
+  }
+
+  .list-left1 {
+    .el-table .cell,
+    .el-table th div,
+    .el-table--border td:first-child .cell,
+    .el-table--border th:first-child .cell {
+      padding-left: 0;
+    }
+  }
+
+  // 预备废弃
+  // src/views/customer/index.vue 已删除
+  // src/views/medium/index.vue 未删除
+  .comon-table-box {
+    background: #fff;
+    padding: 12px;
+    margin-top: 12px;
+    padding-top: 20px;
+  }
+
+  .common-block-wrapper {
+    background: #fff;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.04);
+  }
+
+  .mt10 {
+    margin-top: 10px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .brand-color {
+    color: $color-primary;
+  }
+
+  .fl {
+    float: left;
+  }
+
+  .fr {
+    float: right;
+  }
+
+  .mr10 {
+    margin-right: 10px;
+  }
+
+  .mr5 {
+    margin-right: 5px;
+  }
+
+  .pd10 {
+    padding: 10px;
+  }
+
+  .bor-bt {
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .bor {
+    border: 1px solid #ebebeb;
+  }
+
+  .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
+  .clearfix:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .clearfix {
+    _zoom: 1;
+  }
+
+  // 列表隔行色
+  .el-table--striped .el-table__body tr.el-table__row--striped td {
+    background-color: #f6f6f6;
+  }
+
+  // 序号
+  .el-table__header-wrapper {
+    font-size: 16px;
+    color: var(--text-des-color);
+  }
+
+  // pgae分页
+  // .el-pagination__sizes {
+  //   .el-input__inner {
+  //     border-radius: 6px !important;
+  //     border: none;
+  //     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  //   }
+  // }
+
+  // 分页左
+  // .el-pager {
+  //   .number {
+  //     margin: 0 5px;
+  //     background: rgba(255, 255, 255, 1);
+  //     border: 1px solid rgba(235, 238, 246, 1);
+  //     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  //     border-radius: 6px;
+  //     color: #666666;
+  //   }
+
+  //   // 兼容分页背景
+  //   .current,
+  //   .active {
+  //     background-color: #396fff !important;
+  //     color: white !important;
+
+  //     &::after {
+  //       background: none;
+  //     }
+  //   }
+  // }
+
+  // 重置按钮
+  // .btn-reset {
+  //   color: var(--text-des-color) !important;
+  //   background: #fff !important;
+  //   width: 60px;
+  //   height: 30px;
+  //   padding: 0;
+  // }
+
+  // .btn-reset:hover {
+  // background: #ff5b7f !important;
+  // color: white !important;
+  // border: none;
+  // }
+
+  // 查询按钮
+  .btn-search {
+    width: 60px;
+    height: 30px;
+    padding: 0;
+  }
+
+  // 时间组件样式兼容
+  .el-month-table td.current {
+    font-size: 12px !important;
+
+    &.current::after {
+      background: #fff;
+    }
+  }
+
+  .el-date-table td.current {
+    font-size: 12px !important;
+
+    &.current::after {
+      background: #fff;
+    }
+  }
+
+  // 首页-合作主播-日期组件
+  .category-list {
+    .el-input__inner {
+      border: none;
+      color: var(--text-third-color);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.17);
+    }
+  }
+
+  // 首页-主播达人榜-选择器组件
+  .dimension {
+    .el-input__inner {
+      border: none;
+      color: var(--text-third-color);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.17);
+    }
+  }
+
+  // 合同金额
+  .color-red {
+    color: #ff731e;
+  }
+
+  // 标签移入效果
+  .category-item,
+  .sell-chance li {
+    &:hover {
+      color: #333 !important;
+      transform: scale(1.2);
+      font-weight: 600;
+    }
+
+    &:hover .iconfont {
+      font-weight: normal;
+    }
+  }
+
+  // 14寸
+  .size-medium {
+    font-size: 14px;
+  }
+
+  // 16寸
+  .size-normal {
+    font-size: 16px !important;
+  }
+
+  // #666
+  .color-666 {
+    color: #666 !important;
+  }
+
+  // #999
+  .color-999 {
+    color: #999 !important;
+  }
+
+  .color-blue {
+    color: #396fff;
+  }
+
+  // 蓝色按钮
+  .btn-blue {
+    background-color: #396fff;
+  }
+
+  .el-table {
+    color: #666;
+  }
+
+  .status-dot-1 {
+    color: #ff9434;
+    font-size: 12px;
+  }
+
+  .status-dot-2 {
+    color: $color-primary;
+    font-size: 12px;
+  }
+
+  .status-dot-3 {
+    color: #f43846;
+    font-size: 12px;
+  }
+
+  .status-dot-4 {
+    color: #ff9434;
+    font-size: 12px;
+  }
+
+  .status-dot-5 {
+    color: #aaa;
+    font-size: 12px;
+  }
+
+  .big-button {
+    width: 100px;
+    height: 36px !important;
+  }
+
+  // 二级页面下边框
+  .el-table--border {
+    border-bottom: 1px solid var(--table-border-color);
+  }
+
+  .el-table .cell {
+    overflow: visible;
+  }
+
+  //
+  .el-table__fixed-right::before,
+  .el-table__fixed::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ebeef5;
+    z-index: -4;
+  }
+
+  .many {
+    color: #ff731e !important;
+  }
+
+  // 去除浏览器默认input背景色
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+    outline: none;
+  }
+
+  .aedocumentarylist-container {
+    .el-table td,
+    .el-table th {
+      padding: 10px 0 !important;
+      height: 60px !important;
+      text-align: left;
+    }
+  }
+
+  #step-header {
+    .el-col-8 {
+      width: auto;
+    }
+  }
+
+  .el-dialog,
+  .common-dialog {
+    border-radius: 4px;
+    background: #f2f6f9 !important;
+    padding: 10px;
+  }
+
+  // 编辑图标颜色
+  .icon-bianji:before {
+    color: var(--text-des-color);
+  }
+
+  // 弹框圆角
+  .el-dialog__header {
+    border-radius: 10px;
+  }
+
+  // 合作详情第2步登记业绩-不可删除弹框样式
+  .DeleteButton .el-button {
+    border-radius: 10px;
+    font-size: 14px;
+    width: 120px !important;
+    height: 38px;
+  }
+
+  .DeleteButton .el-message-box__content {
+    color: var(--text-color);
+    font-size: 16px;
+
+    .el-button {
+      width: 120px;
+      height: 38px;
+    }
+
+    .alert-icon {
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      width: 118px;
+      height: 105px;
+      margin-left: -59px;
+      background: url('~@/assets/images/zb_icon_alert.jpg') no-repeat;
+    }
+  }
+
+  .el-message-box__btns {
+    .el-button--primary {
+      background: #396fff;
+    }
+  }
+
+  .el-dialog__body {
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  // 弹框头部
+  .el-dialog__header {
+    text-align: left !important;
+  }
+
+  // radio单选框
+  .el-radio__inner {
+    width: 24px;
+    height: 24px;
+  }
+
+  .color-3 {
+    color: var(--text-color);
+  }
+
+  .font-weight-b {
+    font-weight: 600;
+  }
+
+  .overflow-ellipsis {
+    overflow: hidden;
+    /* 超出部分隐藏 */
+    white-space: nowrap;
+    /* 不换行 */
+    text-overflow: ellipsis;
+    /* 超出部分文字以...显示 */
+  }
+
+  //提示框
+  .el-popper {
+    border-radius: 4px;
+  }
+
+  // 去除number滚轮样式
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+
+  // ----天鸽交互优化 start----
+
+  // 所有字体图标移入变小手
+  .iconfont {
+    cursor: pointer;
+  }
+
+  // 删除、作废移入变红
+  .icon-shanchu {
+    &:hover.icon-shanchu::before {
+      color: #f05765 !important;
+    }
+  }
+
+  // 编辑移入变蓝
+  .icon-bianji {
+    &:hover.icon-bianji:before {
+      color: #396fff !important;
+    }
+  }
+
+  // 加号移入变蓝
+  .iconjindutianjia {
+    &:hover.iconjindutianjia:before {
+      color: #396fff !important;
+    }
+  }
+
+  // 审核、重新审核移入变蓝
+  .icon-shenhe,
+  .icon-zhongxinshenhe {
+    &:hover.icon-shenhe:before {
+      color: #396fff !important;
+    }
+
+    &:hover.icon-zhongxinshenhe:before {
+      color: #396fff !important;
+    }
+  }
+
+  // 导入日志图标移入变蓝
+  .icon-daoruxiangqing,
+  .icon-xiazairizhi {
+    &:hover.icon-daoruxiangqing:before {
+      color: #396fff !important;
+    }
+
+    &:hover.icon-xiazairizhi:before {
+      color: #396fff !important;
+    }
+  }
+
+  .icon-fujian1 {
+    margin-right: 5px;
+
+    &.icon-fujian1:before {
+      color: var(--text-des-color);
+      font-size: 22px;
+    }
+
+    &:hover.icon-fujian1:before {
+      color: #396fff !important;
+    }
+  }
+
+  // 公司库报价单查看、下载
+  .icon-chakanbaojiadan {
+    &:hover.icon-chakanbaojiadan:before {
+      color: #396fff !important;
+    }
+  }
+
+  .icon-xiazaibaojiadan {
+    &:hover.icon-xiazaibaojiadan:before {
+      color: #396fff !important;
+    }
+  }
+
+  // v任务删除图标
+  .el-icon-delete {
+    &:hover.el-icon-delete:before {
+      color: #f05765 !important;
+    }
+  }
+
+  // 点击选中样式
+  #active {
+    background-color: none;
+    font-size: 18px !important;
+    color: #333333 !important;
+    font-weight: 600;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 11px;
+      border-radius: 6px;
+      background: rgba(255, 206, 54, 1);
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      z-index: -1;
+    }
+  }
+
+  // 缺省图标
+  .no_data {
+    img {
+      width: 110px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .no_data_img {
+    width: 110px;
+    margin-bottom: 10px;
+  }
+
+  // ----天鸽交互优化 end----
+
+  // 小提示图标
+  .el-icon-question:before {
+    color: #cdcdcd;
+  }
+
+  // 强制换行
+  .break-all {
+    word-break: break-all;
+  }
+
+  // 客户公司名称下拉框
+  .el-select-dropdown__wrap {
+    max-height: 274px;
+    max-width: 600px;
+  }
+
+  current,
+  active {
+    &:not(.number) {
+      background-color: none;
+      font-size: 18px !important;
+      color: #333333 !important;
+      font-weight: 600;
+      position: relative;
+      z-index: 0;
+      &::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 11px;
+        border-radius: 6px;
+        background: rgba(255, 206, 54, 1);
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        z-index: -1;
+      }
+    }
+  }
+
+  // 客户分类
+  .customer-search-bar {
+    .el-form-item__label {
+      font-size: 16px;
+    }
+  }
+
+  // 详情页列表
+
+  // .el-table td.is-center,
+  // .el-table th.is-center {
+  //   text-align: left;
+  // }
+
+  .el-button {
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+.customer-form {
+  .el-form-item__label {
+    line-height: 28px;
+    padding-bottom: 0;
+    font-size: 14px;
+  }
+  .el-select {
+    display: block;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    margin-right: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 3px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  //box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: transparent;
+}
+
+.tg-page-empty {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  > .tg-page-empty-title {
+    line-height: 22px;
+    margin-top: -42px;
+    color: #a4b2c2;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.tg-popover {
+  padding: 6px 12px;
+  min-width: 0;
+  max-width: 420px;
+  color: var(--text-color);
+}
+

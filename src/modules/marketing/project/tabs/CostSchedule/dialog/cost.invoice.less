@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+
+.dialog-build-in-cost-invoice {
+    .title {
+        line-height: 40px;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+    .container {
+        display: flex;
+        .image {
+            width: 90px;
+            height: 90px;
+        }
+        .invoice-content {
+            display: flex;
+            flex-direction: column;
+            margin-left: 12px;
+            .row {
+                line-height: 18px;
+                height: 18px;
+                margin-top: 6px;
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+            .label {
+                line-height: 18px;
+                height: 18px;
+                color: var(--tip-icon-color);
+            }
+            .value {
+                line-height: 18px;
+                height: 18px;
+                color: var(--text-color);
+            }
+        }
+    }
+
+}

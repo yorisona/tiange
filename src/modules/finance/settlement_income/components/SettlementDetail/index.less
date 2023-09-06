@@ -1,0 +1,294 @@
+
+
+.settlement-detail {
+  padding: 24px 24px 0px 24px;
+  display: inline-block;
+  &.settlement-detail-bottom-24 {
+    padding-bottom: 24px;
+  }
+
+
+  & > div.amount {
+    font-size: 12px;
+    color: var(--text-second-color);
+
+    & > i {
+      font-style: normal;
+      font-size: 18px;
+      color: #ff7a36;
+      font-weight: 600;
+    }
+  }
+
+  & > div.detail {
+    margin-top: 21px;
+    display: flex;
+    align-items: center;
+
+    & .detail-item {
+      width: 286px;
+      margin-right: 18px;
+      height: 220px;
+      border: 1px solid rgba(164, 178, 194, 0.3);
+      border-radius: 2px;
+
+      & .label {
+        height: 40px;
+        background: rgba(164, 178, 194, 0.09);
+        border-radius: 2px 2px 0 0;
+        border-radius: 2px 2px 0px 0px;
+        line-height: 40px;
+        padding-left: 18px;
+      }
+
+      & .part {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      & .formula {
+        font-size: 12px;
+        color: var(--text-third-color);
+        line-height: 16px;
+        margin-left: 12px;
+      }
+
+      & .amount {
+        color: var(--text-color);
+        overflow-y: auto;
+        height: auto;
+        font-size: 12px;
+      }
+
+      & .amount-bold {
+        color: var(--text-color);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      & .row {
+        margin: 12px 18px 0 !important;
+        padding-top: 12px;
+        border-top: 1px dashed rgba(164, 178, 194, 0.3);
+        color: var(--text-third-color);
+
+        & .manual-item {
+          font-size: 12px;
+          margin-bottom: 12px;
+          display: flex;
+        }
+      }
+
+      &.manual {
+        & .amount {
+          margin-bottom: 12px;
+        }
+      }
+      &.server {
+        & .amount {
+          margin: 18px 0 0 18px;
+        }
+      }
+      &.manual,
+      &.commission {
+        & > div.amount > div {
+          margin-left: 18px;
+        }
+        & .p1 {
+          font-size: 12px;
+          color: var(--text-third-color);
+          margin: 18px 0 6px 0;
+          &.dydb {
+            margin-bottom: 0;
+          }
+        }
+        & .p2 {
+          font-size: 12px;
+          color: var(--text-color);
+          span {
+            font-weight: 600;
+            font-size: 14px;
+          }
+        }
+        & .p3 {
+          font-size: 12px;
+          color: var(--text-color);
+          margin: 18px 0 6px 0;
+        }
+        & .p4 {
+          font-size: 12px;
+          margin-bottom: 6px;
+        }
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+      .douyin-cps-detail {
+        padding: 18px 18px;
+        .douyin-cps-amount {
+          display: flex;
+          margin-bottom: 10px;
+          .amount-label {
+            color: var(--text-second-color);
+            text-align: right;
+            font-size: 12px;
+            line-height: 20px;
+          }
+          .amount-detail {
+            flex: 1;
+            .amount-amount {
+              display: flex;
+              line-height: 20px;
+              .amount-fee {
+                color: var(--text-color);
+                font-weight: 600;
+              }
+              .amount-download {
+                color: var(--theme-color);
+                margin-left: 20px;
+              }
+            }
+            .amount-text {
+              margin-top: 2px;
+              color: var(--text-third-color);
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      &.douyincpn-width {
+        width: 580px;
+      }
+    }
+  }
+
+  & .download,
+  & .range-recommend {
+    & .name {
+      max-width: 300px;
+      display: inline-block;
+      overflow: hidden;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: var(--text-color);
+    }
+    & .icon {
+      font-size: 20px;
+    }
+  }
+  & .mcn-range-recommend {
+    padding: 20px 0 18px 0;
+    border-bottom: 1px solid rgba(164, 178, 194, 0.3);
+    & .icon {
+      font-size: 20px;
+    }
+    & .mcn-download-item {
+      display: flex;
+      align-items: center;
+      line-height: 18px;
+      font-size: 12px;
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+
+      &:first-child {
+        margin-right: 24px;
+      }
+      & .el-button--text {
+        padding: 0;
+        margin-left: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--theme-color);
+      }
+      & .label {
+        text-align: right;
+        color: var(--text-second-color);
+      }
+      & .name {
+        color: var(--text-color);
+        padding-left: 2px;
+      }
+    }
+  }
+  & .range-recommend {
+    line-height: 48px;
+    border-bottom: 1px solid rgba(164, 178, 194, 0.3);
+    display: flex;
+    & .download-item {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      &:first-child {
+        margin-right: 24px;
+      }
+      & .el-button--text {
+        padding: 0;
+        margin-left: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--theme-color);
+      }
+      & .label {
+        // width: 56px;
+        // text-align: right;
+        color: var(--text-third-color);
+
+        // margin-right: 12px;
+      }
+      & .name {
+        color: var(--text-color);
+        padding-left: 2px;
+      }
+    }
+  }
+  & .download {
+    margin-top: 16px;
+    & .download-item {
+      display: flex;
+      font-size: 12px;
+      span, div {
+        margin-top: 0;
+        color: var(--text-color);
+        &.contract-div {
+          color: var(--theme-color);
+        }
+      }
+      & .label {
+        margin: 0px;
+        width: 62px;
+        text-align: right;
+        color: var(--text-third-color);
+        &.contract-div {
+          color: var(--theme-color);
+        }
+        // margin-right: 12px;
+      }
+      & .name {
+        color: var(--text-color);
+        padding-left: 2px;
+      }
+
+      & .el-button--text {
+        padding: 0;
+        margin-left: 12px;
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--theme-color);
+      }
+      & .file-item {
+        width: 340px;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        &:last-of-type {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

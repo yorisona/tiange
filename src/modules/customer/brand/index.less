@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+
+.tg-customer-brand-page {
+  flex: auto;
+  overflow-y: auto;
+  overflow-y: overlay;
+  .input-with-select .el-input-group__prepend {
+    background-color: #fff;
+    width: 88px;
+  }
+  tr {
+    cursor: pointer;
+  }
+  .el-input {
+    color: var(--text-color);
+  }
+  .brand-operation-area {
+    display: flex;
+    justify-content: space-between;
+    .brand-edit {
+      color: #6a7b92;
+      font-size: 14px;
+      margin-right: 18px;
+      line-height: 32px;
+    }
+  }
+  .brand-item-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-top: 0px;
+    margin-left: -12px;
+    .empty-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50vh;
+      .empty-text {
+        color: #a4b2c2;
+        position: relative;
+        top: -40px;
+      }
+    }
+  }
+}
+
+
+.el-select-dropdown__item {
+  color: var(--text-second-color);
+}
+.el-select-dropdown__item.selected {
+  color:var(--theme-color)!important;
+}

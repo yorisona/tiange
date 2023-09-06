@@ -1,0 +1,78 @@
+@charset 'utf-8';
+
+
+.tg-live-project-dialog-pay-refund {
+  .el-form {
+    padding: 24px 12px 48px 18px;
+    min-height: 490px;
+    .form-row-two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 36px;
+      row-gap: 24px;
+    }
+    .el-date-editor.el-input,
+    .el-date-editor.el-input__inner {
+      width: auto;
+    }
+    .row-pay {
+      > .el-form-item {
+        .el-form-item__content {
+          height: 32px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .row-way-detail {
+      // margin: 0 -24px;
+      padding: 24px 24px;
+      background: rgba(var(--tip-icon-rgb-color), 0.09);
+    }
+    .el-form-item {
+      margin-bottom: 0;
+      .el-form-item__label {
+        text-align: right;
+      }
+    }
+    .el-textarea > .el-textarea__inner {
+      height: 88px;
+    }
+    .uploaded-file {
+      display: flex;
+      .uploaded-file-btn {
+        display: flex;
+        word-break: break-all;
+        color: var(--text-color);
+        cursor: auto;
+        .line-clamp-1 {
+          font-size: 12px;
+        }
+        // &:hover {
+        //   color: var(--theme-color);
+        // }
+        .uploaded-file-btn-icon {
+          margin-right: 2px;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          margin-top: 2px;
+          flex-shrink: 0;
+        }
+      }
+      .uploaded-file-download {
+        margin-left: 12px;
+        margin-top: 2px;
+      }
+      .uploaded-file-del {
+        margin-top: 2px;
+        //   visibility: hidden;
+      }
+      &:hover {
+        .uploaded-file-del {
+          // visibility: visible;
+        }
+      }
+    }
+  }
+}

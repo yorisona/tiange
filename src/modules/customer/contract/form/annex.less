@@ -1,0 +1,101 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.tg-customer-contract-form-annex-dialog {
+  .dialog-content {
+    .content-block-header {
+      padding: 0 10px;
+      height: 37px;
+      line-height: 37px;
+      span {
+        position: relative;
+        color: var(--text-color);
+        font-weight: 600;
+        padding-left: 12px;
+      }
+    }
+    .form-block {
+      padding-right: 137px;
+      margin-top: 15px;
+      .upload-attachment {
+        display: inline-block;
+        .upload-btn {
+          position: relative;
+          padding-left: 30px;
+          i {
+            position: absolute;
+            top: 7px;
+            left: 8px;
+          }
+        }
+      }
+      .upload-tips {
+        margin-left: 11px;
+        font-size: 12px;
+        color: var(--text-third-color);
+      }
+      .uploaded-list {
+        span {
+          position: relative;
+          display: inline-block;
+          img {
+            vertical-align: middle;
+          }
+          em {
+            display: inline-block;
+            font-style: normal;
+            vertical-align: middle;
+            color: #5c82ff;
+            margin: 0 50px 0 5px;
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          i {
+            vertical-align: middle;
+            font-size: 20px;
+            color: #aaa;
+            cursor: pointer;
+            position: absolute;
+            top: 12px;
+            right: 25px;
+          }
+        }
+      }
+    }
+    .approval {
+      .approval-username {
+        display: inline-block;
+        width: 64px;
+        height: 28px;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 10px;
+        background: #f6f6f6;
+      }
+      .el-icon-arrow-right {
+        color: #dadada;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 8px;
+      }
+      .approval-tips {
+        font-size: 12px;
+        color: #ff8b3d;
+        margin-left: 8px;
+        .el-icon-warning {
+          color: #ff8b3d;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  .upload-btn-wrap {
+    .d-ib();
+  }
+  .upload-tips {
+    .fc(12px, var(--text-third-color));
+  }
+}

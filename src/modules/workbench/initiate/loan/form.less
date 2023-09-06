@@ -1,0 +1,118 @@
+@charset 'utf-8';
+
+
+.loan-dialog {
+  /deep/ .el-dialog__body {
+    background: #f6f6f6;
+  }
+  .wrap {
+    padding: 20px;
+    background: #fff;
+
+    /deep/ .el-input__inner {
+      height: 32px;
+    }
+    /deep/ .el-input-group__prepend {
+      padding: 0 10px !important;
+      background: none;
+      border: none;
+      color: var(--text-color);
+    }
+    .v-bgc {
+      background: #f6f6f6;
+      padding: 10px;
+      /deep/ .el-row {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      /deep/ .el-form-item__content {
+        background: #f6f6f6;
+      }
+    }
+    /deep/ .el-radio__input.is-checked + .el-radio__label {
+      color: var(--text-color);
+    }
+  }
+  .flow {
+    background: #fff;
+    padding-left: 80px;
+    padding-top: 20px;
+    /deep/ .el-step__icon.is-text {
+      border-radius: 50%;
+      border: 5px solid #d6d6d6 !important;
+      border-color: inherit;
+      background: #d6d6d6;
+    }
+    /deep/ .el-step__line {
+      position: absolute;
+      border-color: inherit;
+      background-color: #d6d6d6;
+      display: block;
+    }
+    /deep/ .el-step__icon-inner {
+      display: none;
+    }
+    /deep/ .el-step__icon {
+      width: 18px;
+      height: 18px;
+      margin-left: 3px;
+    }
+    /deep/ .el-form-item {
+      margin-bottom: 0px;
+    }
+    /deep/ .el-step.is-vertical .el-step__line {
+      top: 36px;
+      bottom: -4px;
+    }
+    /deep/ .el-step__title.is-wait {
+      color: var(--text-color);
+      font-size: 14px;
+    }
+    /deep/ .el-input--suffix {
+      width: 309px;
+      height: 32px;
+    }
+    /deep/ .el-input__inner {
+      height: 32px;
+    }
+    /deep/ .el-step.is-vertical .el-step__title {
+      line-height: 40px;
+      padding-bottom: 0px;
+    }
+    /deep/ .el-input__icon {
+      line-height: 30px;
+    }
+    // 金额小于10万状态下
+    .line-show-1:nth-child(4) {
+      /deep/ .el-step__line {
+        display: none;
+      }
+    }
+    // 金额大于10万小于50万状态下
+    .line-show-2:nth-child(5) {
+      /deep/ .el-step__line {
+        display: none;
+      }
+    }
+    // 金额大于50万状态下
+    .line-show-3:last-child {
+      /deep/ .el-step__line {
+        display: none;
+      }
+    }
+
+    // 流程
+
+    .flow-select {
+      color: var(--text-color);
+      font-size: 14px;
+    }
+    .flow-title {
+      margin-bottom: 10px;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+    // margin-top: 10px;
+    // padding: 10px 30px;
+  }
+}

@@ -1,0 +1,226 @@
+.border-card-base-info {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    margin-bottom: 33px;
+  }
+  .base-item-title {
+    .star {
+      color: #ec1e1e;
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    .tips {
+      font-size: 12px;
+      color: var(--text-third-color);
+    }
+  }
+  .base-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 210px));
+    grid-column-gap: 24px;
+    grid-row-gap: 18px;
+  }
+  .flex-line-box {
+    display: flex;
+    column-gap: 30px;
+    padding: 0;
+    .flex-line-item {
+      flex: 1;
+    }
+    .flex-line-item-2 {
+      width: calc(50% - 36px);
+    }
+    .flex-line-item-4 {
+      width: calc(25% - 36px);
+    }
+  }
+  .generator-kol-platform {
+    display: inline-block;
+    & .el-tabs {
+      box-shadow: none;
+      border: 1px solid #e3e7ec;
+      margin-bottom: 32px;
+    }
+    & .el-tabs__header {
+      background: #f4f7f8;
+      border-bottom: 1px solid #e3e7ec;
+    }
+    & .el-tabs__item {
+      color: #6a7b92;
+    }
+    & .el-tabs__content {
+      padding: 11px 18px;
+    }
+    /deep/ .el-checkbox {
+      display: inline-block;
+      margin-top: 0px;
+      .el-checkbox__input {
+        margin-top: -8px;
+      }
+      .checkbox-p {
+        width: 100px;
+        overflow: hidden;
+        margin-top: 13px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 20px;
+        font-weight: 400;
+        color: var(--text-color);
+      }
+    }
+  }
+  /deep/.el-input__inner {
+    border-radius: 2px !important;
+  }
+  .input-more {
+    /deep/.el-input__inner {
+      border-radius: 2px 0 0 2px !important;
+    }
+    /deep/.el-input-group__append {
+      border-radius: 0 2px 2px 0 !important;
+    }
+  }
+
+  .options {
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 100px;
+  }
+  .upload-tips {
+    color: var(--text-third-color);
+  }
+  .resume {
+    display: flex;
+    margin-bottom: 14px;
+    .tips {
+      margin-left: 12px;
+      font-size: 12px;
+      color: var(--text-third-color);
+      line-height: 1.2;
+    }
+  }
+  .resume-list {
+    display: flex;
+    align-items: center;
+    row-gap: 14px;
+    color: var(--text-color);
+    svg {
+      width: 20px;
+      height: 20px;
+      &:nth-child(1) {
+        height: 20px;
+      }
+    }
+    span {
+      padding: 0 6px 0 4px;
+    }
+  }
+  /deep/ .el-form-item {
+    margin-bottom: 0;
+  }
+  /deep/ .el-form-item__label {
+    color: var(--text-second-color);
+    font-size: 12px;
+    height: 22px;
+    line-height: 18px;
+    padding-bottom: 6px;
+  }
+  /deep/ .el-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 18px;
+    .el-checkbox {
+      margin: 0;
+    }
+  }
+  /deep/ .el-checkbox {
+    display: flex;
+    .el-checkbox__input {
+      margin-top: 16px;
+    }
+    .checkbox-p {
+      width: 100px;
+      overflow: hidden;
+      margin-top: 13px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 20px;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+  }
+  /deep/.el-checkbox__input.is-checked + .el-checkbox__label {
+    color: var(--text-second-color);
+  }
+  /deep/ .el-form-item__error {
+    text-align: left;
+  }
+  .file-list {
+    margin-left: 8px;
+    margin-top: 24px;
+    display: flex;
+    column-gap: 18px;
+    flex-wrap: wrap;
+    row-gap: 18px;
+    .upload-btn {
+      border-radius: 2px;
+    }
+    .file {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+      }
+      .icon {
+        position: absolute;
+        right: -7px;
+        top: -7px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #d1d8e0;
+        border-radius: 50%;
+        background-color: #fff;
+        &:hover {
+          color: #f04b4b !important;
+        }
+      }
+    }
+
+    .upload-btn {
+      width: 120px;
+      height: 120px;
+      border: dashed 1px rgba(164, 178, 194, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      i {
+        font-size: 28px;
+        width: 28px;
+        height: 28px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      font-size: 12px;
+      color: var(--text-second-color);
+    }
+  }
+}

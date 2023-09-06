@@ -1,0 +1,83 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.tg-customer-list-company-list-page {
+  .un-border-reset-btn {
+    width: 64px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: -3px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .search-flex-wrapper {
+    display: flex;
+    .filter-box {
+      flex: 1;
+    }
+  }
+  .co-status {
+    display: flex;
+    .point {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 7px;
+      margin-right: 5px;
+      &.fail {
+        background: rgba(var(--fail-rgb-color), 0.6);
+      }
+      &.success {
+        background: #33BA5D;
+      }
+      &.process {
+        background: #FF955F;
+      }
+      &.block {
+        background: #F04B4B;
+      }
+      &.not-commit {
+        background: rgba(60,82,105,.6)
+      }
+    }
+    .success {
+      color: var(--text-color);
+    }
+    .fail {
+      color: var(--text-color);
+    }
+  }
+
+  .table-container {
+    overflow-y: auto;
+    overflow-y: overlay;
+  }
+
+  .el-table {
+    tbody {
+      .company-name-line {
+        .pos-r();
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        > .company-logo {
+          @size: 60px;
+          .wh(@size, @size);
+          .brdr(4px);
+        }
+        > .company-name {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .el-table tbody > tr:hover > td,
+  .tg-page-container .el-table tbody > tr.hover-row > td {
+    cursor: pointer;
+  }
+
+}
+

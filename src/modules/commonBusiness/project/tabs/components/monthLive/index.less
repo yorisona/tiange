@@ -1,0 +1,108 @@
+
+.month-live-wrapper {
+  display: grid;
+  row-gap: 12px;
+  min-width: 932px;
+  grid-template-rows: 325px 554px minmax(560px, 1fr);
+  .project-live {
+    display: flex;
+    .title {
+      margin-left: 0;
+    }
+    .table-box {
+      background-color: white;
+      flex-grow: 1;
+      padding: 0 12px;
+      position: relative;
+      .live-header {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        .title {
+          margin-left: 0;
+        }
+        .tag-box {
+          margin-top: 2px;
+          display: flex;
+          column-gap: 12px;
+          .tag-box-line {
+            display: flex;
+            height: 24px;
+            background: #f0f2f5;
+            border-radius: 3px;
+            line-height: 24px;
+            padding: 0 10px;
+            .close-icon {
+              margin-top: 5px;
+              margin-left: 8px;
+              color: #c0c4cc;
+            }
+          }
+        }
+      }
+      .live-pagination {
+        width: calc(100% - 24px);
+        padding: 0 12px;
+        position: absolute;
+        bottom: 10px;
+        right: -12px;
+        left: 12px;
+      }
+      .month-live-table {
+        /deep/tr {
+          cursor: pointer;
+        }
+      }
+      /deep/.el-table {
+        position: absolute;
+        width: calc(100% - 24px);
+        tbody > tr > td {
+          padding: 7px 0;
+          .cell {
+            padding: 0 9px;
+            .today {
+              font-weight: 600;
+            }
+          }
+        }
+        thead > tr > th {
+          padding: 9px;
+          line-height: 16px;
+          .cell {
+            line-height: 16px;
+          }
+        }
+        .live-status {
+          > span {
+            &:first-of-type {
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              border-radius: 4px;
+              margin-right: 6px;
+            }
+          }
+          .finished {
+            background-color: rgba(var(--success-rgb-color), 0.6);
+          }
+          .waiting {
+            background-color: var(--default-status-color);
+          }
+          .warning {
+            background-color: var(--error-color);
+          }
+        }
+      }
+    }
+  }
+  .el-table::before {
+    height: 0;
+  }
+  .live-pagination {
+    border-top: 1px solid var(--table-border-color);
+    padding-top: 10px !important;
+    /deep/.el-pagination__total {
+      top: 10px;
+    }
+  }
+}

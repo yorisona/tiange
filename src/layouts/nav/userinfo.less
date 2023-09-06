@@ -1,0 +1,98 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.nav-userinfo {
+  .pos-r();
+  grid-area: userinfo;
+  display: inline-grid;
+  grid-template-areas: 'avatar nickname role arrow';
+  align-items: center;
+  height: 48px;
+  .pdr(18px);
+  user-select: none;
+  cursor: pointer;
+  > .ico-default-avatar {
+    grid-area: avatar;
+  }
+  > .nickname {
+    grid-area: nickname;
+    .fc(14px,  var(--text-second-color));
+    //font-weight: 600;
+    line-height: 18px;
+    .pdl(6px);
+  }
+
+  > .role {
+    .fc(12px, var(--text-third-color));
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  > .ico-triangle-down {
+    grid-area: arrow;
+    .fs(16px);
+    transform: rotate(0deg);
+  }
+
+  > .dropdown-menu {
+    .pos-atr(100; 66px; 18px);
+    .bgc(white);
+    .pd(8px 0);
+    box-shadow: 0px 1px 8px 0px rgba(var(--tip-icon-rgb-color), 0.3);
+    opacity: 0;
+    animation-duration: 300ms;
+    pointer-events: none;
+    &::before {
+      .pos-atr(100; -16px; 25px);
+      content: '';
+      border-top: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      border-left: 8px solid transparent;
+    }
+    > .dropdown-menu-item {
+      .whlh(142px, 36px, 36px);
+      .pd(0 15px);
+      .fc(14px, var(--text-color));
+      font-weight: 400;
+      &:hover {
+        .bgc(rgba(var(--theme-rgb-color), 0.06));
+      }
+    }
+  }
+
+  > .dropdown-menu.inactive {
+    opacity: 0;
+    animation-name: dropdowm-menu-out;
+    animation-timing-function: ease-out;
+    pointer-events: none;
+  }
+  > .dropdown-menu.active {
+    opacity: 1;
+    animation-name: dropdowm-menu-in;
+    animation-timing-function: ease-in;
+    pointer-events: inherit;
+  }
+}
+
+@keyframes dropdowm-menu-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdowm-menu-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

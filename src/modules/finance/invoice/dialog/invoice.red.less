@@ -1,0 +1,52 @@
+
+.invoice-red-dialog {
+  .el-form .el-form-item--mini .el-form-item__content {
+    .file-list-box {
+      .file-item svg {
+        margin-top: 0;
+        &.ico-a-quseguanbiicon2x {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  .reason-box {
+    padding: 0 24px 12px 24px;
+    .el-form-item__label {
+      color: var(--text-second-color);
+      padding: 0;
+      line-height: 16px;
+    }
+    .radio-flex {
+      display: flex;
+      font-size: 12px;
+      .slot {
+        color: var(--text-third-color);
+        line-height: 25px;
+        padding-top: 2px;
+      }
+      .star {
+        color: var(--error-color);
+      }
+    }
+    .upload-box {
+      display: flex;
+      .file-tips {
+        margin-left: 12px;
+        font-size: 12px;
+        margin-top: 0;
+        color: var(--text-third-color);
+      }
+      /deep/.el-loading-spinner {
+        .circular {
+          width: 20px;
+          height: 20px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .file-list-box {
+      width: 750px;
+    }
+  }
+}

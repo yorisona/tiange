@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>天鸽系统</title>
+</head>
+<style>
+  .logo {
+    width: 180px;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subTitle {
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-third-color);
+    text-align: center;
+    margin-top: 102px;
+  }
+</style>
+
+<body>
+  <div v-loading.fullscreen.lock="fullscreenLoading" class="box">
+    <!-- <div @click="login">111</div> -->
+    <img class="m-auto mt-200px logo" src="./tiange.png" alt="" />
+    <div class="text-center mt-152px subTitle" id="subTitle">正在进入天鸽系统...</div>
+  </div>
+</body>
+<script src="https://tiange-oss.goumee.com/prod/front/axios/axios.min.js"></script>
+<!-- <script src="./index.js" type="module"></script> -->
+<script type="module">
+  // import utils from './index.js'
+  const BASE_URL = 'https://data.goumee.com'
+  const TokenKey = 'Auth-Token';
+  const getUrlKey = (name) => {
+    let reg = `(^|&)${name}=([^&]*)(&|$)`;
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]);
+    return null;
+  };
+  const getCode = () => localStorage.getItem('actcode');
+  const setToken = (token) => {
+    localStorage.setItem(TokenKey, `jwt ${token}`);
+  };
+  const getTokenDesign = () => localStorage.getItem(TokenKey);
+
+  const createAuth = (TokenKey) => {
+    return {
+      getToken: () => localStorage.getItem(TokenKey),
+      setToken: (token) => localStorage.setItem(TokenKey, `jwt ${token}`),
+    };
+  };
+  const utils = {
+    createPromise() {
+      const pm = {};
+      pm.promise = new Promise((resolve, reject) => {
+        pm.resolve = resolve;
+        pm.reject = reject;
+      });
+      return pm;
+    },
+    async loadScript(url) {
+      const pm = utils.createPromise();
+      const script = document.createElement('script');
+      script.src = url;
+      script.onload = pm.resolve;
+      script.onerror = pm.reject;
+      document.head.appendChild(script);
+
+      return pm.promise;
+    },
+    async sleep(time = 1000) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    },
+    getAuthSrc(src) {
+      let value = src;
+      if (!value.includes('?')) value = `${value}?`;
+      value = `${value}Authorization=${getTokenDesign()}`;
+      return value;
+    },
+  };
+
+  // const Confirm = (options) => {
+  //   if (typeof options === 'string') {
+  //     options = {
+  //       message: options,
+  //     };
+  //   }
+  //   // return Dialog.confirm(options)
+  // };
+
+  const axiosA = axios.create({
+    // 前缀
+    baseURL: BASE_URL,
+    // 超时
+    timeout: 1000 * 30,
+    // 请求头
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  axiosA.interceptors.response.use(
+    (response) => {
+      if (response.status === 200) {
+        return response.data.data;
+      }
+      return response;
+    },
+    (error) => {
+      const { response } = error;
+      if (response) {
+        return Promise.reject(response.data);
+      }
+      return Promise.reject(error);
+    },
+  );
+  // axiosA.get('/api/getData')
+  //   .then(function (response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+  const service = {
+    get(url, data) {
+      return axiosA.get(url, { params: data });
+    },
+
+    post(url, data) {
+      return axiosA.post(url, data);
+    },
+  };
+  const getAppId = () => {
+    return service.get('/api/app/get_app_id', {
+      app_type: 2,
+    });
+  };
+  const loginTG = (app_id, code) => {
+    return service.post('/api/app/feishu_app_login', { app_id, code });
+  };
+  console.log(utils, 'utils')
+  class useSystem {
+    constructor() {
+      this.isInit = false
+      this.isLogin = false
+      this.error = ''
+      this.token = ''
+      this.userInfo = null
+    }
+    async Init() {
+      await this.login();
+    }
+    async getAppId() {
+      return getAppId().then((res) => {
+        return res.app_id;
+      });
+    }
+    async loadSDK() {
+      if (typeof window.h5sdk !== 'undefined') return;
+      return utils.loadScript('https://lf1-cdn-tos.bytegoofy.com/goofy/lark/op/h5-js-sdk-1.5.16.js').then(() => {
+        if (typeof window.h5sdk === 'undefined') throw new Error('SDK加载失败');
+      });
+    }
+    async requestAuthCode(appId) {
+      // debugger
+      await this.loadSDK();
+      const pm = utils.createPromise();
+      window.tt.requestAuthCode({
+        appId,
+        success: pm.resolve,
+        fail: pm.reject,
+      });
+      return pm.promise;
+    }
+    async requestSystemInfo() {
+      // await this.loadSDK();
+      const pm = utils.createPromise();
+      window.tt.getSystemInfo({
+        success: pm.resolve,
+        fail: pm.reject,
+      });
+      return pm.promise;
+    }
+    async checkIsLogin() {
+      return auth_getuser().catch(() => null);
+    }
+    async login() {
+      // debugger
+      if (this.isLogin) return;
+      try {
+        this.isLogin = false;
+        let lastInfo = null;
+        if (navigator.userAgent.includes('goumee') || navigator.userAgent.includes('MicroMessenger')) {
+          // localStorage.setItem('Auth-Token-Design', 'jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjU4MDMxNTgsImlhdCI6MTY2MzIxMTE1OCwibmJmIjoxNjYzMjExMTU4LCJpZGVudGl0eSI6MjF9._rpA0lCTB7h37QNsbwIDsGzlT4xXEJn6bAdUtc08EUE')
+          lastInfo = await this.checkIsLogin();
+        }
+        if (lastInfo !== null) {
+          this.userInfo = lastInfo;
+        } else {
+          const appId = await this.getAppId();
+          const info = await this.requestAuthCode(appId);
+          console.log(info, 'info');
+          const loginInfo = await loginTG(appId, info.code);
+          this.token = loginInfo.token;
+          setToken(this.token);
+          this.userInfo = loginInfo.user_info;
+        }
+        this.isLogin = true;
+        // window.tt.setStorageSync('Auth-Token-Design', this.token);
+        // alert(`http://dev2.goumee.com/external/feishu?Authorization=${this.token}`)
+        // window.open(`http://localhost:8080/external/feishu?Authorization=${this.token}`, '_blank');
+        // const systemInfo = await this.requestSystemInfo();
+        // if (systemInfo && systemInfo.model === 'PC') {
+        window.open(`${BASE_URL}/external/feishu?Authorization=${this.token}`, '_blank');
+        window.tt.closeWindow()
+        // window.open(`http://dev2.goumee.com/external/feishu`);
+        // }
+        console.log(
+          systemInfo.model,
+          '`${process.env.VUE_APP_BASE_API}?Authorization=${this.token}`',
+        );
+      } catch (e) {
+        // 报错提示
+        console.log('登录失败了', e.message);
+        this.error = e.message;
+        document.getElementById('subTitle').innerHTML = `<div style="text-align: center; color:red;">登录失败：${this.error}</div>`;
+      }
+    }
+  };
+  const useSystemA = new useSystem();
+  useSystemA.Init();
+</script>
+
+</html>

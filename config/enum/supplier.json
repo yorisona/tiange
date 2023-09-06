@@ -1,0 +1,206 @@
+{
+	"version": "1.0.0",
+	"type": "enum",
+	"describe": "供应商模块相关定义",
+	"enums": [
+		{
+			"name": "AnchorType",
+			"describe": "主播类型",
+			"items": [
+				{
+					"key": "RATION",
+					"label": "签约主播",
+					"value": 1
+				},
+				{
+					"key": "QUALITATIVE",
+					"label": "试播主播"
+				}
+			]
+		},
+		{
+			"name": "CooperativeSignType",
+			"describe": "主播签约方式类型",
+			"items": [
+				{
+					"key": "OFFICIAL",
+					"label": "正式签约",
+					"value": 1
+				},
+				{
+					"key": "PERSONAL",
+					"label": "个人签约"
+				}
+			]
+		},
+		{
+			"name": "BailingOutContent",
+			"describe": "开票内容",
+			"items": [
+				{
+					"key": "INFORMATION_TECHNOLOGY_SERVICE_FEE",
+					"label": "信息技术服务",
+					"value": 2
+				},
+				{
+					"key": "INFORMATION_SERVICE_FEE",
+					"label": "信息服务",
+					"value": 1
+				},
+				{
+					"key": "OTHER",
+					"label": "其他",
+					"value": 3
+				}
+			]
+		},
+		{
+			"name": "TaxItem",
+			"describe": "所属税目",
+			"items": [
+				{
+					"key": "PURCHASE_AND_SALE_CONTRACT",
+					"label": "购销合同",
+					"value": 0
+				},
+				{
+					"key": "CONSTRUCTION_AND_INSTALLATION_WORKS",
+					"label": "建筑安装工程"
+				},
+				{
+					"key": "ENGINEERING_SURVEY_AND_DESIGN",
+					"label": "工程勘察设计"
+				},
+				{
+					"key": "PROCESSING_CONTRACT",
+					"label": "加工承揽"
+				},
+				{
+					"key": "PROPERTY_LEASE",
+					"label": "财产租赁"
+				},
+				{
+					"key": "TRANSPORTATION_OF_GOODS",
+					"label": "货物运输"
+				},
+				{
+					"key": "TRANSFER_OF_PROPERTY_RIGHTS",
+					"label": "产权转移"
+				},
+				{
+					"key": "TECHNICAL_CONTRACT",
+					"label": "技术合同"
+				},
+				{
+					"key": "LOAN_CONTRACT",
+					"label": "借款合同"
+				},
+				{
+					"key": "WAREHOUSING_AND_STORAGE",
+					"label": "仓储保管"
+				},
+				{
+					"key": "PROPERTY_INSURANCE",
+					"label": "财产保险"
+				},
+				{
+					"key": "FUND_ACCOUNT_BOOK",
+					"label": "资金账簿"
+				}
+			]
+		},
+		{
+			"name": "RecruitmentStatus",
+			"describe": "招募状态",
+			"items": [
+				{
+					"key": "WAITING_CONFIRM",
+					"label": "待确认",
+					"value": 6
+				},
+				{
+					"key": "COMPLETE",
+					"label": "已完成"
+				}
+			]
+		},
+		{
+			"name": "RecruitRatisfaction",
+			"describe": "服务评价",
+			"items": [
+				{
+					"key": "VERY_DISSATISFIED",
+					"label": "非常不满意",
+					"value": 1
+				},
+				{
+					"key": "NOT_SATISFIED",
+					"label": "不太满意"
+				},
+				{
+					"key": "GENERALLY",
+					"label": "一般"
+				},
+				{
+					"key": "SATISFIED",
+					"label": "满意"
+				},
+				{
+					"key": "VERY_SATISFIED",
+					"label": "非常满意"
+				}
+			]
+		},
+		{
+			"name": "RecruitmentCooperationContent",
+			"describe": "招募合作内容",
+			"items": [
+				{
+					"key": "ANCHOR",
+					"label": "主播",
+					"value": 1
+				},
+				{
+					"key": "MODEL",
+					"label": "模特"
+				},
+				{
+					"key": "CHILDREN_WEAR_MODEL",
+					"label": "童模"
+				},
+				{
+					"key": "AUXILIARY_ANCHOR",
+					"label": "助播"
+				},
+				{
+					"key": "OTHER",
+					"label": "其他"
+				}
+			]
+		},
+		{
+			"name": "RecruitmentCooperationMode",
+			"describe": "招募合作情况",
+			"items": [
+				{
+					"key": "CONTRACT",
+					"label": "签约",
+					"value": 1
+				},
+				{
+					"key": "TRIAL_BROADCAST",
+					"label": "试播"
+				},
+				{
+					"key": "TAKE",
+					"label": "拍摄"
+				},
+				{
+					"key": "PART_TIME_JOB",
+					"label": "兼职"
+				}
+			]
+		}
+	],
+	"name": "supplier"
+}

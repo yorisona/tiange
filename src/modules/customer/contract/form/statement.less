@@ -1,0 +1,109 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+.statement-dialog {
+  .subject {
+    .fc(14px,  var(--text-color));
+    letter-spacing: 0;
+    line-height: 18px;
+    font-weight: 600;
+  }
+
+  .settlement-detail-item {
+    padding: 6px 0;
+    margin-bottom: 12px;
+    margin-right: 8px;
+    .pos-r();
+    .bgc(#f6f6f6);
+    .brdr(4px);
+    .pdb(1px);
+    .pdl(16px);
+    .pdr(16px);
+    > .close-btn {
+      display: flex;
+      .bgc(white);
+      .wh(16px, 16px);
+      .pos-atr(100; -7px; -8px);
+      .brdr(50%);
+      cursor: pointer;
+      &:hover {
+        > svg.icon {
+          .fgc(var(--error-color)) !important;
+        }
+      }
+      > svg.icon {
+        .fs(16px);
+        .fgc(#ccc);
+      }
+    }
+
+    > .settlement-detail-item-grid {
+      display: grid;
+      grid-template-columns: 238px 238px 238px;
+      margin: 0 0 16px 0;
+      grid-gap: 8px 0;
+      justify-content: space-between;
+    }
+  }
+  .statement-add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hlh(32px, 32px);
+    .brd(1px; dashed; #dcdfe6);
+    cursor: pointer;
+    .brdr(4px);
+    .mgt(10px);
+    font-size: 12px;
+    > svg.icon {
+      font-size: 10px;
+      font-weight: 600;
+      .fgc(var(--theme-color));
+    }
+    > span {
+      margin-left: 6px;
+      .fgc(var(--theme-color));
+    }
+    &:hover {
+      border-color:var(--theme-color);
+    }
+  }
+
+  .upload-btn-wrap {
+    .d-ib();
+  }
+  .upload-tips {
+    position: relative;
+    top: 5px;
+    .fc(12px, var(--text-third-color));
+  }
+  .form-block {
+    padding: 18px 9px 18px 18px;
+    //height: 554px;
+    max-height: 716px;
+    overflow-y: auto;
+    overflow-y: overlay;
+    & .contract-attachment-input {
+      width: 164px;
+    }
+    .el-form-item {
+      margin-right: 18px;
+    }
+    .el-form-item:nth-child(3n + 1) {
+      margin-right: 0 !important;
+    }
+    .uploaded-list {
+      width: 660px;
+      .upload-file-list {
+        .file-name {
+          max-width: 280px;
+        }
+        & .file-item {
+        }
+      }
+    }
+  }
+}
+.contract-select-empty {
+  min-width: 164px;
+  width: auto;
+}

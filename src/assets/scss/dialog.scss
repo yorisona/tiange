@@ -1,0 +1,19 @@
+::v-deep .el-dialog__body {
+  padding: 0 !important;
+
+  .title-right {
+    height: 68px;
+  }
+  .status-color {
+    margin-left: 10px !important;
+    position: relative;
+    top: -2px;
+  }
+  .uls {
+    padding: 0 20px !important;
+  }
+}
+
+.sty-lines {
+  margin-left: 0 !important;
+}

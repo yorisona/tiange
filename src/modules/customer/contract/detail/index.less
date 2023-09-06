@@ -1,0 +1,218 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+@color-primary: #396fff;
+
+#customer-contract-detail {
+  min-width: 1000px;
+  .contract-detail-title {
+    height: 54px;
+    line-height: 54px;
+    background: #f2f6f9;
+    overflow: hidden;
+    margin-bottom: 6px;
+    .title-left {
+      font-size: 18px;
+      color: var(--text-color);
+      font-weight: 400;
+      i {
+        color: #bfc1c8;
+        margin-right: 8px;
+        cursor: pointer;
+        width: 50px;
+        height: 40px;
+        background: white;
+        border-radius: 10px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 40px;
+        text-align: center;
+      }
+    }
+    .oprate-btn {
+      float: right;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      cursor: pointer;
+      z-index: 999;
+      .icon-bianji:before {
+        color: #396fff;
+      }
+      .icon-shanchu:before {
+        color: #f05765;
+      }
+      .icon-btn {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        .gm-icon {
+          display: inline-block;
+          margin-top: 9px;
+        }
+      }
+    }
+  }
+  .contract-detail-content {
+    min-height: 400px;
+    .content-block {
+      .block-title {
+        height: 37px;
+        line-height: 37px;
+        padding-top: 5px;
+        position: relative;
+        padding-left: 12px;
+        color: var(--text-color);
+        font-weight: 600;
+      }
+    }
+    .no-detail {
+      text-align: center;
+      padding-top: 140px;
+      p {
+        color: var(--text-des-color);
+        margin-top: 30px;
+      }
+    }
+  }
+}
+/deep/ .color-red > .cell {
+  padding-left: 8px;
+  display: flex;
+  &:before {
+    content: '￥';
+    display: block;
+  }
+}
+.delete-contract-alert.el-message-box .el-message-box__content {
+  height: initial;
+}
+.delete-contract-alert.el-message-box .el-message-box__content .el-message-box__message {
+  top: 0;
+}
+.approve-progress-popper {
+  padding: 0;
+}
+.delete-attachment-confirm.el-message-box {
+  .el-message-box__content {
+    height: initial;
+    text-align: center;
+  }
+  .el-message-box__status {
+    position: initial;
+  }
+  .el-message-box__message {
+    position: initial;
+    top: initial !important;
+  }
+}
+
+// * 新增
+.tg-customer-contract-detail {
+  .tg-file-card-group {
+    .close-btn {
+      display: none;
+    }
+  }
+  .contract-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .base-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 40px;
+    .pd(10px 0);
+    > .base-grid-item {
+      > .base-grid-item-lbl {
+        width: 98px;
+        flex: none;
+      }
+    }
+  }
+
+  .subject {
+    .fcf(14px, var(--text-color), bold);
+  }
+
+  .line {
+    .wh(100%, 1px);
+    .brd-b(#ebebeb);
+  }
+
+  .attachment-label {
+    .fc(14px, var(--text-color));
+    font-weight: 600;
+  }
+
+  .no-attachment {
+    .fc(14px, var(--text-des-color));
+  }
+  .attachment-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    column-gap: 40px;
+    row-gap: 10px;
+    .pd(10px 0);
+    > .attachment-item {
+      display: grid;
+      grid-template-areas: '. . .';
+      grid-template-columns: 14px 160px 38px;
+      column-gap: 4px;
+      align-items: center;
+      > .attachment-name {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+      }
+    }
+  }
+
+  // * 销售渠道
+  .sale-chance-content {
+    .line-clamp(1);
+  }
+
+  // * 销售渠道列
+  .contract-sale-chance {
+    .line-clamp(1);
+  }
+
+  .annex-block {
+    .pos-r();
+    .operation-btns {
+      .pos-atr(100; 15px; 20px);
+      > span {
+        .mg(0 10px);
+        .fc(14px,var(--theme-color));
+      }
+    }
+  }
+}
+
+.el-popover.el-popper.settlement-detail-dialog-popper {
+  > div {
+    .lh(22px);
+  }
+
+  /deep/ .lbl {
+    .d-ib();
+    width: 70px;
+
+    .fc(14px, #666);
+    font-weight: 400;
+    line-height: 18px;
+    .ta-rt();
+  }
+}
+
+.oa-approve-progress-popper {
+  .pd(0);
+}
+
+@import '~@/components/OAFlows/flows.less';

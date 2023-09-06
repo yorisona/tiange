@@ -1,0 +1,62 @@
+@charset 'utf-8';
+@import '../utils/index.less';
+
+@filecardWidth: 178px;
+@filecardHeight: 112px;
+.tg-file-card {
+  .pos-r();
+  .wh(@filecardWidth, @filecardHeight);
+  .brd(#ebebeb);
+  .brdr(4px);
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 10px;
+  .pd(15px);
+  > svg.icon {
+    .fs(28px);
+    cursor: pointer;
+  }
+  > .tg-file-card-filename {
+    .fc(12px, var(--text-color));
+
+    .hlh(16px, 16px);
+    .line-clamp(1);
+    cursor: pointer;
+    width: 146px;
+    .line-clamp(1);
+  }
+  > .tg-file-card-download-btn {
+    .fc(12px,var(--theme-color));
+    .hlh(16px, 16px);
+  }
+  > .close-btn {
+    .pos-atr(100; -10px; -10px);
+    cursor: pointer;
+    .fs(20px);
+  }
+}
+
+.tg-file-card-add-btn {
+  .pos-r();
+  .wh(@filecardWidth, @filecardHeight);
+  .brd(#ebebeb);
+  .brdr(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .fc(12px, var(--text-des-color));
+  .pdt(20px);
+  svg.icon {
+    .fc(28px, var(--text-des-color));
+  }
+}
+
+.tg-file-card-group {
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, @filecardWidth);
+  column-gap: 30px;
+  row-gap: 16px;
+  .pd(10px 0);
+}

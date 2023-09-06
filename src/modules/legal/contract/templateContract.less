@@ -1,0 +1,329 @@
+@import '~@/styles/utils/index.less';
+
+// 原scoped
+.tg-contract-page {
+  @color-blue:var(--theme-color);
+  .el-card__body {
+    padding: 18px !important;
+  }
+  .ProjectInfoColumn:hover {
+    color: var(--text-color);
+    div {
+      color:var(--theme-color)!important;
+    }
+  }
+  * {
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    transition-property: width, height, margin, padding, top, right, bottom, left;
+  }
+  .icon-shangchuankaipiaopingzheng:before {
+    content: '\E620';
+    font-size: 24px;
+  }
+  .icon-zuofeihetong:before {
+    font-size: 24px;
+  }
+
+  .form-item-group {
+    .el-input-group__prepend {
+      background: transparent;
+    }
+    .contract-input {
+      .el-input__inner {
+        width: 100%;
+        padding-right: 10px;
+      }
+      .el-input--suffix {
+        color: #666;
+      }
+    }
+  }
+  .condition {
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.04);
+    .condition-line {
+      color: #666;
+      min-height: 60px;
+      position: relative;
+      &:last-child {
+        border-bottom: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .condition-label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+        margin-left: 12px;
+        color: var(--text-color);
+        font-size: 16px;
+      }
+      .condition-label2 {
+        color: var(--text-des-color);
+      }
+      .condition-value {
+        display: inline-block;
+        padding-left: 80px;
+        /* 销售渠道 */
+
+        .sell-chance {
+          padding-top: 16px;
+          overflow: hidden;
+          li {
+            float: left;
+            padding: 0 10px;
+            margin: 0 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            height: 28px;
+            line-height: 28px;
+            font-size: 16px;
+            color: var(--text-des-color);
+          }
+        }
+        /* 合同类型 */
+        .contract-type {
+          padding-bottom: 12px;
+          padding-left: 10px;
+          .select {
+            width: 160px;
+            height: 32px;
+            margin-top: 14px;
+            /deep/ .el-input__inner {
+              height: 32px;
+              line-height: 32px;
+            }
+            /deep/ .el-input__icon {
+              line-height: 32px;
+            }
+          }
+          .contract-type-label {
+            color: var(--text-color);
+            margin-left: 20px;
+            font-size: 16px;
+          }
+        }
+        /* 搜索合同 */
+        .search-contract {
+          .input {
+            width: 260px;
+            margin-top: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            /deep/ .el-input__inner {
+              height: 32px;
+            }
+          }
+          .el-button {
+            vertical-align: middle;
+            margin-top: 14px;
+            font-size: 14px;
+            padding: 7px 15px;
+          }
+        }
+      }
+    }
+  }
+  .result-list {
+    .one-sale-chance {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    // 正常
+    .status-dot-all {
+      color: @color-blue;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      vertical-align: middle;
+      &.status-dot-1 {
+        background-color: #ff9434;
+      }
+      &.status-dot-2 {
+        background-color: #2877ff;
+      }
+      &.status-dot-3 {
+        background-color: #f43846;
+      }
+      &.status-dot-4 {
+        background-color: #ff9434;
+      }
+      &.status-dot-5 {
+        background-color: #aaa;
+      }
+    }
+    .status-dot-1 {
+      color: #ff9434;
+    }
+    .status-dot-2 {
+      color: #2877ff;
+    }
+    .status-dot-3 {
+      color: #f43846;
+    }
+    .status-dot-4 {
+      color: #ff9434;
+    }
+    .status-dot-5 {
+      color: #aaa;
+    }
+    .create-time {
+      color: var(--text-des-color);
+    }
+    .status-text {
+      vertical-align: middle;
+    }
+    .customer-name {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .contract-type {
+      color: var(--text-third-color);
+      font-size: 12px;
+    }
+    .contract-pagination {
+      padding: 0;
+      margin-top: 12px;
+      /deep/ .el-input.el-input--mini.el-input--suffix {
+        margin: 0;
+      }
+    }
+    .empty-placeholder {
+      padding: 150px 0;
+      img {
+        width: 110px;
+        height: 110px;
+      }
+    }
+    .see-reason-btn {
+      color: #ff9434;
+    }
+    .see-reason-btn2 {
+      color: #2877ff;
+    }
+    .status-dot.status-dot-2 {
+      color: red;
+    }
+    .approve-btn-wrap {
+      width: 34px;
+      display: inline-block;
+    }
+  }
+}
+
+// 原非scoped
+.tg-contract-page {
+  .contract-oprete-popper {
+    min-width: auto;
+    padding: 7px 12px;
+  }
+  .delete-contract-alert.el-message-box .el-message-box__content {
+    height: initial;
+  }
+  .delete-contract-alert.el-message-box .el-message-box__content .el-message-box__message {
+    top: 0;
+  }
+  /* 作废弹窗样式 */
+  .invalid-confirm.el-message-box .el-message-box__content {
+    height: initial;
+    text-align: center;
+  }
+  .invalid-confirm.el-message-box .el-message-box__content .el-message-box__message {
+    top: initial;
+  }
+  .invalid-confirm.el-message-box .el-message-box__content .el-message-box__status {
+    position: initial;
+  }
+  /* 合同附件弹窗样式 */
+  .contract-attachment-popper {
+    border-radius: 2px;
+    padding: 0 20px;
+  }
+}
+
+// * 新增
+// * 客户合同列表
+.tg-contract-list-page2 {
+  .el-table {
+    // * 销售渠道列
+    .contract-sale-chance {
+      .line-clamp(2);
+    }
+
+    // * 操作列布局(暂废不用)
+    .operation-grid {
+      display: grid;
+      grid-template-columns: 100px 30px;
+      column-gap: 4px;
+      justify-content: center;
+    }
+  }
+}
+
+.contract-recycled-tag {
+  .d-ib();
+  .brdr(10px);
+  .hlh(20px, 20px);
+  .pd(0 8px);
+  .fs(12px);
+  &.contract-recycled-tag-yes {
+    .bgc(#ecf7f3);
+    .fgc(#3eaf90);
+  }
+  &.contract-recycled-tag-no {
+    .bgc(#f4f4f4);
+    .fgc(#6a7b92);
+  }
+}
+
+.contract-process-tag {
+  .d-ib();
+  .brdr(9px);
+  .hlh(18px, 18px);
+  .pd(0 8px);
+  .fs(12px);
+  &.contract-process-tag-detail {
+    background-color: rgba(164, 178, 194, 0.1);
+    color: var(--theme-color);
+  }
+}
+.oa-approve-progress-popper {
+  .pd(0);
+}
+.empty-data-line {
+  cursor: pointer;
+  color: var(--text-color);
+  &:hover {
+    color: var(--theme-color);
+  }
+}
+.color-a4b2c2 {
+  color: #a4b2c2;
+}
+
+.el-select-dropdown__item {
+  color: var(--text-color);
+}
+span {
+  font-size: 12px;
+  display: inline-block;
+  border: none;
+  margin-right: 20px;
+  padding: 0px !important;
+  color: var(--theme-color);
+  text-align: center;
+  cursor: pointer
+}

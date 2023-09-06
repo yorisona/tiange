@@ -1,0 +1,64 @@
+.dataStatistics_box20230324 {
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+    color: #0a0a0a;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+  }
+  .tooltip-box {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: -25px;
+    .tooltip {
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+      .cir {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+    }
+  }
+  &_project_box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    --beforeCol: #3f8ef6;
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 7px 5px 14px;
+      width: calc(50% - 3px);
+      background: #f4f8ff;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      font-size: 12px;
+      color: #0a0a0a;
+      margin-bottom: 6px;
+      &::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 100%;
+        background: var(--beforeCol);
+        left: 0;
+        position: absolute;
+      }
+      &:nth-child(odd) {
+        margin-right: 6px;
+      }
+    }
+  }
+}

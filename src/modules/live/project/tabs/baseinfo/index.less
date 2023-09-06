@@ -1,0 +1,57 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.tg-live-project-base-info {
+  box-sizing: border-box;
+  margin-left: 18px;
+  margin-right: 18px;
+  padding-bottom: 18px;
+
+  .base-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 12px;
+    column-gap: 18px;
+    > .base-grid-item {
+      > .base-grid-item-lbl {
+        width: 70px;
+        flex: none;
+        color: var(--text-third-color);
+      }
+    }
+  }
+  .base-grid-item {
+    > .base-grid-item-lbl {
+      width: 70px;
+      color: var(--text-third-color);
+      flex: none;
+    }
+    > .base-grid-item-content {
+      color: var(--text-color);
+    }
+  }
+
+  .project-detail-title {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+    height: 56px;
+    line-height: 56px;
+  }
+  .project-detail-second-title {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+  }
+  .sub-block {
+    > .sub-title {
+      .fgc(#333);
+    }
+  }
+  .line {
+    .wh(100%, 1px);
+    .brd-b(#ebebeb);
+  }
+}

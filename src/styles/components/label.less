@@ -1,0 +1,81 @@
+@charset 'utf-8';
+
+
+// 标签(可点选)
+.tg-label {
+  @labelHeight: 22px;
+  @padding: 6px;
+  @brdRadius: 2px;
+  @durationTime: 250ms;
+  &:hover {
+    color: var(--theme-color);
+    font-weight: 400;
+  }
+
+  .d-ib();
+  .hlh(@labelHeight, @labelHeight);
+  .pd(0 @padding);
+  .brdr(@brdRadius);
+
+  .fc(14px, var(--text-color));
+  cursor: pointer;
+  &:not(.tg-label-active) {
+    transition: background-color @durationTime ease-in;
+  }
+  &.tg-label-active {
+    border-radius: 2px;
+    .bgc(rgba(var(--theme-rgb-color), 0.1));
+    .fgc(var(--theme-color));
+    transition: color @durationTime ease-out, background-color @durationTime ease-out;
+  }
+}
+
+// 标签组
+.tg-label-group {
+  @rowGap: 8px;
+  @columnGap: 14px;
+  display: flex;
+  > .tg-label-group-label {
+    flex: none;
+    padding-top: 2px;
+    .fc(14px, var(--text-third-color));
+    .ta-rt();
+  }
+  > .tg-label-group-more {
+    flex: none;
+    padding-left: 38px;
+    color: var(--theme-color);
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  > .tg-label-group-items {
+    flex: auto;
+    display: flex;
+    flex-wrap: wrap;
+    &.tg-label-group-items-hide {
+      overflow: hidden;
+      height: 22px;
+    }
+  }
+
+  &:not(.fallback) {
+    .pd(8px 0);
+    > .tg-label-group-items {
+      row-gap: @rowGap;
+      column-gap: @columnGap;
+    }
+  }
+  &.fallback {
+    .pd(12px 0 0 0);
+    > .tg-label-group-items {
+      .mgl(@columnGap);
+      > .tg-label {
+        .mgb(@rowGap);
+        &:not(:first-child) {
+          .mgl(@columnGap);
+        }
+      }
+    }
+  }
+}

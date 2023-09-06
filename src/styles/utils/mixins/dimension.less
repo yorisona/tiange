@@ -1,0 +1,70 @@
+/**
+ * mixins/dimension
+ * 尺寸相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-18
+ * @copyright 2017
+ */
+// display, width & height
+.box(@display: block; @width: auto; @height)
+	when ( isnumber(@height) ) {
+	display: @display;
+	width: @width;
+	height: @height;
+}
+
+.box(@display: block; @width: auto; @height)
+	when ( iskeyword(@height) ) {
+	display: @display;
+	width: @width;
+	height: @height;
+}
+
+.box(@display: block; @width: auto) when (default()) {
+	display: @display;
+	width: @width;
+}
+// width, height & line-height
+.wh(@width: auto; @height: auto){
+	width: @width;
+	height: @height;
+}
+
+.hlh(@height: auto; @lineHeight: normal){
+	height: @height;
+	line-height: @lineHeight;
+}
+
+.hlh(@height: auto) when (default()){
+	height: @height;
+	line-height: @height;
+}
+
+.whlh(@width: auto; @height: auto; @lineHeight: normal){
+	.wh(@width: @width; @height: @height);
+	line-height: @lineHeight;
+}
+
+.whlh(@width: auto; @height: auto) when (default()){
+	.wh(@width: @width; @height: @height);
+	line-height: @height;
+}
+
+.content(@width: @normalWidth; @height)
+	when ( isnumber(@height) ) {
+	.mg-lt-rt-auto();
+	.wh(@width: @width; @height: @height);
+}
+
+.content(@width: @normalWidth; @height)
+	when ( iskeyword(@height) ) {
+	.mg-lt-rt-auto();
+	.wh(@width: @width; @height: @height);
+}
+
+.content(@width: @normalWidth) when (default()){
+	.mg-lt-rt-auto();
+	width: @normalWidth;
+}

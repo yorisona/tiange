@@ -1,0 +1,370 @@
+@import '@/styles/vars.scss';
+$color-primary: var(--theme-color);
+// 排除掉新增的和最近维护的页面
+// 1. 客户列表
+.router-view-content:not(.tg-page-container) {
+  // .el-pagination {
+  //   background: #fff;
+  //   padding: 10px 0;
+  // }
+  .not-data {
+    height: 160px;
+    background: #fff;
+    margin-top: 14px;
+    position: relative;
+    i {
+      display: inline-block;
+      width: 130px;
+      height: 100px;
+      background: url(../../assets/img/star_info_sprite1.png) -63px -76px;
+      margin-top: 10px;
+    }
+    p {
+      color: #b4b2b5;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  .show-search-info {
+    padding-left: 0;
+    overflow: hidden;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    li {
+      width: 49%;
+      // height: 320px;
+      display: inline-block;
+      background: #fff;
+      margin: 5px 1%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      padding: 10px;
+      padding-bottom: 4px;
+      border-radius: 2px;
+      box-shadow: 0 1px 2px #dedede;
+      transition: all 0.2s;
+      p {
+        margin: 12px 0;
+      }
+      .card-head {
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        font-size: 0;
+        .card-head-left {
+          color: $color-primary;
+          font-size: 14px;
+          flex: 1;
+          height: 28px;
+          line-height: 28px;
+          .star-name {
+            font-size: 16px;
+            position: relative;
+            bottom: 8px;
+            cursor: pointer;
+          }
+          img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+          .go-detail {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            padding: 0;
+            color: $color-primary;
+            border-color: $color-primary;
+            position: relative;
+            bottom: 1px;
+            font-size: 12px;
+            margin-left: 5px;
+          }
+        }
+        .card-delete,
+        .card-edit {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+          background: url(../../assets/img/star_info_sprite1.png);
+        }
+        .card-delete:hover,
+        .card-edit:hover {
+          position: relative;
+          top: 1px;
+        }
+        .card-edit {
+          background-position: -7px -11px;
+        }
+        .card-delete {
+          background-position: -3px -110px;
+          margin-left: 10px;
+        }
+        .el-checkbox-group {
+          // position: absolute; top: 0; right: 0;
+        }
+        .card-select-par {
+          float: right;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          width: 22px;
+          height: 22px;
+          border: 1px solid red;
+          background-image: url(../../assets/img/star_info_sprite1.png);
+          input {
+            position: absolute;
+            // top: -2999px;
+          }
+        }
+      }
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        .card-body-title {
+          font-size: 14px;
+          color: #666;
+        }
+        p {
+          font-size: 12px;
+          color: var(--text-des-color);
+          height: 20px;
+          line-height: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-height: 20px;
+        }
+        .basic-info {
+          width: 32%;
+          .el-rate {
+            display: inline;
+            position: relative;
+            bottom: 2px;
+            left: 4px;
+            white-space: nowrap;
+          }
+        }
+        .card-body-middle {
+          width: 32%;
+          .star-cost-info {
+            height: 15px;
+            line-height: 15px;
+          }
+        }
+        .card-body-last {
+          width: 32%;
+          .card-body-last-des {
+            max-height: 82px;
+            overflow-y: auto;
+            p:first-child {
+              margin-top: 0;
+            }
+          }
+
+          .small-line-height {
+            line-height: 15px;
+            height: 15px;
+          }
+        }
+        .isRelativeLeft {
+          position: relative;
+          left: 15%;
+        }
+      }
+      .card-foot {
+        border-top: 1px solid #f0f1f2;
+        overflow: hidden;
+        p {
+          float: left;
+          color: #666;
+          font-size: 12px;
+          span {
+            color: var(--text-des-color);
+          }
+        }
+        p:nth-child(1) {
+          margin-right: 6px;
+        }
+        p:nth-child(2) {
+          padding-left: 6px;
+          border-left: 1px solid #efeff3;
+        }
+        .el-button {
+          float: right;
+          margin-top: 7px;
+          margin-left: 10px;
+        }
+      }
+    }
+    .is-marginLeft {
+      float: left;
+      margin-left: 0;
+    }
+    .is-marginRight {
+      float: right;
+      margin-right: 0;
+    }
+  }
+  .query-star-pv {
+    display: inline-block;
+    width: 53%;
+    .el-row {
+      width: 100%;
+      .el-select {
+        width: 28%;
+      }
+      .el-input {
+        width: 28%;
+        margin: 0 4px;
+      }
+    }
+  }
+  .query-star {
+    display: inline-block;
+    width: 46%;
+    .el-row {
+      width: 100%;
+      .el-form-item {
+        margin: 0;
+        width: 48%;
+        overflow: hidden;
+        .el-input {
+          float: right;
+        }
+        .el-select {
+          float: right;
+        }
+        .el-autocomplete {
+          float: right;
+        }
+      }
+    }
+    .el-button {
+      width: 80px;
+    }
+    .to-word {
+      font-size: 12px;
+    }
+  }
+  .all-select {
+    color: #49cdb0;
+    margin-left: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid red;
+    input {
+      position: absolute;
+      // top: -2999px;
+    }
+    i {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: url(../../assets/img/star_info_sprite1.png);
+      vertical-align: middle;
+    }
+  }
+  .is-all-check {
+    i {
+      background-position: -5px -76px;
+    }
+  }
+  .not-all-check {
+    i {
+      background-position: -3px -140px;
+    }
+  }
+  .lot-import-dialog {
+    .el-row {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 14px;
+    }
+  }
+  .add-star-dialog {
+    .el-row {
+      width: 80%;
+      margin: 0 auto;
+      .el-form-item {
+        width: 43%;
+        margin-left: 3%;
+        margin-right: 3%;
+        position: relative;
+        margin-bottom: 6px;
+        span {
+          font-size: 12px;
+          color: $color-primary;
+          position: absolute;
+          top: -26px;
+          right: 0;
+        }
+        .el-select {
+          width: 100%;
+        }
+      }
+    }
+    .el-button {
+      width: 80px;
+    }
+  }
+  .rate-degree .el-rate {
+    display: inline-block;
+  }
+  .upload-table .el-rate {
+    height: 24px;
+  }
+  .add-display-form {
+    .el-form {
+      .el-form-item {
+        width: 79%;
+        margin: 2px auto;
+        position: relative;
+        margin-left: 10%;
+        .el-checkbox {
+          position: absolute;
+          top: 18px;
+          left: 10%;
+          margin-left: 2px;
+        }
+        span {
+          font-size: 12px;
+          color: $color-primary;
+          position: absolute;
+          top: -26px;
+          right: 0;
+          margin-right: 10%;
+        }
+      }
+      .el-input,
+      .el-select {
+        width: 80%;
+        margin-left: 10%;
+      }
+    }
+  }
+  .lot-import-info-dialog {
+    .upload-info {
+      min-height: 76px;
+      border-right: 1px solid #eee;
+      .info-tit {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .info-item {
+        margin-left: 8px;
+      }
+    }
+  }
+  .page-section {
+    min-width: 810px;
+  }
+}

@@ -1,0 +1,181 @@
+/**
+ * mixins - margin & padding
+ * 补白相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-18
+ * @copyright 2017
+ */
+
+/**
+ * 外补白
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number|String|List}   @margin
+ *
+ * ```less
+ * // 支持css支持的任何写法
+ * .mg(10px); // eq margin: 10px;
+ *
+ * // or
+ * .mg(0 10px); // eq margin: 0 10px;
+ * ```
+ */
+.mg(@margin){
+	margin: @margin;
+}
+/**
+ * 外补白
+ * 传入四个参数
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @top
+ * @param  {Number}   @right
+ * @param  {Number}   @bottom
+ * @param  {Number}   @left
+ */
+.mg(@top: 0; @right: 0; @bottom: 0; @left: 0)
+	when
+	not ( isnumber(@right) )
+	and not ( ispixel(@right) )
+	and not ( ispercentage(@right) )
+	and not ( @right = auto )
+	and not ( isnumber(@bottom) )
+	and not ( ispixel(@bottom) )
+	and not ( ispercentage(@bottom) )
+	and not ( @bottom = auto )
+	and not ( isnumber(@left) )
+	and not ( ispixel(@left) )
+	and not ( ispercentage(@left) )
+	and not ( @left = auto) {
+	.mg(@top);
+}
+
+.mg(@top: 0; @right: 0; @bottom: 0; @left: 0) when (default()) {
+	.mg(@arguments);
+}
+
+/**
+ * 外补白 - 顶部
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.mgt(@val: 0) when ( isnumber(@val) ) {
+	margin-top: @val;
+}
+
+/**
+ * 外补白 - 右边
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.mgr(@val: 0) when ( isnumber(@val) ) {
+	margin-right: @val;
+}
+
+/**
+ * 外补白 - 底部
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.mgb(@val: 0) when ( isnumber(@val) ) {
+	margin-bottom: @val;
+}
+
+/**
+ * 外补白 - 左边
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.mgl(@val: 0) when ( isnumber(@val) ) {
+	margin-left: @val;
+}
+
+.pd(@padding){
+	padding: @padding;
+}
+.pd(@top, @right){
+	padding: @top @right;
+}
+.pd(@top: 0; @right: 0; @bottom: 0; @left: 0)
+	when
+	not ( isnumber(@right) )
+	and not ( ispixel(@right) )
+	and not ( ispercentage(@right) )
+	and not ( @right = auto )
+	and not ( isnumber(@bottom) )
+	and not ( ispixel(@bottom) )
+	and not ( ispercentage(@bottom) )
+	and not ( @bottom = auto )
+	and not ( isnumber(@left) )
+	and not ( ispixel(@left) )
+	and not ( ispercentage(@left) )
+	and not ( @left = auto)	{
+	.pd(@top);
+}
+.pd(@top: 0; @right: 0; @bottom: 0; @left: 0) when (default()) {
+	.pd(@arguments);
+}
+
+/**
+ * 内补白 - 顶部
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.pdt(@val: 0) when ( isnumber(@val) ) {
+	padding-top: @val;
+}
+
+/**
+ * 内补白 - 右边
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.pdr(@val: 0) when ( isnumber(@val) ) {
+	padding-right: @val;
+}
+
+/**
+ * 内补白 - 底部
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.pdb(@val: 0) when ( isnumber(@val) ) {
+	padding-bottom: @val;
+}
+
+/**
+ * 内补白 - 左边
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ * @param  {Number}   @val
+ */
+.pdl(@val: 0) when ( isnumber(@val) ) {
+	padding-left: @val;
+}
+
+/**
+ * 左右外补白自动
+ * 常用于和宽度属性配合做出定宽块状元素居中效果
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-19
+ *
+ * ```less
+ * display: block;
+ * width: 1200px;
+ * margin-left: auto;
+ * margin-right: auto;
+ * ```
+ */
+.mg-lt-rt-auto(){
+	margin-left: auto;
+	margin-right: auto;
+}

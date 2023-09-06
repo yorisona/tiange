@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <!-- 禁止浏览器从本地计算机的缓存中访问页面内容,禁止缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 设置缓存过期时间为0 -->
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="<%= VUE_APP_TG_ICON_FONT_CSS %>" />
+    <title><%= VUE_APP_NAME %></title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.9/lib/theme-chalk/index.css" />
+    <% for (var lib in htmlWebpackPlugin.options.bundle) { %>
+    <script src="<%= htmlWebpackPlugin.options.bundle[lib] %>"></script>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!-- [天鸽图标字体:旧] -->
+    <script src="<%= VUE_APP_TG_ICON_FONT_JS %>"></script>
+    <!-- [天鸽图标字体] -->
+    <script src="<%= VUE_APP_TG_ICON_FONT %>"></script>
+  </body>
+</html>

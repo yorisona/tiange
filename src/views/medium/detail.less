@@ -1,0 +1,233 @@
+@import '~@/styles/utils/index.less';
+.approval-status-label-circle {
+  .hlh(20px, 20px);
+  .brdr(10px);
+  .pd(0 6px);
+
+  font-weight: 400;
+  .fs(var(--default-font-size));
+  // * 框架
+  &.pending,
+  &.processing {
+    @fgColor: var(--warning-color);
+    @bgColor: rgba(var(--warning-rgb-color), 0.1);
+    .fgc(@fgColor);
+    .brd(rgba(var(--warning-rgb-color), 0.8));
+    .bgc(@bgColor);
+  }
+  &.normal {
+    @fgColor: var(--success-color);
+    @bgColor: rgba(var(--success-rgb-color), 0.1);
+    .fgc(rgba(var(--success-rgb-color), 0.7));
+    .brd(rgba(var(--success-rgb-color), 0.6));
+    .bgc(@bgColor);
+  }
+  // * 销售
+  &.failure {
+    @fgColor: var(--error-color);
+    @bgColor: rgba(var(--error-rgb-color), 0.1);
+    .fgc(rgba(var(--error-rgb-color), 0.85));
+    .brd(rgba(var(--error-rgb-color), 0.8));
+    .bgc(@bgColor);
+  }
+  // * 采买
+  &.invalid {
+    @fgColor: var(--fail-color);
+    @bgColor: fade(#3c5269, 8);
+    .fgc(@fgColor);
+    .brd(#C9D0D6);
+    .bgc(@bgColor);
+  }
+}
+.supplier-company-detail {
+  min-width: 1046px;
+  .item-hover:hover {
+    color: var(--theme-color)!important;
+  }
+  .add-by {
+    text-align: right;
+    flex: 1;
+    margin-right: 24px;
+    color: var(--text-third-color);
+    font-size: 12px;
+    line-height: 40px;
+  }
+  .label {
+    //width: 98px;
+    flex-shrink: 0;
+    color: var(--text-third-color);
+  }
+  .value {
+    color: var(--text-color);
+  }
+  .supplier-company-info {
+    display: flex;
+    padding: 18px 0;
+    .supplier-company-info-detail {
+      flex-grow: 1;
+      .supplier-company-info-header {
+        display: flex;
+        line-height: 30px;
+        .name {
+          margin-right: 30px;
+          font-size: 14px;
+          color: var(--text-color);
+          line-height: 30px;
+          font-weight: 400;
+        }
+        svg.icon {
+          cursor: pointer;
+          .fc(16px, var(--icon-color));
+        }
+        svg.icon.focusing:focus {
+          outline: none;
+        }
+        .case-edit {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+  .company-detail-info {
+    margin-top: 0;
+    .bottom-style {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e5e5e5;
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+    .info-title {
+      font-size: 16px;
+      font-weight: 600;
+      height: 50px;
+      line-height: 50px;
+      color: var(--text-color);
+      margin-top: 8px;
+      padding-left: 7px;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 18px;
+        width: 3px;
+        height: 15px;
+        background: rgba(var(--theme-rgb-color), 0.9);
+        border-radius: 1px;
+      }
+    }
+    .label {
+      text-align: left;
+      color: var(--text-third-color);
+    }
+    .value {
+      color: var(--text-color);
+      word-break: break-all;
+    }
+    .info-content {
+      font-size: 12px;
+      display: grid;
+      column-gap: 12px;
+      margin-bottom: 12px;
+      .info-item {
+        display: flex;
+      }
+    }
+    .platform-info {
+      .info-content {
+        grid-template-columns: repeat(1, minmax(325px, 1fr));
+      }
+    }
+    .contract-info {
+      .info-content {
+        grid-template-columns: repeat(3, minmax(325px, 1fr));
+      }
+    }
+    .finance-info {
+      .info-content {
+        grid-template-columns: repeat(3, minmax(325px, 1fr));
+      }
+    }
+    .qualification-info {
+      .info-content {
+        grid-template-columns: repeat(3, minmax(325px, 1fr));
+        .value {
+          display: flex;
+          flex-flow: column;
+          row-gap: 15px;
+          flex-grow: 1;
+        }
+      }
+    }
+    .platforms-or-areas {
+      display: flex;
+      // column-gap: 6px;
+      // row-gap: 12px;
+      flex-wrap: wrap;
+      margin-right: -6px;
+      margin-bottom: -6px;
+      .item {
+        font-size: 12px;
+        border: 1px solid var(--border-line-color);
+        color: var(--text-color);
+        flex-shrink: 0;
+        padding: 0 6px;
+        border-radius: 2px;
+        background: fade(white, 10);
+        margin-right: 6px;
+        margin-bottom: 6px;
+      }
+    }
+    .supplier-company-info-description {
+      .summary-description {
+        width: 66%;
+        margin-left: 4px;
+      }
+      .detail-description {
+        display: flex;
+        padding: 7px 0;
+        margin-left: 12px;
+        .label {
+          width: auto;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .uploaded-file {
+    display: flex;
+    .uploaded-file-btn {
+      display: flex;
+      word-break: break-all;
+      color: var(--text-color);
+      cursor: default;
+      .uploaded-file-btn-icon {
+        margin-right: 2px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.tg-supplier-company-detail-tooltip.is-light {
+  border-color: rgba(var(--text-third-rgb-color), 0.5);
+  color: var(--text-color);
+  font-size: 14px;
+  .popper__arrow {
+    border-top-color: rgba(var(--text-third-rgb-color), 0.5) !important;
+  }
+}
+
+.approve-progress {
+  width: auto !important;
+}
+.el-popover {
+  &.company-detail-approve-progress-popper {
+    padding: 0 !important;
+  }
+}

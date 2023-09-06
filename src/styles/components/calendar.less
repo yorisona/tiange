@@ -1,0 +1,1056 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+@import './calendar.util.less';
+
+@calendarTimelineColWidth: 70px;
+@calendarTimelineHeiglt: 84px;
+@calendarTimelineMediumHeiglt: 62px;
+@calendarTimelineSmallHeiglt: 40px;
+
+// 排期日历
+.tg-calendar {
+  display: grid;
+  flex: auto;
+  grid-template-rows: 40px auto;
+  justify-items: stretch;
+  align-items: stretch;
+  gap: 1px;
+  .bgc(rgba(var(--tip-icon-rgb-color), 0.3));
+  overflow: auto;
+  overflow: overlay;
+  > .calendar-hd.week {
+    grid-area: week;
+    // position: sticky;
+    // top: 0;
+    // left: 0;
+    > .calendar-hd-content {
+      &:after {
+        content: '';
+        .pos-atr(100; 0; -1px);
+        width: 1px;
+        height: 100%;
+        .brd-r(#ebebeb);
+      }
+      > span {
+        &:first-of-type {
+          color: var(--text-second-color);
+        }
+      }
+    }
+  }
+  > .mon {
+    grid-area: mon;
+  }
+  > .tue {
+    grid-area: tue;
+  }
+  > .wed {
+    grid-area: wed;
+  }
+  > .thu {
+    grid-area: thu;
+  }
+  > .fri {
+    grid-area: fri;
+  }
+  > .sat {
+    grid-area: sat;
+  }
+  > .sun {
+    grid-area: sun;
+  }
+  > .calendar-bd {
+    grid-area: calendar;
+    .bgc(white);
+    overflow: auto;
+  }
+
+  > .calendar-hd {
+    user-select: none;
+    .bgc(white);
+    .fc(12px, var(--tip-icon-color));
+
+    font-weight: 400;
+    > .calendar-hd-content {
+      height: 100%;
+      display: flex;
+      padding-left: 12px;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: rgba(var(--tip-icon-rgb-color), 0.1);
+      &.active {
+        font-weight: 600;
+        .fgc(#333);
+      }
+      > span {
+        &:first-of-type {
+          color: var(--text-color);
+          font-weight: 600;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+
+  .cell {
+    .bgc(white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
+}
+
+// 周+时间线视图
+.tg-calendar.week-cal {
+  grid-template-areas:
+    'week mon tue wed thu fri sat sun'
+    'calendar calendar calendar calendar calendar calendar calendar calendar';
+  grid-template-columns: 70px repeat(7, minmax(136px, 1fr));
+  .brd-t(#ebebeb);
+  .brd-r(#ebebeb);
+  .brd-l(#ebebeb);
+}
+
+// 月视图
+.tg-calendar.month-cal {
+  grid-template-areas:
+    'mon tue wed thu fri sat sun'
+    'calendar calendar calendar calendar calendar calendar calendar';
+  grid-template-columns: repeat(7, minmax(136px, 1fr));
+  grid-template-rows: 40px repeat(auto-fill, minmax(206px, 1fr));
+  .brd(#ebebeb);
+  .cell-day.cell {
+    min-height: 206px;
+  }
+}
+
+// 时间线视图
+.tg-calendar.timeline-cal {
+  grid-template-columns: @calendarTimelineColWidth repeat(7, minmax(136px, 1fr));
+  grid-auto-columns: minmax(136px, 1fr);
+  grid-template-rows: 42px repeat(24, @calendarTimelineHeiglt) @calendarTimelineHeiglt;
+  .brd(transparent);
+
+  > .week {
+    .calendar-hd-content {
+      justify-content: center;
+      padding-right: 12px;
+    }
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  > .mon {
+    grid-row: ~'1 / 2';
+    grid-column: ~'2 / 3';
+  }
+  > .tue {
+    grid-row: ~'1 / 2';
+    grid-column: ~'3 / 4';
+  }
+  > .wed {
+    grid-row: ~'1 / 2';
+    grid-column: ~'4 / 5';
+  }
+  > .thu {
+    grid-row: ~'1 / 2';
+    grid-column: ~'5 / 6';
+  }
+  > .fri {
+    grid-row: ~'1 / 2';
+    grid-column: ~'6 / 7';
+  }
+  > .sat {
+    grid-row: ~'1 / 2';
+    grid-column: ~'7 / 8';
+  }
+  > .sun {
+    grid-row: ~'1 / 2';
+    grid-column: ~'8 / 9';
+  }
+
+  > .cell.timeline {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  &[size='62'] {
+    grid-template-rows: 42px repeat(24, @calendarTimelineMediumHeiglt) @calendarTimelineMediumHeiglt;
+  }
+}
+
+// 日视图
+.tg-calendar.day-cal {
+  grid-template-columns: @calendarTimelineColWidth repeat(7, minmax(136px, 1fr));
+  grid-auto-columns: minmax(136px, 1fr);
+  grid-template-rows: 40px repeat(auto-fill, minmax(98px, 1fr));
+  .brd(transparent);
+  > .week {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    .calendar-hd-content {
+      padding-left: 0px;
+      justify-content: center;
+      color: var(--text-second-color);
+    }
+  }
+
+  > .mon {
+    grid-row: ~'1 / 2';
+    grid-column: ~'2 / 3';
+  }
+  > .tue {
+    grid-row: ~'1 / 2';
+    grid-column: ~'3 / 4';
+  }
+  > .wed {
+    grid-row: ~'1 / 2';
+    grid-column: ~'4 / 5';
+  }
+  > .thu {
+    grid-row: ~'1 / 2';
+    grid-column: ~'5 / 6';
+  }
+  > .fri {
+    grid-row: ~'1 / 2';
+    grid-column: ~'6 / 7';
+  }
+  > .sat {
+    grid-row: ~'1 / 2';
+    grid-column: ~'7 / 8';
+  }
+  > .sun {
+    grid-row: ~'1 / 2';
+    grid-column: ~'8 / 9';
+  }
+
+  > .timeline-cell {
+    .bgc(white);
+    .pd(0 20px);
+    min-height: 98px;
+  }
+
+  &.sticky {
+    .pos-r();
+    > .calendar-hd {
+      position: sticky;
+      top: 0;
+    }
+    > .week {
+      left: 0;
+      z-index: 100;
+    }
+    > .timeline-cell {
+      position: sticky;
+      left: 0;
+      z-index: 99;
+      &:after {
+        .pos-atr(100; 0; -1px);
+        content: '';
+        width: 1px;
+        height: 100%;
+        .bgc(#ebebeb);
+      }
+    }
+  }
+}
+
+// 时间线
+.tg-calendar .tg-calendar-timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(24, @calendarTimelineHeiglt);
+  row-gap: 1px;
+  .pd(@calendarTimelineHeiglt/2 0);
+  > .time {
+    .pos-r();
+    .whlh(100%, @calendarTimelineHeiglt, @calendarTimelineHeiglt);
+    .fc(12px, var(--text-second-color));
+    //.pdr(12px);
+    .ta-c();
+    &:before {
+      .pos-a();
+      content: attr(data-prefix);
+      .whlh(100%, @calendarTimelineHeiglt, @calendarTimelineHeiglt);
+      .pdr(12px);
+      transform: translateY(-20px);
+      box-sizing: border-box;
+      z-index: 100;
+    }
+    &:after {
+      content: attr(data-hour);
+      transform: translateY(20px);
+      z-index: 100;
+    }
+  }
+  &[size='40'] {
+    grid-template-rows: repeat(24, @calendarTimelineSmallHeiglt);
+    .pd(@calendarTimelineSmallHeiglt/2 0);
+    > .time {
+      .whlh(100%, @calendarTimelineSmallHeiglt, @calendarTimelineSmallHeiglt);
+      &:before {
+        .whlh(100%, @calendarTimelineSmallHeiglt, @calendarTimelineSmallHeiglt);
+      }
+    }
+  }
+  &[size='62'] {
+    grid-template-rows: repeat(24, @calendarTimelineMediumHeiglt);
+    .pd(@calendarTimelineMediumHeiglt/2 0);
+    > .time {
+      .whlh(100%, @calendarTimelineMediumHeiglt, @calendarTimelineMediumHeiglt);
+      &:before {
+        .whlh(100%, @calendarTimelineMediumHeiglt, @calendarTimelineMediumHeiglt);
+      }
+    }
+  }
+  // &[small] {
+  //   grid-template-rows: repeat(24, @calendarTimelineSmallHeiglt);
+  //   .pd(@calendarTimelineSmallHeiglt/2 0);
+  //   > .time {
+  //     .whlh(100%, @calendarTimelineSmallHeiglt, @calendarTimelineSmallHeiglt);
+  //     &:before {
+  //       .whlh(100%, @calendarTimelineSmallHeiglt, @calendarTimelineSmallHeiglt);
+  //     }
+  //   }
+  // }
+}
+
+// 单日时间线
+.tg-calendar.tg-calendar-day-timeline {
+  grid-template-columns: @calendarTimelineColWidth 1fr;
+  .brd-t(#ebebeb);
+  .brd-r(#ebebeb);
+  .brd-l(#ebebeb);
+  > .timeline {
+    .bgc(white);
+  }
+  > .tg-calendar-timeline-card-mixed {
+    background-color: transparent;
+    > .tg-calendar-timeline-card-mixed-inner {
+      > .operator,
+      > .kol {
+        > .item {
+          overflow: hidden;
+          > .item-names {
+            .mgt(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 遮罩层
+.tg-calendar-column-mask,
+.tg-calendar-row-mask {
+  .pos-r();
+  z-index: 100;
+  .bgc(#3c75df1a);
+  pointer-events: none;
+  &:before,
+  &:after {
+    content: '';
+    .bgc(#86bdff);
+  }
+}
+
+// 日(列)遮罩层
+.tg-calendar-column-mask {
+  .grid-row(1, 27);
+  &:before {
+    .pos-a(100; 0; -1px);
+    width: 1px;
+    height: 100%;
+  }
+  &:after {
+    .pos-atr(100; 0; -1px);
+    width: 1px;
+    height: 100%;
+  }
+}
+
+// 行遮罩层
+.tg-calendar-row-mask {
+  .grid-column(2, 9);
+  &:before {
+    .pos-a(100; -1px; 0);
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    .pos-abr(100; -1px; 0);
+    width: 100%;
+    height: 1px;
+  }
+}
+
+.tg-calendar .tg-calendar-grid {
+  display: grid;
+  .bgc(#ebebeb);
+  gap: 1px;
+  overflow-x: auto;
+  // position: sticky;
+  // left: 0;
+  > .cell-week {
+    position: sticky;
+    left: 0;
+    grid-area: week;
+    &:before {
+      content: '';
+      .pos-atr(100; 0; -1px);
+      width: 1px;
+      height: 100%;
+      .brd-r(#ebebeb);
+    }
+  }
+
+  // 时间线
+  > .timeline {
+    // position: sticky;
+    // left: 0;
+    grid-area: time;
+    display: grid;
+  }
+
+  > .day-mon {
+    grid-area: mon;
+    .grid-column(2, 3);
+  }
+  > .day-tue {
+    grid-area: tue;
+    .grid-column(3, 4);
+  }
+  > .day-wed {
+    grid-area: wed;
+    .grid-column(4, 5);
+  }
+  > .day-thu {
+    grid-area: thu;
+    .grid-column(5, 6);
+  }
+  > .day-fri {
+    grid-area: fri;
+    .grid-column(6, 7);
+  }
+  > .day-sat {
+    grid-area: sat;
+    .grid-column(7, 8);
+  }
+  > .day-sun {
+    grid-area: sun;
+    .grid-column(8, 9);
+  }
+
+  .calendar-cell-maker();
+}
+
+.tg-calendar .tg-calendar-grid.week-grid {
+  grid-template-areas:
+    'week mon tue wed thu fri sat sun'
+    'time mon-1 tue-1 wed-1 thu-1 fri-1 sat-1 sun-1'
+    'time mon-2 tue-2 wed-2 thu-2 fri-2 sat-2 sun-2'
+    'time mon-3 tue-3 wed-3 thu-3 fri-3 sat-3 sun-3'
+    'time mon-4 tue-4 wed-4 thu-4 fri-4 sat-4 sun-4'
+    'time mon-5 tue-5 wed-5 thu-5 fri-5 sat-5 sun-5'
+    'time mon-6 tue-6 wed-6 thu-6 fri-6 sat-6 sun-6'
+    'time mon-7 tue-7 wed-7 thu-7 fri-7 sat-7 sun-7'
+    'time mon-8 tue-8 wed-8 thu-8 fri-8 sat-8 sun-8'
+    'time mon-9 tue-9 wed-9 thu-9 fri-9 sat-9 sun-9'
+    'time mon-10 tue-10 wed-10 thu-10 fri-10 sat-10 sun-10'
+    'time mon-11 tue-11 wed-11 thu-11 fri-11 sat-11 sun-11'
+    'time mon-12 tue-12 wed-12 thu-12 fri-12 sat-12 sun-12'
+    'time mon-13 tue-13 wed-13 thu-13 fri-13 sat-13 sun-13'
+    'time mon-14 tue-14 wed-14 thu-14 fri-14 sat-14 sun-14'
+    'time mon-15 tue-15 wed-15 thu-15 fri-15 sat-15 sun-15'
+    'time mon-16 tue-16 wed-16 thu-16 fri-16 sat-16 sun-16'
+    'time mon-17 tue-17 wed-17 thu-17 fri-17 sat-17 sun-17'
+    'time mon-18 tue-18 wed-18 thu-18 fri-18 sat-18 sun-18'
+    'time mon-19 tue-19 wed-19 thu-19 fri-19 sat-19 sun-19'
+    'time mon-20 tue-20 wed-20 thu-20 fri-20 sat-20 sun-20'
+    'time mon-21 tue-21 wed-21 thu-21 fri-21 sat-21 sun-21'
+    'time mon-22 tue-22 wed-22 thu-22 fri-22 sat-22 sun-22'
+    'time mon-23 tue-23 wed-23 thu-23 fri-23 sat-23 sun-23'
+    'time mon-24 tue-24 wed-24 thu-24 fri-24 sat-24 sun-24';
+  grid-template-rows: minmax(206px, 1fr) repeat(23, 40px) 60px;
+  grid-template-columns: @calendarTimelineColWidth repeat(7, minmax(136px, 1fr));
+}
+
+// 卡片(容器)
+.tg-calendar-card {
+  z-index: 200;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+// 单元格日(容器)
+.tg-calendar-day {
+  .pos-r();
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 206px;
+  .pd(0 6px 10px 6px);
+  user-select: none;
+  > .tg-calendar-day-hd {
+    flex: none;
+    .pos-r();
+    .hlh(33px, 33px);
+    > .tg-calendar-day-hd-title {
+      .fc(16px, #666);
+      font-weight: 600;
+    }
+    > .add-btn {
+      .pos-atr(100; 7px; 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .wh(17px, 17px);
+      .brdr(50%);
+      cursor: pointer;
+      &:before {
+        .pos-a(100; 1px; 1px);
+        content: '';
+        .wh(15px, 15px);
+      }
+      > svg.icon {
+        cursor: pointer;
+        .fs(17px);
+      }
+    }
+  }
+  > .tg-calendar-day-bd {
+    flex: auto;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 50px);
+    row-gap: 6px;
+  }
+  > .tg-calendar-day-empty {
+    .pos-a(0; 0; 0);
+    content: attr(data-empty);
+    .wh(100%, 206px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fc(14px, var(--text-des-color));
+    font-weight: 400;
+  }
+
+  &.active {
+    > .tg-calendar-day-hd {
+      > .tg-calendar-day-hd-title {
+        .fgc(var(--theme-color));
+      }
+    }
+  }
+
+  &.disabled,
+  &[disabled] {
+    .bgc(#fcfcfc);
+    background-image: url('~@/assets/images/20200/day_cell_bg.png');
+    > .tg-calendar-day-hd {
+      > .tg-calendar-day-hd-title {
+        .fgc(var(--text-des-color));
+      }
+    }
+  }
+}
+
+// 便签?单项安排容器
+.tg-calendar-memo {
+  .wh(100%, 50px);
+  .brdr(4px);
+  .brd-t(#ebebeb);
+  .brd-r(#ebebeb);
+  .brd-b(#ebebeb);
+  .brd-l(none);
+  .bgc(white);
+  display: grid;
+  grid-template-areas:
+    'brd . . .'
+    'brd . title .'
+    'brd . . .'
+    'brd . content .'
+    'brd . . .';
+  grid-template-rows: 7px 16px 2px 16px 7px;
+  grid-template-columns: 3px 5px 1fr 5px;
+  user-select: none;
+  cursor: pointer;
+  > .tg-calendar-memo-brd {
+    grid-area: brd;
+    .bgc(#5991ff);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  > .tg-calendar-memo-title {
+    grid-area: title;
+    align-self: center;
+
+    .fc(12px, #333);
+    font-weight: 400;
+  }
+  > .tg-calendar-memo-content {
+    grid-area: content;
+    align-self: center;
+
+    .fc(12px);
+    font-weight: 400;
+    &.gray {
+      .fgc(var(--text-des-color));
+    }
+    &.yellow {
+      .fgc(#ff7a36);
+    }
+    &.green {
+      .fgc(#3eaf90);
+    }
+  }
+}
+
+// 运营+KOL混合的时间线排期卡片
+.tg-calendar-timeline-card-mixed {
+  .pos-r();
+  display: flex;
+  padding-left: 6px;
+  padding-right: 6px;
+  z-index: 400;
+  > .tg-calendar-timeline-card-mixed-inner {
+    display: flex;
+    width: 100%;
+    .brd(#a6c0eb);
+    .brdr(4px);
+    > .operator,
+    > .kol {
+      flex: auto;
+      width: 50%;
+      display: grid;
+      row-gap: 1px;
+      box-sizing: border-box;
+      z-index: 1;
+      > .item {
+        z-index: 1;
+        .pos-r();
+        .pd(4px);
+        overflow: hidden;
+        > .item-time {
+          .fc(12px, #333);
+          .lh(17px);
+        }
+        > .item-names {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          column-gap: 18px;
+          row-gap: 4px;
+
+          .fc(12px, #333);
+          .mgt(2px);
+          // .line-clamp(1);
+          > .item-name {
+            flex: 0 0 auto;
+            min-width: 24px;
+            max-width: 132px;
+            .line-clamp(1);
+          }
+
+          &.empty {
+            .fc(12px, #ff7a36);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    > .kol {
+      .bgc(#b6cbf2);
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      > .item {
+        .bgc(#e8effa);
+      }
+    }
+    > .operator {
+      .bgc(#ffcdb3);
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      > .item {
+        .bgc(#ffefe7);
+      }
+    }
+  }
+  > .tg-timeline-schedule-popover {
+    display: none;
+  }
+  > .tg-calendar-timeline-card-mixed-inner:hover {
+    + .tg-timeline-schedule-popover {
+      display: block;
+      animation-name: fadePopover;
+      animation-duration: 300ms;
+      animation-fill-mode: none;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+      animation-play-state: running;
+    }
+  }
+}
+
+// 普通时间线排期卡片
+.tg-calendar-timeline-card {
+  .pos-r();
+  display: flex;
+  padding-left: 0px;
+  padding-right: 8px;
+  z-index: 400;
+  > .tg-calendar-timeline-card-inner {
+    position: relative;
+    .brd(1px; solid; rgba(var(--theme-rgb-color), 0.5));
+    .brdr(4px);
+    .pd(8px);
+    .bgc(white);
+    .nowrap(100%);
+    transition: all 0.15s linear;
+    > .item-time {
+      .fc(14px, var(--text-color));
+      .lh(18px);
+      font-weight: 600;
+    }
+    > .item-names {
+      // display: flex;
+      // width: 100%;
+      // flex-wrap: wrap;
+      // column-gap: 10px;
+      // row-gap: 4px;
+
+      // .fc(12px, #333);
+      // .mgt(2px);
+      // .line-clamp(1);
+      line-height: 18px;
+      height: 18px;
+      > .item-name {
+        white-space: break-spaces;
+        padding: 0 4px;
+        // display: inline-block !important;
+        line-height: 18px;
+        background-color: rgba(var(--tip-icon-rgb-color), 0.1);
+        border-radius: 2px;
+        max-width: 132px;
+        color: var(--text-second-color);
+        font-size: 12px;
+        .line-clamp(1);
+      }
+    }
+    > .item-content {
+      .fc(12px, var(--text-second-color));
+      line-height: 16px;
+      margin-top: 6px;
+      > span {
+        white-space: break-spaces;
+        .line-clamp(1);
+      }
+    }
+    &::before {
+      background-color: rgba(var(--theme-rgb-color), 0.9);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      left: 0;
+      right: 0;
+      top: 0;
+      position: absolute;
+      height: 3px;
+      content: '';
+    }
+    &:hover {
+      cursor: pointer;
+      .brd(1px; solid; rgba(var(--theme-rgb-color), 0.9));
+      box-shadow: 0px 1px 8px 0px rgba(var(--tip-icon-rgb-color), 0.3);
+      transform: translate(0, -4px);
+      + .tg-timeline-schedule-popover {
+        display: block;
+        animation-name: fadePopover;
+        animation-duration: 300ms;
+        animation-fill-mode: none;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        animation-play-state: running;
+      }
+    }
+  }
+  > .tg-timeline-schedule-popover {
+    position: absolute;
+    top: 2px;
+    z-index: 100;
+    display: none;
+    &.tg-timeline-schedule-popover-left {
+      left: -272px;
+    }
+    &.tg-timeline-schedule-popover-right {
+      right: -264px;
+    }
+  }
+}
+
+// 普通日排期卡片
+.tg-calendar-day-card {
+  display: grid;
+  align-items: center;
+  > .tg-calendar-day-card-inner {
+    .pd(0 8px 8px 0px);
+    display: grid;
+    // grid-template-rows: repeat(auto-fill, 50px);
+    justify-self: stretch;
+    align-self: flex-start;
+    row-gap: 6px;
+    .el-popover__reference {
+      > .memo {
+        position: relative;
+        cursor: pointer;
+        .brd(1px; solid; rgba(var(--theme-rgb-color), 0.5));
+        .brdr(4px);
+        .pd(8px);
+        .bgc(white);
+        transition: all 0.15s linear;
+        // .nowrap(100%);
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          height: 3px;
+          background-color: rgba(var(--theme-rgb-color), 0.8);
+          border-radius: 4px;
+        }
+        > .item-project-name {
+          color: var(--text-color);
+          font-weight: 600;
+          line-height: 18px;
+          .line-clamp(1);
+        }
+        > .item-time {
+          // .fc(12px, #333);
+          // .lh(17px);
+          // position: relative;
+          color: var(--text-color);
+          margin-top: 12px;
+          padding-left: 12px;
+          position: relative;
+          line-height: 18px;
+          font-weight: 600;
+          > span {
+            position: absolute;
+            display: inline-block;
+            &:first-of-type {
+              left: 0;
+              top: 6px;
+              width: 6px;
+              height: 6px;
+              border-radius: 3px;
+              background-color: fade(#3c5269, 30);
+            }
+            &:nth-of-type(2) {
+              left: 2px;
+              top: 14px;
+              width: 2px;
+              height: 20px;
+              background-color: rgba(var(--tip-icon-rgb-color), 0.3);
+            }
+          }
+        }
+        > .item-names {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          column-gap: 10px;
+          row-gap: 4px;
+          line-height: 18px;
+          background-color: rgba(var(--tip-icon-rgb-color), 0.1);
+          border-radius: 2px;
+          padding: 0 4px;
+
+          .fc(12px, var(--text-second-color));
+          .mgt(6px);
+          .line-clamp(1);
+          > .item-name {
+            flex: 0 0 auto;
+            min-width: 24px;
+            max-width: 132px;
+            .line-clamp(1);
+          }
+        }
+        &:hover {
+          .brd(1px; solid; rgba(var(--theme-rgb-color), 0.9));
+          box-shadow: 0px 1px 8px 0px rgba(var(--tip-icon-rgb-color), 0.3);
+          transform: translate(0, -4px);
+        }
+      }
+    }
+  }
+  > .tg-calendar-day-card-empty {
+    .fc(14px, var(--tip-icon-color));
+    font-weight: 400;
+    justify-self: center;
+  }
+}
+
+.tg-timeline-schedule-popover {
+  @color: #dcdfe6;
+  position: absolute;
+  z-index: 1000;
+  width: 266px;
+  .bgc(white);
+  // width: 190px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  .brd(@color);
+  .brdr(4px);
+  .pd(18px);
+  user-select: none;
+  pointer-events: none;
+  transition: left ease-in-out 300ms, top ease-in-out 300ms, right ease-in-out 300ms;
+  > .tg-timeline-schedule-popover-arrow {
+    position: absolute;
+    z-index: 100;
+    top: 18px;
+    .wh(10px, 10px);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 100;
+      top: -4px;
+      .wh(8px, 8px);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      box-sizing: border-box;
+    }
+  }
+  &.tg-timeline-schedule-popover-left {
+    > .tg-timeline-schedule-popover-arrow {
+      right: -10px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid @color;
+      &:before {
+        right: -3px;
+        border-right: 4px solid transparent;
+        border-left: 4px solid white;
+      }
+    }
+  }
+
+  &.tg-timeline-schedule-popover-right {
+    > .tg-timeline-schedule-popover-arrow {
+      left: -10px;
+      border-right: 5px solid @color;
+      border-left: 5px solid transparent;
+      &:before {
+        left: -3px;
+        border-right: 4px solid white;
+        border-left: 4px solid transparent;
+      }
+    }
+  }
+  .popover-row {
+    .line-clamp(1);
+    margin-top: 12px;
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+    .popover-label {
+      display: inline-block;
+      width: 70px;
+      text-align: right;
+      color: var(--tip-icon-color);
+      font-size: 14px;
+    }
+    .popover-value {
+      color: var(--text-color);
+      font-size: 14px;
+    }
+  }
+}
+
+@keyframes fadePopover {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tg-calendar-mask {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  &.month-cal {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    z-index: 500;
+  }
+}
+
+.tg-calendar-day-popover {
+  padding: 0 !important;
+  user-select: none;
+  pointer-events: none;
+  > .popper__arrow {
+    top: 30px !important;
+  }
+  .popover-header {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(var(--tip-icon-rgb-color), 0.2);
+    > div {
+      &:first-of-type {
+        color: var(--text-color);
+        font-weight: 600;
+        line-height: 18px;
+      }
+      &:last-of-type {
+        color: var(--tip-icon-color);
+        margin-top: 4px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+  .popover-times {
+    padding: 12px 18px;
+    > .item-time {
+      color: var(--text-color);
+      margin-top: 12px;
+      padding-left: 12px;
+      position: relative;
+      line-height: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      > span {
+        position: absolute;
+        display: inline-block;
+        &:first-of-type {
+          left: 0;
+          top: 5px;
+          width: 6px;
+          height: 6px;
+          border-radius: 3px;
+          background-color: fade(#3c5269, 30);
+        }
+        &:nth-of-type(2) {
+          left: 2px;
+          top: 13px;
+          width: 2px;
+          height: 18px;
+          background-color: rgba(var(--tip-icon-rgb-color), 0.3);
+        }
+      }
+    }
+  }
+}

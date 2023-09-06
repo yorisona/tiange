@@ -1,0 +1,122 @@
+@charset 'utf-8';
+
+
+.tg-invoice-reverse-dislog {
+    .tg-invoice-reverse-content {
+        padding: 18px 24px;
+        // height: 610px;
+        .invoice-amount-container {
+            display: flex;
+            justify-content: space-between;
+            .amount-item {
+                background: rgba(var(--warning-rgb-color), 0.05);
+                border-radius: 2px;
+                // width: 268px;
+                flex-grow: 1;
+                height: 66px;
+                padding: 6px 12px;
+                margin-right: 24px;
+                &:last-of-type {
+                    margin-right: 0;
+                    > div:last-of-type {
+                        margin-top: 4px;
+                    }
+                }
+                > div {
+                    &:first-of-type {
+                        height: 18px;
+                        line-height: 18px;
+                        color: var(--text-second-color);
+                    }
+                    &:last-of-type {
+                        margin-top: 6px;
+                        color: var(--warning-color);
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                }
+                &:nth-of-type(3) {
+                    > div:last-of-type {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .amount-project {
+            padding: 24px 0 12px 0;
+        }
+        .list-container-title {
+            line-height: 18px;
+            padding: 24px 0 12px 0;
+            color: var(--text-second-color);
+        }
+        // .settlement-list-container {
+
+        // }
+        // .invoice-reverse-list-container {
+
+        // }
+        .el-table {
+            box-sizing: content-box;
+            .el-table__body-wrapper {
+                overflow: overlay;
+                tbody {
+                    box-sizing: content-box;
+                  td.el-table__cell {
+                    height: 36px;
+                  }
+                }
+            }
+            .invoice-reverse-delete {
+                height: 16px;
+                width: 16px;
+                color: var(--icon-color);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .settlement-add {
+                font-size: 14px;
+                height: 12px;
+                line-height: 12px;
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+            .reverse-amount {
+                .el-input-group__prepend {
+                    color: var(--text-color);
+                    background: white;
+                    padding: 0 2px 0 12px;
+                    border-color: rgba(var(--tip-icon-rgb-color), 0.5);
+                }
+                .el-input__inner {
+                  line-height: 20px;
+                  height: 20px;
+                    text-align: right;
+                    padding-left: 0;
+                    border-color: rgba(var(--tip-icon-rgb-color), 0.5);
+                }
+            }
+            .el-table__empty-block {
+                grid-template-rows: 20px minmax(110px, auto) 0px;
+                .el-table__empty-text {
+                    height: 123px;
+                    > img {
+                        height: 100px;
+                    }
+
+                }
+            }
+            .el-table__body-wrapper {
+                height: 161px !important;
+            }
+            .table-row-hidden {
+                display: none;
+            }
+            .table-row-show {
+                display: table-row;
+            }
+        }
+    }
+}

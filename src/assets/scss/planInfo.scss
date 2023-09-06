@@ -1,0 +1,325 @@
+@import '@/styles/vars.scss';
+$color-primary: var(--theme-color);
+// 排除掉新增的和最近维护的页面
+// 1. 客户列表
+.router-view-content:not(.tg-page-container) {
+  .top-tabs {
+    // padding: 0 10px 0;
+    background: #fff;
+    position: relative;
+    .el-icon-arrow-right {
+      position: absolute;
+      font-size: 22px;
+      color: var(--text-des-color);
+      top: 9px;
+      right: 18px;
+      cursor: pointer;
+      z-index: 1;
+      transition: all 0.3s;
+      transform: rotate(0);
+    }
+    .is-right {
+      transform: rotate(90);
+    }
+    .is-bot {
+      transform: rotate(90deg);
+    }
+    .detail-footer {
+      border-top: 1px solid #f3f4f5;
+      line-height: 50px;
+      text-align: right;
+      padding-right: 16px;
+      span {
+        color: $color-primary;
+      }
+    }
+  }
+  .product-list-desc {
+    border-bottom: 1px dashed #f1f2f3;
+    margin: 5px 0;
+    padding: 5px 0;
+    &:last-child {
+      border-bottom: 0;
+    }
+    .icon-num {
+      display: inline-block;
+      width: 34px;
+      line-height: 34px;
+      text-align: center;
+      border-radius: 2px;
+      background: $color-background;
+      color: var(--text-des-color);
+      margin-top: 8px;
+      margin-left: calc(50% - 17px);
+    }
+    .pro-desc {
+      line-height: 30px;
+      .el-col {
+        color: var(--text-des-color);
+        span {
+          color: #666;
+        }
+        .pro-link {
+          a {
+            text-decoration: none;
+            color: $color-primary;
+            i {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+  .plan-list {
+    height: 270px;
+    margin-top: 10px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    .plan-list-desc-star {
+      height: 100%;
+      border-right: 1px solid #f4f5f6;
+      .star-header {
+        height: 159px;
+        border-bottom: 1px solid #f4f5f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        img {
+          width: 100px;
+          border-radius: 50%;
+        }
+        P {
+          margin: 8px 0 0;
+          text-align: center;
+          color: #666;
+          font-size: 16px;
+        }
+      }
+      .star-cost-amount {
+        height: 52px;
+        padding: 5px;
+        white-space: nowrap;
+        .star-cost {
+          white-space: nowrap;
+          box-sizing: border-box;
+          height: 100%;
+          text-align: center;
+          span {
+            display: block;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            color: $color-primary;
+          }
+          p {
+            color: var(--text-des-color);
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+        p {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin: 0;
+          text-align: center;
+        }
+      }
+      .replace-star {
+        height: 54px;
+        border-top: 1px solid #f4f5f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .el-button {
+          // width: 60%;
+          height: 32px;
+        }
+      }
+    }
+    .plan-list-desc-pro {
+      height: 100%;
+      .pro-top {
+        height: 212px;
+        padding-top: 5px;
+        border-bottom: 1px solid #f4f5f6;
+        .pro-info-par {
+          max-height: 140px;
+          overflow-y: auto;
+        }
+        .pro-info {
+          padding: 6px;
+          &:first-child {
+            margin-top: 4px;
+          }
+          .pro-info-tit {
+            color: #666;
+            padding: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          .pro-info-desc {
+            color: #666;
+            div {
+              display: inline-block;
+              background: #f4f5f6;
+              padding: 5px 15px;
+              span {
+                margin-left: 12px;
+              }
+            }
+          }
+        }
+        .date-info {
+          padding: 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          .date-info-tit {
+            line-height: 32px;
+            padding: 5px;
+            color: #666;
+          }
+          .date-info-desc {
+            padding: 5px 0;
+            .date-tag-span {
+              padding: 8px 10px;
+              border: 1px solid #dedede;
+              line-height: 40px;
+              margin-left: 6px;
+              em {
+                font-size: 12px;
+                font-style: normal;
+                color: var(--text-des-color);
+                margin: 4px;
+              }
+              .is-display {
+                color: $color-primary;
+              }
+              .not-display {
+                color: var(--text-des-color);
+              }
+              span {
+                cursor: pointer;
+                &:hover {
+                  color: $color-primary;
+                }
+              }
+              &:first-child {
+                margin-left: 0;
+              }
+              .el-icon-circle-close {
+                color: var(--text-des-color);
+                cursor: pointer;
+                z-index: 2;
+                &:hover {
+                  color: #666;
+                }
+              }
+            }
+          }
+        }
+      }
+      .pro-bot {
+        .el-col {
+          line-height: 50px;
+        }
+        .add-schedule {
+          height: 50px;
+          .el-button {
+            float: right;
+            margin-right: 14px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  .add-date-dialog {
+    .el-form-item {
+      width: 70%;
+      margin-left: 15%;
+      margin-bottom: 10px;
+      .el-input,
+      .el-select {
+        width: 100%;
+      }
+    }
+    .tag-checked-product {
+      span {
+        display: block;
+        background: #f4f5f6;
+        padding: 3px 5px;
+        margin-top: 4px;
+        line-height: 19px;
+        font-size: 12px;
+        position: relative;
+        i {
+          position: absolute;
+          right: 4px;
+          top: 6px;
+          color: var(--text-des-color);
+          border-radius: 50%;
+          cursor: pointer;
+          &:hover {
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+  .date-detail-dialog {
+    .date-detail-dialog-header {
+      padding: 5px 10px;
+      background: #f4f5f6;
+      margin-bottom: 12px;
+      .date-detail-tit {
+        color: var(--text-color);
+        font-size: 18px;
+        line-height: 36px;
+      }
+      .el-row {
+        color: var(--text-des-color);
+        line-height: 28px;
+        span {
+          color: #666;
+          em {
+            font-size: 12px;
+            font-style: normal;
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            padding: 1px 4px;
+            border-radius: 2px;
+            margin-left: 4px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+  .replace-star-dialog {
+    .replace-star-dialog-header {
+      line-height: 46px;
+      padding: 5px 0;
+      overflow: hidden;
+      span {
+        color: #666;
+      }
+      .el-select {
+        float: right;
+      }
+    }
+  }
+  .plan-active-enter-active,
+  .plan-active-leave-active {
+    transition: all 0.2s;
+  }
+  .plan-active-enter,
+  .plan-active-leave-to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}

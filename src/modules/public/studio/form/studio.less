@@ -1,0 +1,74 @@
+@charset 'utf-8';
+
+
+.studio-form-modal {
+  .el-dialog {
+    border-radius: 4px;
+  }
+
+  .el-form {
+    display: grid;
+    row-gap: 8px;
+  }
+
+  .checkboxRow {
+    height: 28px;
+    line-height: 27px;
+    label {
+      height: 28px;
+      line-height: 27px;
+     &.el-checkbox .el-checkbox__input {
+        padding-top: 0;
+      }
+      &.el-checkbox .el-checkbox__label{
+        line-height: 27px;
+      }
+    }
+  }
+
+  .studio-checkbox-group {
+    display: grid;
+    column-gap: 16px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 78px));
+    > .studio-checkbox {
+      width: 78px;
+      margin: 0;
+    }
+  }
+
+  .dialog-content {
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    .el-form-item__error {
+      padding-top: 0;
+    }
+
+    textarea {
+      color: var(--text-color);
+
+      font-size: var(--default-font-size);
+      padding: 10px;
+    }
+
+    .content-body {
+      .plan-table-wrap {
+        .add-table-line {
+          height: 32px;
+          border: #d5e1f3 dashed 1px;
+          text-align: center;
+          line-height: 32px;
+          margin-top: 10px;
+          cursor: pointer;
+          color: #396fff;
+          i {
+            margin-right: 6px;
+            font-size: 15px;
+            color: #396fff;
+          }
+        }
+      }
+    }
+  }
+}

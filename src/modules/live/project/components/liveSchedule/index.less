@@ -1,0 +1,80 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.tg-project-live-schedule {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: overlay;
+}
+    .live-operator-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 18px;
+        margin: 3px 0;
+        .date-switch {
+            display: flex;
+            align-items: center;
+        }
+        .date-select {
+            .el-date-editor {
+                width: 246px;
+            }
+            .label {
+                color: var(--text-second-color);
+                margin-right: 6px;
+              font-size: 12px;
+            }
+        }
+        .live-operator {
+            display: flex;
+            align-items: center;
+            margin-left: 28px;
+        }
+        .live-operator-row-left {
+            display: flex;
+            align-items: center;
+            .btn-circle {
+                width: 28px;
+                height: 28px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 16px;
+                font-size: 18px;
+                color: var(--text-second-color);
+                border: 1px solid rgba(var(--tip-icon-rgb-color), 0.3);
+                cursor: pointer;
+                &:hover {
+                    > svg.icon {
+                        .fgc(var(--theme-color));
+                    }
+                }
+            }
+            .live-date {
+                margin: 0 12px;
+                color: var(--text-color);
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+        .live-operator-row-right {
+
+        }
+        .abnormal-tip-btn {
+            color: #C4CBD2;
+            &:hover {
+                color: var(--theme-color);
+            }
+        }
+    }
+
+.abnormal-tip {
+    .abnormal-tip-title {
+        font-weight: 600;
+    }
+    .abnormal-tip-row {
+        color: var(--text-second-color);
+    }
+}

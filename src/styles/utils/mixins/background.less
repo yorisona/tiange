@@ -1,0 +1,32 @@
+/**
+ * mixins - background
+ * 背景相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-18
+ * @copyright 2017
+ */
+
+/**
+ * 背景色
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-23
+ * @param  {Any} @bgColor
+ */
+.bgc(@bgColor){
+	background-color: @bgColor;
+}
+
+// background-image 背景图
+.bgi(@src) when (isstring(@src)){
+	background-image: url(@src);
+}
+
+// css sprite
+.sprite(@src; @repeat: no-repeat; @posX: 0; @posY: 0){
+	.bgi(@src);
+	background-image: url(@src);
+	background-repeat: @repeat;
+	background-position: @posX @posY;
+}

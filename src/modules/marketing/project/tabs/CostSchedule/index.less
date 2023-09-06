@@ -1,0 +1,93 @@
+@charset 'utf-8';
+
+
+.marketing-project-cost-schedule {
+
+    .el-table__row {
+        // > td {
+        //     cursor: auto !important;
+        // }
+        &:hover {
+            .conbineItem {
+                color: var(--theme-color);
+            }
+        }
+    }
+    .cost-headers {
+        margin-bottom: -12px;
+        display: flex;
+        .cost-headers-operations {
+            margin-right: 24px;
+            .tg-btn {
+                margin-bottom: 12px;
+                &:first-of-type {
+                    margin-right: 18px;
+                }
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+        .cost-headers-sumary {
+            line-height: 32px;
+            // margin-bottom: -12px;
+            .cost-headers-sumary-label {
+              display: inline-block;
+              margin-bottom: 0;
+              color: var(--text-third-color);
+              font-size: var(--small-font-size);
+            }
+            .cost-headers-sumary-value {
+                display: inline-block;
+                margin-bottom: 0;
+                color: var(--text-color);
+                font-weight: 600;
+                font-size: 16px;
+                margin-right: 32px;
+            }
+        }
+
+    }
+    .content-third-blue {
+        color: var(--tip-icon-color);
+    }
+
+    .achievement_uid {
+        color: var(--text-color);
+    }
+    .achievement_name {
+        color: var(--tip-icon-color);
+    }
+    .achievement_gather_amount {
+        color: var(--tip-icon-color);
+    }
+    .kol_name {
+        color: var(--text-color);
+    }
+    .company_name {
+        color: var(--tip-icon-color);
+    }
+    .gmt_create {
+        color: var(--tip-icon-color);
+    }
+    .is_pay, .pay_date, .pay_lookup {
+        display: inline-block;
+        text-align: right;
+        width: 70px;
+    }
+    .combine-invoices {
+        &:hover .conbineItem {
+            color: var(--theme-color);
+        }
+        .conbineItem {
+            color: var(--text-color);
+            &:hover {
+                color: #2570F1;
+            }
+        }
+    }
+
+    .invoices-link {
+        color: #a4b2b2;
+    }
+}

@@ -1,0 +1,53 @@
+/**
+ * mixins - text & other
+ * 文本、文本装饰相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-23
+ * @copyright 2017
+ */
+
+// text-align
+.ta-lt(){
+	text-align: left;
+}
+.ta-c(){
+	text-align: center;
+}
+.ta-rt(){
+	text-align: right;
+}
+
+// text-indent
+.ti(@val: 2em) when (isnumber(@val)){
+	text-indent: @val;
+}
+.notext(){
+	.ti(-10000em);
+}
+
+// vertical-align
+.va(@val: baseline){
+	vertical-align: @val;
+}
+.va-t(){
+	.va(top);
+}
+.va-m(){
+	.va(middle);
+}
+.va-b(){
+	.va(bottom);
+}
+
+// line-height
+.lh(@val: normal){
+	line-height: @val;
+}
+
+// text-decoration
+.td(@val: none){
+	text-decoration: @val;
+}
+

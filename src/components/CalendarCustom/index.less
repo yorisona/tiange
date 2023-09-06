@@ -1,0 +1,236 @@
+
+.tg-calendar-custom {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border: 1px solid var(--table-border-color);
+
+  .tg-calendar-custom-th,
+  .tg-calendar-custom-td {
+    border-top: 1px solid var(--table-border-color);
+    border-left: 1px solid var(--table-border-color);
+
+    &:nth-child(7n + 1) {
+      border-left: none;
+    }
+  }
+
+  .tg-calendar-custom-th {
+    height: 32px;
+    background: rgba(164, 178, 194, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 0;
+    font-size: 12px;
+    color: var(--text-color);
+  }
+
+  .tg-calendar-custom-td {
+    position: relative;
+    min-height: 100px;
+    color: var(--text-color);
+    &.other-month {
+      .tg-calendar-custom-day {
+        color: var(--text-third-color);
+      }
+    }
+  }
+
+  .tg-calendar-custom-day {
+    position: absolute;
+    font-size: 16px;
+    color: var(--text-third-color);
+    left: 12px;
+    top: 12px;
+
+    &.active {
+      color: var(--theme-color);
+    }
+  }
+}
+
+.tg-calendar-custom-side {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: solid 1px var(--table-border-color);
+  border-right: solid 1px var(--table-border-color);
+  position: relative;
+
+  ::-webkit-scrollbar {
+    border: solid 1px var(--table-border-color);
+    border-right: none;
+    border-bottom: none;
+    height: 10px !important;
+    background-color: #fff;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #e5e8ec;
+    margin-right: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: transparent;
+  }
+
+  .calendar-header {
+    display: grid;
+    grid-template-rows: 32px repeat(auto-fit, 32px);
+
+    .calendar-header-angle-columns {
+      position: absolute;
+      left: 22px;
+      bottom: 3px;
+      line-height: 20px;
+    }
+
+    .calendar-header-angle-row {
+      position: absolute;
+      right: 22px;
+      top: 3px;
+      line-height: 20px;
+    }
+  }
+
+  .calendar-header-left,
+  .calendar-header-right {
+    position: absolute;
+    top: 0;
+    background-color: #ffffff;
+
+    .tg-calendar-custom-td,
+    .tg-calendar-custom-th {
+      min-height: 32px;
+    }
+  }
+
+  .calendar-header-left {
+    left: 0;
+    //box-shadow: 3px 0 5px 0 rgba(0, 0, 0, 0.1);
+    z-index: 100;
+
+    .tg-calendar-custom-td {
+      font-weight: 600;
+    }
+  }
+
+  .calendar-header-right {
+    right: 0;
+    width: 151px;
+    box-shadow: -3px 0 5px 0 rgba(0, 0, 0, 0.1);
+    z-index: 10;
+
+    .calendar-header-side {
+      width: 100%;
+    }
+
+    .tg-calendar-custom-th {
+      font-size: 16px;
+      color: var(--text-color);
+      justify-content: flex-end;
+      padding-right: 24px;
+      font-weight: 600;
+    }
+
+    .tg-calendar-custom-td {
+      background: #f6f6f6;
+      text-align: right;
+      justify-content: flex-end;
+      font-size: 12px;
+      color: var(--text-color);
+      padding-right: 24px;
+    }
+  }
+
+  .calendar-body {
+    flex: 1;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(12, 32px);
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 0 150px 0 135px;
+
+    .tg-calendar-custom-td {
+      box-sizing: border-box;
+      font-size: 12px;
+      color: var(--text-color);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &.rest {
+        font-size: 56px;
+        color: var(--text-third-color);
+        justify-content: center;
+      }
+    }
+  }
+
+  .calendar-header-side {
+    font-size: 12px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 18px;
+    font-weight: 600;
+  }
+
+  .calendar-header-top {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 12px;
+
+    .day {
+      font-size: 14px;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    .week {
+      font-size: 12px;
+      color: var(--text-second-color);
+      margin-left: 12px;
+    }
+  }
+
+  .calendar-header-angle {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 140%;
+      height: 1px;
+      background-color: var(--table-border-color);
+      transform: rotate(15deg);
+      transform-origin: left top;
+    }
+  }
+
+  .tg-calendar-custom-td,
+  .tg-calendar-custom-th {
+    border-top: 1px solid var(--table-border-color);
+    border-left: 1px solid var(--table-border-color);
+  }
+
+  .tg-calendar-custom-td {
+    min-width: 106px;
+  }
+
+  .calendar-header-side {
+    width: 135px;
+  }
+
+  .calendar-header {
+    border-right: 1px solid var(--table-border-color);
+    margin-right: -1px;
+  }
+}

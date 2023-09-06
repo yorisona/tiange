@@ -1,0 +1,351 @@
+@charset 'utf-8';
+
+
+.break-all {
+  word-break: break-all;
+}
+.dialog-footer:after {
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0; //使父元素不会被.撑出来
+  overflow: hidden; //使.隐藏
+}
+.remark-text {
+  text-indent: -2.5em;
+  margin-left: 2em;
+  span {
+    //  word-wrap: break-word;
+    word-break: break-all;
+  }
+}
+.left_icon {
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
+  // text-align: left;
+  .apply-click {
+    display: inline-block;
+    color: #666;
+    font-size: 12px;
+    margin-right: 8px;
+    img {
+      width: 14px;
+      height: 16px;
+      vertical-align: middle;
+      margin-bottom: 5px;
+      margin-right: 3px;
+    }
+  }
+}
+
+.btn-red {
+  background: #f43846;
+  border: none;
+}
+.title-right {
+  padding-left: 20px;
+  line-height: 67px;
+  .approver-state {
+    font-size: 12px;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 1px 4px;
+  }
+  .status-color {
+    margin-left: 3px;
+    vertical-align: top;
+  }
+  // 审批中
+  .status-color-1 {
+    color: #ff9434;
+    background: rgba(255, 249, 244, 1);
+  }
+  // 审批成功
+  .status-color-2 {
+    color: #396fff;
+    background: rgba(247, 249, 255, 1);
+  }
+  // 审批失败
+  .status-color-3 {
+    color: #f43846;
+    background: rgba(255, 242, 244, 1);
+  }
+  // 已撤销
+  .status-color-4 {
+    color: var(--text-des-color);
+    background: rgba(251, 251, 251, 1);
+  }
+}
+.main-header {
+  background: #fff;
+  .from-header-box {
+    background: rgba(250, 252, 254, 1);
+    padding-left: 20px;
+    line-height: 46px;
+    .from-header {
+      display: inline-block;
+      color: #666;
+      font-size: 12px;
+      text-align: left;
+      margin-right: 30px;
+    }
+  }
+}
+
+.main-middle {
+  margin-top: 10px;
+  background: #fff;
+  .uls {
+    display: flex;
+    padding: 15px 15px;
+    padding-bottom: 0;
+    ul {
+      flex: 1;
+      li {
+        line-height: 35px;
+        text-indent: -35px;
+        padding-left: 35px;
+      }
+    }
+  }
+  .reason {
+    padding: 15px;
+    border-top: 1px solid #f2f6f9;
+    text-indent: -64px;
+    padding-left: 79px;
+  }
+  .from-middle {
+    color: #666;
+    text-align: left;
+    // line-height: 40px;
+    margin-top: 38px;
+    .color-9 {
+      color: var(--text-des-color);
+    }
+  }
+  .color-9 {
+    color: var(--text-des-color);
+  }
+  .from-middle-company {
+    margin-top: 10px;
+  }
+}
+.color-9 {
+  color: var(--text-des-color);
+}
+// 已撤销
+.revocation {
+  /deep/ .el-step__line {
+    background-color: transparent;
+    top: -42px !important;
+  }
+  .revocation-color {
+    color: var(--text-des-color);
+  }
+}
+.hover-red:hover {
+  color: #f43846;
+}
+// deep
+/deep/ .el-step.is-vertical .el-step__main {
+  padding-left: 15px;
+  padding-top: 5px;
+}
+/deep/ .el-dialog__body {
+  padding: 0;
+}
+/deep/ .el-dialog__body {
+  background: #f2f6f9;
+}
+.flow {
+  padding: 20px;
+  padding-left: 10px;
+  background: #fff;
+  margin-top: 10px;
+  .steps {
+    padding-left: 10px;
+    .color-3 {
+      font-size: 14px;
+      color: var(--text-color);
+    }
+  }
+  .flow-select {
+    color: var(--text-des-color);
+    font-size: 14px;
+  }
+  .refuse {
+    color: #f43846;
+  }
+  /deep/ .el-step__icon-inner {
+    display: none;
+  }
+  // /deep/ .el-step__icon.is-text {
+  //   border-radius: 50%;
+  //   border: 5px solid #9eb8fd !important;
+  //   border-color: inherit;
+  //   background: #396fff;
+  // }
+  // /deep/ .el-step__line {
+  //   position: absolute;
+  //   border-color: inherit;
+  //   background-color: #396fff;
+  // }
+  // 完成后步骤样式
+  /deep/ .el-step__title.is-finish {
+    color: var(--text-color);
+    font-size: 14px;
+  }
+  /deep/ .el-step__head.is-finish {
+    // color: var(--text-color);
+    .el-step__icon.is-text {
+      border-radius: 50%;
+      border: 6px solid #396fff !important;
+      border-color: inherit;
+      background: #fff;
+    }
+  }
+  /deep/ .el-step__icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 3px;
+  }
+  //未完成步骤样式
+  /deep/ .el-step__title.is-process {
+    font-weight: 400;
+  }
+  /deep/ .el-step__head.is-process {
+    .el-step__icon.is-text {
+      border-radius: 50%;
+      border-color: inherit;
+      background: #d6d6d6;
+      border: none;
+    }
+  }
+  /deep/ .el-step__head.is-wait {
+    .el-step__icon.is-text {
+      border-radius: 50%;
+      border-color: inherit;
+      background: #d6d6d6;
+      border: none;
+    }
+  }
+  // 未完成步骤右侧文字样式
+  /deep/ .el-step__title.is-wait,
+  /deep/ .el-step__title.is-process {
+    color: var(--text-des-color);
+    font-size: 14px;
+  }
+  /deep/ .el-step.is-vertical .el-step__line {
+    top: 36px;
+    bottom: 20px;
+  }
+
+  /deep/ .el-input--suffix {
+    width: 309px;
+    height: 32px;
+  }
+  /deep/ .el-input__inner {
+    height: 32px;
+  }
+  /deep/ .el-input__icon {
+    line-height: 30px;
+  }
+  /deep/ .step-username {
+    .el-step:last-of-type .el-step__line {
+      display: block;
+    }
+    /deep/ .el-step__line-inner {
+      height: 44px;
+    }
+  }
+}
+.userinfo-customer-dialog {
+  /deep/ .el-dialog__header {
+    background: #f2f6f9;
+    padding: 0;
+    border-bottom: #efefef solid 1px;
+    .userinfo-customer-dialog-header {
+      // background: #F8F8F8;
+      background: #f2f6f9;
+      height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      color: var(--text-color);
+      padding-left: 10px;
+    }
+    .el-dialog__headerbtn {
+      top: 10px;
+      right: 10px;
+      i.el-dialog__close {
+        color: #0b1536 !important;
+        font-size: 30px;
+        opacity: 0.5;
+      }
+    }
+  }
+  /deep/ .el-dialog__body {
+    .approval-content {
+      text-align: center;
+      padding: 18px 30px;
+      background: #fff;
+      .el-radio {
+        & + .el-radio {
+          padding-left: 60px;
+        }
+        span.el-radio__input,
+        span.el-radio__label {
+          vertical-align: text-top;
+          font-size: 16px;
+        }
+      }
+    }
+    .edit-content {
+      width: 540px;
+      margin: 0 auto;
+      .edit-input {
+        display: inline-block;
+        width: 428px;
+      }
+      .el-form-item__content {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  /deep/ .el-dialog__footer {
+    border-top: #f5f5f5 solid 1px;
+    padding: 20px;
+    .el-button {
+      width: 100px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+}
+/deep/ .el-step.is-vertical .el-step__head {
+  height: 100px;
+}
+// 去除小蓝框
+:focus {
+  outline: 0;
+}
+// 审批成功后最后一个步骤样式
+.steps {
+  // /deep/ .el-step:last-of-type.is-flex {
+  //   /deep/ .el-step__main {
+  //     .color-blue {
+  //       color: #396fff ;
+  //     }
+  //   }
+  // }
+  .step-children:last-child {
+    .last-color {
+      color: #396fff;
+    }
+  }
+}
+
+// 新增部分
+
+// .refund-detail-dialog {
+// }

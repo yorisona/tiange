@@ -1,0 +1,232 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.tg-auth-page {
+  .bgc(#e4ebfa);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px auto 56px;
+  overflow: hidden;
+  background-image: url(~@/assets/images/login_bg.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+  > .tg-auth-header {
+    @headerHeight: 80px;
+    .hlh(@headerHeight, @headerHeight);
+    .bgc(white);
+    display: grid;
+    grid-template-areas: '. logo nav .';
+    grid-template-columns: 1fr 760px 440px 1fr;
+    align-items: center;
+    > .logo {
+      grid-area: logo;
+      background: url(~@/assets/img/login/tiangelogo.png) no-repeat;
+      justify-self: start;
+      .wh(128px, 46px);
+      > img {
+        .wh(128px, 46px);
+      }
+    }
+    > .nav {
+      grid-area: nav;
+      justify-self: end;
+      .hlh(@headerHeight, @headerHeight);
+      > .home-link {
+        .fc(20px, #333);
+        width: 40px;
+
+        font-weight: 400;
+        &:hover {
+          .fgc(var(--theme-color));
+        }
+      }
+    }
+  }
+  > .tg-auth-footer {
+    .fc(12px, var(--text-des-color));
+    .lh(16px);
+    font-weight: 400;
+    .ta-c();
+    .pdb(40px);
+  }
+
+  // 中间区域
+  > .tg-login-main {
+    .pos-r();
+    display: grid;
+    grid-template-areas:
+      '. . .'
+      '. form .'
+      '. . .';
+    grid-template-rows: 1fr 603px 2fr;
+    grid-template-columns: 1fr 1200px 1fr;
+    min-height: 630px + 2 * 30px;
+    > .tg-login-form {
+      width: 1200px;
+      z-index: 1;
+      grid-area: form;
+      display: grid;
+      grid-template-areas: '. banner form .';
+      grid-template-columns: 1fr 760px 440px 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      .bgc(#0b53d7);
+      > .banner {
+        .pos-r();
+        grid-area: banner;
+        display: flex;
+        justify-content: center;
+        > .banner-img {
+          .wh(500px, auto);
+          flex: none;
+        }
+        > .left-img,
+        > .right-img {
+          animation-name: swing_top_dowm;
+          animation-timing-function: ease-in-out;
+          animation-duration: 1.2s;
+          animation-iteration-count: infinite;
+          animation-play-state: running;
+          animation-direction: alternate;
+        }
+        > .left-img {
+          .pos-a(100; 40px; 160px);
+          animation-delay: 0;
+        }
+        > .right-img {
+          .pos-atr(100; 5px; 150px);
+          animation-delay: 0.6s;
+        }
+      }
+      > .form {
+        grid-area: form;
+        align-self: stretch;
+        .bgc(white);
+        .pd(0 76px 0 76px);
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.tg-auth-page > .tg-login-main > .tg-login-form > .form {
+  > .el-form {
+    .bgc(white);
+    flex: auto;
+    height: 310px;
+    > .form-cap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      flex-direction: column;
+
+      font-weight: 600;
+      .hlh(28px, 28px);
+      .pdb(50px);
+      > .login-type {
+        .fc(18px, #666);
+        cursor: pointer;
+        &.active {
+          .fc(22px, #333);
+        }
+      }
+    }
+    > .el-form-item {
+      .mgb(24px);
+    }
+    .el-input {
+      > input {
+        border-radius: 0;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        line-height: 40px;
+        font-size: var(--small-font-size);
+        &:-webkit-autofill {
+          .bgc(white);
+          box-shadow: 0 0 0 1000px #fff inset;
+        }
+        &::placeholder {
+          .fgc(var(--placeholder-color));
+        }
+      }
+      .el-input__prefix {
+        line-height: 40px;
+      }
+    }
+
+    .tg-btn.login-btn {
+      .whlh(100%, 40px, 38px);
+      justify-content: center;
+      .fc(18px, white);
+    }
+
+    .forget-pw > a {
+      .fgc(#409eff);
+    }
+
+    .code-tip {
+      .fc(12px, #09ae6a);
+    }
+
+    .verify-code {
+      cursor: pointer;
+    }
+
+    .vcode-btn {
+      // .fc(14px, #ed675c);
+      .fc(14px,var(--theme-color));
+      cursor: pointer;
+    }
+
+    .vcode-btn-count {
+      .fc(14px, #aaa9a9);
+      user-select: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .tg-auth-page {
+    > .tg-auth-header {
+      grid-template-columns: 1fr 660px 340px 1fr;
+    }
+    > .tg-login-main {
+      grid-template-rows: 1fr 603px 2fr;
+      grid-template-columns: 1fr 1000px 1fr;
+      min-height: 630px + 2 * 30px;
+      > .tg-login-form {
+        width: 1000px;
+        grid-template-columns: 1fr 660px 340px 1fr;
+        > .form {
+          .pd(0 30px 0 30px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .tg-auth-page {
+    @headerHeight: 60px;
+    grid-template-rows: @headerHeight auto 30px;
+    > .tg-auth-header {
+      .hlh(@headerHeight, @headerHeight);
+      > .nav {
+        .hlh(@headerHeight, @headerHeight);
+        > .home-link {
+          .hlh(@headerHeight, @headerHeight);
+        }
+      }
+    }
+  }
+}
+
+@keyframes swing_top_dowm {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}

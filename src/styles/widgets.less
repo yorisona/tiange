@@ -1,0 +1,197 @@
+// * 一些通用的“组件”样式
+@charset 'utf-8';
+@import './utils/index.less';
+@import './animation.less';
+
+// * 对话框
+.customer-dialog,
+.tg-dialog-classic {
+  @bgc: #F4F8FF;
+
+  .el-dialog__header {
+    padding: 0 0 0 20px;
+    color: var(--text-color);
+    .hlh(40px, 40px) !important;
+    .bgc(@bgc);
+    .ta-lt();
+    .fs(14px);
+
+    .el-dialog__headerbtn {
+      height: 20px !important;
+    }
+  }
+
+  .el-dialog__body {
+    .mg(0);
+    .pd(0);
+  }
+
+  .el-dialog__footer {
+    .bgc(#f8f8f8);
+    border-radius: 0 0 4px 4px;
+    .hlh(50px, 50px) !important;
+    .pd(0);
+    .ta-c();
+    .dialog-footer {
+      .d-ib();
+      width: 100%;
+      .el-button {
+        .hlh(36px, 36px);
+        .pd(0);
+      }
+    }
+  }
+
+  .el-dialog__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //column-gap: 12px;
+    .bgc(@bgc);
+    .pd(0 20px);
+  }
+}
+
+// * 筛选项表单
+.el-form.filter-form.flex-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  .order-maker(@order: 1) when (@order <= 100) {
+    &.order-@{order}{
+       order: @order;
+    }
+    .order-maker(@order + 1);
+  }
+  > .flex-form-item {
+    .order-maker(1);
+  }
+}
+
+
+.tg-mask.tg-mask-loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2900;
+  .wh(100%, 100%);
+  .bgc(rgba(0, 0, 0, 0.3));
+  .fc(24px, white);
+  .ta-c();
+  display: grid;
+  grid-template-areas:
+    '. . .'
+    '. content .'
+    '. . .';
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  > .tg-mask-loading {
+    grid-area: content;
+    display: grid;
+    row-gap: 20px;
+    >.tg-mask-icon{
+      .ta-c();
+      > svg.icon {
+        animation: spin 1.2s linear infinite;
+        .fs(32px);
+      }
+    }
+    >.tg-mask-content{
+      .fs(14px);
+    }
+  }
+}
+
+
+.role-label-group {
+  display: inline-grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 20px;
+  > .role-label {
+    display: inline-grid;
+    grid-template-areas: '. .';
+    align-items: center;
+    column-gap: 4px;
+    > .role-color {
+      .wh(14px, 12px);
+      .brdr(2px);
+      &:not(.role-op):not(.role-kol){
+        .bgc(attr(data-color));
+      }
+      &.role-op{
+        .bgc(fade(#ff7a36, 30));
+      }
+      &.role-kol{
+        .bgc(rgba(var(--theme-rgb-color), 0.3));
+      }
+    }
+    >.role-name{
+      font-weight: 400;
+      .fc(14px, var(--text-color));
+      line-height: 18px;
+    }
+    >div{
+      .fc(14px, var(--text-color));
+    }
+  }
+}
+
+/** 弹窗 上下居中 */
+.tg-dialog-vcenter {
+  .el-dialog{
+    // display: flex;
+    // flex-direction: column;
+    margin: 0 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-height: calc(100% - 30px);
+  }
+  .el-dialog .el-dialog__body{
+    flex: 1;
+    overflow: auto;
+  }
+  .el-input-group__append,
+  .el-input-group__prepend {
+    color: #6a7b92;
+  }
+}
+
+
+/** 弹窗 上下居中 */
+.tg-dialog-vcenter-new {
+  display: grid;
+  grid-template-areas: '. . .'
+  '. main .'
+  '. . .';
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  .el-dialog{
+    grid-area: main;
+    margin: 0 !important;
+  }
+}
+
+.tg-fg-blue{
+  .fgc(var(--theme-color));
+}
+
+// 冲销标红
+.reverse-red{
+  color: var(--error-color) !important;
+}
+.reverse-orange{
+  color: #fb8500!important
+}
+// 冲销原因/冲销退回原因/退回原因 等
+.reason-dialog-content {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 22px;
+  .pd(24px);
+}

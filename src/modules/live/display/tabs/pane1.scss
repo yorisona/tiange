@@ -1,0 +1,43 @@
+.tg-live-display-detail-tab-pane1 {
+  $primaryColor: #297AFF;
+  position: relative;
+
+  ::v-deep .el-dialog {
+    width: 521px !important;
+
+    .el-dialog__header {
+      padding: 0 20px 0;
+      background: #f6f6f6;
+      .el-dialog__title {
+        height: 22px;
+        display: inline-block;
+        line-height: 40px;
+      }
+    }
+    .el-dialog__body {
+      padding: 0px 0 0px 0 !important;
+      max-height: 660px;
+      // overflow: auto;
+      padding: 0;
+    }
+  }
+
+  .operator-btn {
+    // position: absolute;
+    // right: 18px;
+    // top: -35px;
+    padding: 12px 0;
+    color: $primaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // cursor: pointer;
+
+    // .operator-line {
+    //   height: 13px;
+    //   width: 1.5px;
+    //   background: $primaryColor;
+    //   margin: 0 12px;
+    // }
+  }
+}

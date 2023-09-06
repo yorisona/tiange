@@ -1,0 +1,135 @@
+.payment-detail-dialog {
+  .line-block {
+    height: 1px;
+    width: calc(100% + 18px);
+    background: var(--table-border-color);
+    margin-left: -18px;
+    margin-bottom: 18px;
+    margin-top: 8px;
+  }
+  .table-title {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-third-color);
+  }
+  .settlement-wrapper {
+    width: 640px;
+    padding-right: 18px;
+    margin-bottom: 24px;
+    border: 1px solid var(--table-border-color);
+    border-bottom: none;
+    border-right: none;
+    .table-header {
+      width: 640px;
+      height: 32px;
+      display: flex;
+      line-height: 30px;
+      text-align: center;
+      background: var(--table-thead-th-bg-color);
+      border-bottom: 1px solid var(--table-border-color);
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 12px;
+      .item {
+        border-right: 1px solid var(--table-border-color);
+        width: 115px;
+      }
+    }
+    .table-body {
+      width: 640px;
+      height: 48px;
+      display: flex;
+      line-height: 48px;
+      text-align: center;
+      font-size: 12px;
+      border-bottom: 1px solid var(--table-border-color);
+      .item {
+        position: relative;
+        border-right: 1px solid var(--table-border-color);
+        color: var(--text-color);
+        width: 115px;
+      }
+    }
+    .settlement-num {
+      width: 180px !important;
+    }
+  }
+  .invoice-detail {
+    width: 640px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 24px;
+    border: 1px solid var(--table-border-color);
+    .table-header {
+      width: 1260px;
+      height: 38px;
+      display: flex;
+      line-height: 38px;
+      text-align: center;
+      background: rgba(164, 178, 194, 0.1);
+      border-bottom: 1px solid var(--table-border-color);
+      color: var(--text-color);
+      font-weight: 600;
+      .item {
+        border-right: 1px solid var(--table-border-color);
+        padding: 0 5px;
+      }
+    }
+    .table-body {
+      width: 1260px;
+      height: 50px;
+      display: flex;
+      line-height: 58px;
+      text-align: center;
+      border-bottom: 1px solid var(--table-border-color);
+      .item {
+        position: relative;
+        border-right: 1px solid var(--table-border-color);
+        color: var(--text-color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0 5px;
+      }
+    }
+    .invoice-settle {
+      width: 170px;
+    }
+    .buyer {
+      width: 180px;
+    }
+    .seller {
+      width: 180px;
+    }
+    .invoice-no {
+      width: 100px;
+    }
+    .invoice-date {
+      width: 105px;
+    }
+    .invoice-amount {
+      width: 118px;
+    }
+    .invoice-point {
+      width: 61px;
+    }
+    .no-tax {
+      width: 118px;
+    }
+    .tax-amount {
+      width: 100px;
+    }
+    .invoice-type {
+      width: 80px;
+    }
+    .invoice-attachment {
+      width: 80px;
+      border-right: none !important;
+      .invoice-img {
+        width: 60px;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

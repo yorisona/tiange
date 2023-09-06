@@ -1,0 +1,25 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.customer-dialog.annex-dialog {
+  display: grid;
+  grid-template-areas:
+    '. . .'
+    '. dialog .'
+    '. . .';
+  grid-template-columns: 1fr 444px 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  > .el-dialog {
+    grid-area: dialog;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .link > .cell {
+    .fgc(var(--theme-color));
+  }
+
+  svg.icon {
+    cursor: pointer;
+    font-size: 14px;
+  }
+}

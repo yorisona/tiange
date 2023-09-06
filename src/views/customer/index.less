@@ -1,0 +1,33 @@
+@import '~@/styles/utils/index.less';
+.customer-index-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  .el-card:nth-of-type(2) {
+    flex: auto;
+  }
+  .customer-search-bar {
+    .pd(10px 0);
+  }
+
+  .el-table {
+    svg.icon {
+      .fs(20px);
+    }
+  }
+
+  .shop-name {
+    > svg.icon,
+    > span {
+      .va(middle);
+    }
+  }
+  .table-container {
+    overflow-y: auto;
+    overflow-y: overlay;
+  }
+  .el-table tbody > tr:hover > td,
+  .tg-page-container .el-table tbody > tr.hover-row > td {
+    cursor: pointer;
+  }
+}

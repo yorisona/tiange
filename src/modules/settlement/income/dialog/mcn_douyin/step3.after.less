@@ -1,0 +1,46 @@
+
+.settlement-step3-detail {
+  padding: 0 10px;
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 140px;
+    }
+    .empty-text {
+      margin-top: -15px;
+    }
+  }
+  .item {
+    display: flex;
+    margin-bottom: 10px;
+    .label {
+      color: var(--text-third-color);
+      width: 115px;
+      text-align: right;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .detail {
+      flex: 1;
+      .amount {
+        display: flex;
+        .fee {
+          color: var(--text-color);
+          font-weight: 600;
+          margin-top: 2px;
+        }
+        .download {
+          color: var(--theme-color);
+          margin-left: 10px;
+          margin-top: 3px;
+        }
+      }
+      .text {
+        color: var(--text-third-color);
+        font-size: 12px;
+      }
+    }
+  }
+}

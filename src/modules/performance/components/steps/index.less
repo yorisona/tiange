@@ -1,0 +1,72 @@
+.steps-box {
+  display: flex;
+  //column-gap: 54px;
+  column-gap: 0;
+  .step {
+    cursor: pointer;
+    margin-right: 54px;
+    width: 129px;
+    &.success {
+      .step-target {
+        &:before {
+          content: ' ';
+          display: block;
+          width: 16px;
+          height: 16px;
+          background: url('~@/assets/img/performance/success.png');
+          background-size: cover;
+          margin-right: 6px;
+        }
+      }
+    }
+    &.active {
+      .step-target {
+        background-color: var(--theme-color);
+        color: white;
+        font-size: 14px;
+      }
+    }
+
+    .step-target {
+      position: relative;
+      display: flex;
+      width: 129px;
+      height: 60px;
+      border: 1px solid var(--border-line-div-color);
+      border-radius: 4px;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+
+      &:after {
+        position: absolute;
+        content: ' ';
+        display: block;
+        width: 54px;
+        height: 22px;
+        left: -54px;
+        top: 19px;
+        background: url('~@/assets/img/performance/arrow.png');
+        background-size: cover;
+      }
+    }
+    &:first-child {
+      .step-target:after {
+        display: none;
+      }
+    }
+  }
+  .step-names {
+    margin-top: 8px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 4px;
+    font-size: var(--small-font-size);
+    flex-direction: column;
+    .present {
+      color: var(--theme-color);
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+	"name": "mb",
+	"describe": "商城模块",
+	"version": "1.0.0",
+	"enums": [
+		{
+			"name": "IntegralMReasonType",
+			"describe": "发放原因",
+			"items": [
+				{
+					"key": "new_employment",
+					"label": "新人入职",
+					"value": 11
+				},
+				{
+					"key": "new_employment_training",
+					"label": "新人培训"
+				},
+				{
+					"key": "regular_employment",
+					"label": "正式转正"
+				},
+				{
+					"key": "anniversary_employment",
+					"label": "入职周年"
+				},
+				{
+					"key": "birth_date",
+					"label": "生日专属"
+				},
+				{
+					"key": "event_rewards",
+					"label": "活动奖励"
+				},
+				{
+					"key": "training_sharing",
+					"label": "培训分享"
+				},
+				{
+					"key": "self_improvement",
+					"label": "自我提升"
+				},
+				{
+					"key": "good_man_card",
+					"label": "好人卡"
+				},
+				{
+					"key": "dian_zan_card",
+					"label": "点赞卡",
+					"value": 110
+				},
+				{
+					"key": "praise_card",
+					"label": "好评卡"
+				},
+				{
+					"key": "special_award",
+					"label": "专项奖励"
+				},
+				{
+					"key": "resignation_transfer",
+					"label": "离职转赠"
+				},
+				{
+					"key": "exchange_returned",
+					"label": "兑换退回"
+				},
+				{
+					"key": "other_reward",
+					"label": "其他奖励",
+					"value": 199
+				},
+				{
+					"key": "commodity_exchange",
+					"label": "商品兑换",
+					"value": 21
+				},
+				{
+					"key": "resignation_clearance",
+					"label": "离职清零"
+				},
+				{
+					"key": "other_deduction",
+					"label": "其他扣除",
+					"value": 299
+				},
+				{
+					"key": "accept_m_coins_as_a_gift",
+					"label": "接受M币赠送",
+					"value": 115
+				},
+				{
+					"key": "initiate_m_coin_gift",
+					"label": "发起M币赠送",
+					"value": 23
+				}
+			]
+		},
+		{
+			"name": "ListingStatus",
+			"describe": "上架状态2",
+			"items": [
+				{
+					"key": "THESHELF",
+					"label": "已上架",
+					"value": 1
+				},
+				{
+					"key": "TAKEDOWN",
+					"label": "未上架",
+					"value": 0
+				}
+			]
+		},
+		{
+			"name": "RedemptionStatus",
+			"describe": "兑换状态",
+			"items": [
+				{
+					"key": "ORDERED",
+					"label": "已下单",
+					"value": 0
+				},
+				{
+					"key": "COMPLETED",
+					"label": "已完成",
+					"value": 1
+				},
+				{
+					"key": "RETURNED",
+					"label": "已退回",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "GivingAwayStatus",
+			"describe": "赠送状态",
+			"items": [
+				{
+					"key": "PENDING_REVIEW",
+					"label": "待审核",
+					"value": 2
+				},
+				{
+					"key": "COMPLETED",
+					"label": "已完成",
+					"value": 1
+				},
+				{
+					"key": "RETURNED",
+					"label": "已退回",
+					"value": 0
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,188 @@
+@charset 'utf-8';
+
+
+.cost-register-drawer {
+    .el-drawer {
+        width: 520px !important;
+    }
+    .cost-register-drawer-body {
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        .cost-register-drawer-content {
+            overflow-y: auto;
+            overflow: overlay;
+            padding-top: 18px;
+            padding-bottom: 24px;
+            .cost-register-customer-info {
+                margin-top: 6px;
+                margin-bottom: 18px;
+            }
+            .cost-register-info {
+                border-radius: 2px;
+                border: 1px solid fade(#A4B2C2, 30);
+                padding: 0 18px 18px 18px;
+                margin-bottom: 18px;
+                .cost-register-info-header {
+                    height: 40px;
+                    padding: 0 18px;
+                    margin: 0 -18px;
+                    background: fade(#A4B2C2, 9);
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+        .cost-register-drawer-footer {
+            padding-right: 6px;
+            flex-shrink: 0;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: #F4F8FF;
+            .tg-btn {
+                margin-right: 18px;
+            }
+        }
+        .el-form {
+            margin: 0 30px 0 30px;
+            .el-form-item {
+                .el-radio-group {
+                    column-gap: 0;
+                }
+                margin-bottom: 0;
+                .el-form-item__label {
+                    padding: 0;
+                    margin-top: 18px;
+                    line-height: 16px;
+                    font-size: 12px;
+                    color: #6a7b92;
+                    .el-popover__reference {
+                        font-size: 16px;
+                        position: relative;
+                        bottom: -2px;
+                    }
+                }
+                .el-form-item__content {
+                    margin-top: 6px;
+                }
+                .el-radio+.el-radio {
+                    margin-left: 24px;
+                }
+                .el-textarea__inner {
+                    height: 94px !important;
+                }
+                .el-input-group__append {
+                    width: 38px;
+                    text-align: center;
+                  padding: 0 10px;
+                  background-color: #f6f6f6;
+                  color: var(--text-third-color);
+                }
+                .el-date-editor {
+
+                    width: 100%;
+                }
+                .el-select {
+                    width: 100%;
+                }
+            }
+            .required {
+                .el-form-item__label {
+                    &::before {
+                        content: '*';
+                        color: var(--error-color);
+                    }
+                }
+            }
+            .v-task-bg {
+                position: relative;
+                margin-top: 18px;
+                padding: 0 18px 18px 18px;
+                border: 1px dashed fade(#3c5269, 30);
+                border-radius: 2px;
+            }
+            .drawer-item-radio-container {
+                padding: 0 12px;
+                display: inline-block;
+                .el-radio__label {
+                    color: var(--text-color);
+                }
+            }
+            .company-kol-desc {
+                line-height: 16px;
+                margin-top: 6px;
+                color: #6A7B92;
+                font-size: 12px;
+                > .tg-btn-link {
+                    font-size: 12px;
+                }
+            }
+            .drawer-item-kol {
+                .el-select {
+                    width: 260px;
+                }
+                .drawer-item-radio-container {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+
+    .drawer-item-bg {
+        overflow: hidden;
+        margin-top: 6px;
+        padding: 0px 18px 18px 18px;
+        background: fade(#A4B2C2, 9);
+        border-radius: 2px;
+    }
+    .drawer-item-add {
+        display: block;
+        line-height: 32px;
+        text-align: center;
+        margin-top: 18px;
+        border-radius: 3px;
+        color: rgba(var(--theme-rgb-color), 0.9);
+        border: 1px dashed fade(#325269, 30);
+        &:hover {
+            color: fade(#2570F1, 90);
+            border: 1px dashed fade(#2570F1, 90);
+        }
+        &:active {
+            color:#2570F1;
+            border: 1px dashed #2570F1;
+        }
+    }
+
+    .cost-register-close {
+        line-height: 14px;
+        width: 14px;
+        right: -6px;
+        top: -6px;
+        font-size: 16px;
+        position: absolute;
+        > .icon {
+            &:last-of-type {
+                display: none;
+            }
+        }
+        &:hover {
+            > .icon {
+                &:first-of-type {
+                    display: none;
+                }
+                &:last-of-type {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.tg-cost-register-popover-260 {
+    width: 260px !important;
+}

@@ -1,0 +1,277 @@
+.form-wrapper {
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+  padding: 18px 20px 32px 20px;
+  overflow: overlay;
+  .brand-check-box {
+    height: 28px;
+    line-height: 28px;
+    margin-left: 8px;
+    margin-right: 18px;
+    /deep/ .el-checkbox__label {
+      padding-left: 6px;
+      font-size: 12px;
+      height: 28px;
+      line-height: 28px;
+    }
+  }
+  .el-form .el-form-item--mini {
+    &.form-item-details {
+      margin-bottom: 0;
+    }
+    &.input-item {
+      /deep/.el-form-item__content {
+        .el-input input,
+        .el-checkbox__label {
+          font-family: PingFang SC, Microsoft Yahei, Microsoft Sans Serif, Hiragino Sans GB, Tahoma,
+            Arial, serif;
+          font-weight: 400;
+        }
+      }
+    }
+    /deep/ .el-radio {
+      height: 28px;
+    }
+  }
+  /deep/ .opinion-upload-box {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    .tg-btn {
+      height: 28px;
+    }
+    .file-list-item {
+      line-height: 16px;
+      // width: 630px !important;
+      grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+      .my-line-clamp {
+        max-width: 120px !important;
+        font-size: 12px;
+        color: var(--text-color);
+      }
+    }
+  }
+  .line {
+    height: 1px;
+    background-color: #d8d8d8;
+    margin-top: 16px;
+  }
+  .line-deliver {
+    display: flex;
+    &__left {
+      width: 70%;
+      border-right: 1px dashed #cccccc;
+      padding-right: 21.5px;
+      margin-right: 21.5px;
+    }
+  }
+  .el-form-item {
+    display: flex;
+    margin-right: 0;
+    /deep/ .el-form-item__content {
+      flex: 1;
+    }
+  }
+  .project-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 2px 12px 0;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    div {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    .shrink-btn {
+      width: 120px;
+      display: inline-block;
+      color: var(--theme-color);
+      cursor: pointer;
+      text-align: right;
+      &:hover {
+        .el-icon-arrow-down,
+        .el-icon-arrow-up {
+          color: var(--theme-color);
+        }
+      }
+      .el-icon-arrow-down,
+      .el-icon-arrow-up {
+        color: #a4b2c2;
+      }
+    }
+  }
+
+  .first-line {
+    display: grid;
+    grid-template-columns: 507px 1fr;
+    /deep/ .el-form-item {
+      display: flex;
+      margin-right: 0;
+      .el-form-item__content {
+        flex: 1;
+      }
+    }
+  }
+
+  /deep/ .el-checkbox__inner {
+    width: 12px;
+    height: 12px;
+    &:after {
+      top: 1px;
+      left: 4px;
+    }
+  }
+  /deep/.el-form .el-form-item--mini .el-textarea > textarea {
+    padding: 6px 12px 12px !important;
+  }
+  .project-content {
+    /deep/.el-form-item__label {
+      width: 85px !important;
+    }
+    .replenish {
+      /deep/.el-form-item__label {
+        width: 70px !important;
+      }
+    }
+  }
+  .upload-btn-wrap {
+    display: inline-block;
+    margin-right: 8px;
+  }
+  .file-list-box {
+    margin-left: 80px;
+    .tg-file-item {
+      font-size: 12px;
+      margin-bottom: 8px;
+      color: var(--text-color);
+      /deep/.file-icon > svg {
+        font-size: 16px;
+      }
+      /deep/ .file-icon {
+        flex: none;
+        margin-right: 2px;
+        font-size: 12px;
+      }
+      /deep/ .downlink {
+        font-size: 12px;
+      }
+      /deep/ .file-remove-icon {
+        font-size: 14px;
+      }
+    }
+  }
+  .file-tips {
+    height: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--text-third-color);
+    line-height: 16px;
+  }
+  .dashed-line {
+    background-image: linear-gradient(to right, #e5e5e5 45%, white 0%);
+    background-position: bottom;
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+    width: 752px;
+    height: 1px;
+    margin-bottom: 18px;
+  }
+  .input-line-text {
+    line-height: 26px;
+    height: 28px !important;
+    /deep/ .el-input__inner {
+      -webkit-appearance: none;
+      background-color: transparent;
+      background-image: none;
+      border: 0; //改成0，边框就消失了！
+      width: 100%;
+      line-height: 20px;
+      height: 20px !important;
+      text-align: left;
+      border-radius: 0;
+      border-bottom: solid 0.5px var(--text-color) !important;
+    }
+    /deep/ .el-input__count-inner {
+      background-color: transparent;
+    }
+  }
+  .el-radio-group {
+    column-gap: 0;
+    .el-radio {
+      margin-right: 18px;
+    }
+  }
+  .el-checkbox-group {
+    margin-top: 3px;
+    .el-checkbox {
+      height: 24px;
+      line-height: 24px;
+      margin-left: 0;
+      margin-right: 18px;
+      /deep/ .el-checkbox__label {
+        padding-left: 6px;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .base-title {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .settlementList-title {
+    font-size: 14px;
+    color: #6a7b92;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+  /deep/ .el-form--inline .el-form-item {
+    .content-name-select {
+      .el-input__inner {
+        padding-right: 35px;
+      }
+    }
+  }
+  /deep/ .el-input--prefix .el-input__inner {
+    padding-left: 12px;
+  }
+  /deep/ .el-date-editor.el-input--prefix .el-input__inner {
+    padding-left: 28px;
+  }
+  /deep/ .el-input--suffix .el-input__inner {
+    padding-right: 0;
+  }
+  /deep/ .el-button--text {
+    color: var(--theme-color);
+    padding: 0;
+    text-align: center;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 18px;
+  }
+  // /deep/.el-form .el-form-item .el-form-item__error {
+  //   line-height: 6px;
+  // }
+  /deep/.textarea-form-item .el-form-item__error {
+    line-height: 15px !important;
+  }
+  /deep/.tg-btn.tg-btn-small,
+  .tg-btn:not(.tg-btn-large):not(.tg-btn-mini) {
+    border-radius: 2px !important;
+  }
+}
+.form-footer {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  background-color: #f4f8ff;
+  button {
+    margin-right: 12px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

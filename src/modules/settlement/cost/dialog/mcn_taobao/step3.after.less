@@ -1,0 +1,160 @@
+@charset 'utf-8';
+
+
+.tg-cost-mcn-taobao-step3-after-container {
+  .step2-cost-layout-content {
+    column-gap: 16px !important;
+    row-gap: 16px !important;
+    grid-template-rows: 118px 300px 56px !important;
+  }
+  .adjust-account-content {
+    grid-template-rows: 44px 276px !important;
+  }
+  .expenditure-cost-list {
+    padding: 0 18px;
+    overflow-y: overlay;
+    .expenditure-cost-list-row {
+      padding: 18px 0;
+      border-bottom: 1px dashed rgba(var(--tip-icon-rgb-color), 0.3);
+      .cost-company-name {
+        color: var(--text-color);
+        font-weight: 600;
+      }
+      .commission-info {
+        margin-top: 18px;
+        display: flex;
+        font-size: 12px;
+        .commission-info-detail {
+          .commission-amount {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-color);
+          }
+          .commission-amount-desc {
+            color: var(--text-third-color);
+          }
+        }
+      }
+      .adjust-info {
+        margin-top: 18px;
+        font-size: 12px;
+        .adjust-info-flex {
+          display: flex;
+          .adjust-info-list {
+            .adjust-info-list-row {
+              display: flex;
+              margin-top: 12px;
+              font-size: 12px;
+              > span {
+                // min-width: 20px;
+                flex-shrink: 0;
+              }
+              .adjust-row-detail {
+                > div {
+                  &:first-of-type {
+                    color: var(--text-color);
+                  }
+                  &:last-of-type {
+                    margin-top: 2px;
+                    color: var(--text-third-color);
+                  }
+                }
+              }
+              &:first-of-type {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+      &:last-of-type {
+        border: none;
+      }
+    }
+    .label {
+      color: var(--text-third-color);
+      width: 70px;
+      display: inline-block;
+      text-align: right;
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+  }
+
+  .tg-cost-mcn-taobao-files {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .income-files {
+      padding: 18px;
+      // height: 151px;
+      border-bottom: 1px solid rgba(var(--tip-icon-rgb-color), 0.3);
+      .titles {
+        font-size: 12px;
+        color: var(--text-third-color);
+        display: block;
+        line-height: 16px;
+      }
+    }
+    .settlement-files {
+      // height: 223px;
+      // min-width: 600px;
+      overflow-y: overlay;
+      padding: 18px 0 18px 18px;
+      .title {
+        font-size: 12px;
+        color: var(--text-second-color);
+        margin-bottom: 6px;
+        // &::before {
+        //   content: '*';
+        //   color: #ec1e1e;
+        // }
+      }
+      .title-before::before {
+        // content: '*';
+        // color: #ec1e1e;
+      }
+      .uploaded-file-btn-icon,
+      .uploaded-file-download {
+        margin-top: 2px !important;
+      }
+    }
+    .uploaded-file {
+      display: flex;
+      .uploaded-file-btn {
+        display: flex;
+        word-break: break-all;
+        color: var(--text-color);
+        cursor: auto;
+        flex-grow: 1;
+        // &:hover {
+        //   color: var(--theme-color);
+        // }
+        .uploaded-file-btn-icon {
+          margin-right: 2px;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          flex-shrink: 0;
+        }
+      }
+      .uploaded-file-download {
+        margin-left: 12px;
+        margin-top: 1px;
+      }
+      .uploaded-file-del {
+        visibility: hidden;
+      }
+      &:hover {
+        .uploaded-file-del {
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .card-layout-right {
+    .card-layout-bd {
+      overflow-y: hidden;
+    }
+  }
+}

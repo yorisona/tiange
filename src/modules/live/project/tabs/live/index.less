@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+.tg-live-project-live,.tg-live-display-page {
+    // padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: overlay;
+  .input-with-select .el-input-group__prepend {
+    background-color: #fff;
+    width: 88px;
+    .el-input .el-input__inner {
+      border-color: transparent;
+    }
+  }
+  .tg-project-live-schedule {
+    background-color: white;
+    .tg-live-schedule-calendar {
+      padding: 0;
+      .calender {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(167px, 1fr));
+        grid-template-rows: repeat(6, auto);
+        justify-content: left;
+        padding: 1px 0 19px 1px;
+        height: calc(100% - 24px);
+        margin: 0 18px ;
+        overflow: auto;
+        overflow: overlay;
+      }
+    }
+  }
+}

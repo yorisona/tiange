@@ -1,0 +1,54 @@
+.form-wrapper {
+  padding: 18px 0;
+  .upload-box {
+    display: flex;
+    .file-tips {
+      margin-left: 12px;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--text-third-color);
+    }
+    /deep/.el-loading-spinner {
+      .circular {
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+  /deep/.company-select .el-input {
+    .el-input__suffix {
+      display: none;
+    }
+    .el-input__inner {
+      padding-right: 10px;
+    }
+  }
+  // /deep/.el-form .el-form-item .el-form-item__error {
+  //   line-height: 6px;
+  // }
+  /deep/.el-textarea .el-input__count {
+    bottom: 7px !important;
+  }
+  /deep/.tg-btn.tg-btn-small,
+  .tg-btn:not(.tg-btn-large):not(.tg-btn-mini) {
+    border-radius: 2px !important;
+  }
+  .file-list-box {
+    margin-top: 4px;
+    width: 750px;
+  }
+  .upload-file-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /deep/ .file-item {
+      width: 360px;
+      .file-name {
+        flex: none;
+        max-width: 300px;
+      }
+    }
+  }
+}

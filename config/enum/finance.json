@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "type": "enum",
+  "describe": "财务模块相关定义",
+  "enums": [
+    {
+      "name": "NewCostSharingType",
+      "describe": "新增费用分摊类型",
+      "items": [
+        {
+          "key": "HYDROPOWER",
+          "label": "水电",
+          "value": 43
+        },
+        {
+          "key": "BROADBAND",
+          "label": "宽带",
+          "value": 70
+        },{
+          "key": "CLEANING",
+          "label": "保洁",
+          "value": 107
+        },
+        {
+          "key": "PROPERTY_FEE",
+          "label": "税金及附加",
+          "value": 204
+        },
+        {
+          "key": "LABOUR_UNION_EXPENSES",
+          "label": "工会经费",
+          "value": 137
+        },
+        {
+          "key": "OFFICE_EXPENSES",
+          "label": "办公费",
+          "value": 46
+        },
+        {
+          "key": "DECORATION_FEE",
+          "label": "基础装修费",
+          "value": 50
+        },
+        {
+          "key": "MAN_POWER",
+          "label": "人力成本",
+          "value": 1
+        },
+        {
+          "key": "RENT",
+          "label": "房租分摊",
+          "value": 3
+        },
+        {
+          "key": "OTHER",
+          "label": "其他费用",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}

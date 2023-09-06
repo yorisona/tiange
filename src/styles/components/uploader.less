@@ -1,0 +1,107 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+// 上传组件(图片)
+.tg-uploader {
+  @size: 90px;
+  .d-ib();
+  .wh(@size, @size);
+  .pos-r();
+  .brdr(4px);
+  &:hover .tg-circle-close-btn {
+    opacity: 1;
+    animation-name: btn-fade-in;
+    animation-timing-function: ease-in;
+    animation-duration: 150ms;
+    pointer-events: all;
+  }
+
+  .el-upload-dragger {
+    .wh(@size, @size);
+    transition: border-color 300ms ease-in-out;
+    border-width: 1px;
+    border-color: rgba(var(--tip-icon-rgb-color), 0.5);
+  }
+  &:not(.uploaded) .el-upload-dragger {
+    border-style: dashed;
+  }
+
+  &.uploaded .el-upload-dragger {
+    border-style: solid;
+  }
+
+  .tg-circle-close-btn {
+    opacity: 0;
+    pointer-events: none;
+    .pos-atr(100; -8px; -8px);
+    .fs(16px);
+    cursor: pointer;
+    animation-name: btn-fade-out;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+  }
+
+  .el-upload img {
+    display: block;
+    .wh(@size, @size);
+  }
+
+  .upload-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .wh(@size, @size);
+    .fc(12px, var(--text-second-color));
+    transition: color 300ms ease-in-out;
+    > svg.icon {
+      .fc(36px, var(--text-second-color));
+      .mgb(6px);
+      transition: color 300ms ease-in-out;
+    }
+    > span {
+      .lh(normal);
+    }
+  }
+
+  &:hover {
+    .el-upload-dragger {
+      border-color:var(--theme-color);
+    }
+    .upload-empty {
+      color:var(--theme-color);
+      > svg.icon {
+        color:var(--theme-color);
+      }
+    }
+  }
+
+  &.noborder > .el-upload {
+    border-color: white;
+  }
+}
+
+.tg-file-uploader {
+  display: inline-flex;
+  .el-upload-dragger {
+    .wh(auto, 32px);
+    .no-brd();
+  }
+}
+
+@keyframes btn-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes btn-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

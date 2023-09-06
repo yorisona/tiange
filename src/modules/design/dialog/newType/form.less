@@ -1,0 +1,192 @@
+.form-wrapper {
+  .el-form .el-form-item--mini {
+    /deep/.el-form-item__content .el-input input {
+      font-family: PingFang SC, Microsoft Yahei, Microsoft Sans Serif, Hiragino Sans GB, Tahoma,
+        Arial, serif;
+    }
+  }
+  padding: 18px 0 32px 18px;
+  overflow: overlay;
+  .el-checkbox-group {
+    margin-top: 3px;
+   .el-checkbox {
+      height: 24px;
+      line-height: 24px;
+      margin-left: 0;
+      margin-right: 18px;
+     /deep/ .el-checkbox__label {
+        padding-left: 6px;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+  .base-title {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .settlementList-title {
+    font-size: 14px;
+    color: #6a7b92;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+  /deep/ .el-form--inline .el-form-item {
+    .content-name-select {
+      .el-input__inner {
+        padding-right: 35px;
+      }
+    }
+  }
+  /deep/ .el-input--prefix .el-input__inner {
+    padding-left: 12px;
+  }
+  /deep/ .el-input--suffix .el-input__inner {
+    padding-right: 0;
+  }
+  /deep/ .el-button--text {
+    color: var(--theme-color);
+    padding: 0;
+    text-align: center;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 18px;
+  }
+  .list-wrapper {
+    &.addition {
+      margin-left: 70px;
+      margin-top: 6px;
+    }
+    //margin-bottom: 12px;
+    border: 1px solid var(--table-border-color);
+    border-left-color: transparent;
+    border-bottom: 0;
+    width: 588px;
+    .header-box {
+      height: 32px;
+      display: flex;
+      line-height: 32px;
+      justify-content: space-between;
+      width: 588px;
+      border-bottom: 1px solid var(--table-border-color);
+      background: rgba(164, 178, 194, 0.1);
+      .header-item {
+        text-align: center;
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 12px;
+        border-left: 1px solid var(--table-border-color);
+        .star {
+          color: var(--error-color);
+        }
+      }
+      .invoice-img {
+        width: 60px;
+        border-left: none;
+      }
+    }
+    .body-box {
+      height: 44px;
+      display: flex;
+      justify-content: space-between;
+      width: 588px;
+      border-bottom: 1px solid var(--table-border-color);
+      &.add {
+        border-left: 1px solid var(--table-border-color);
+        justify-content: center;
+        height: 32px;
+        line-height: 32px;
+        .tg-btn {
+          margin-top: 4px;
+          width: 200px;
+          text-align: center;
+          justify-content: center;
+          border-color: transparent;
+          color:var(--theme-color)!important;
+          /deep/.ico-btn-add {
+            fill:var(--theme-color)!important;
+          }
+          background-color: transparent !important;
+        }
+      }
+      /deep/ .body-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-left: 1px solid var(--table-border-color);
+        .el-form-item {
+          margin-bottom: 0;
+          margin-right: 0px;
+          .el-input {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .content-name {
+      width: 290px;
+    }
+    .delivery-way {
+      //width: 180px;
+      flex: 1;
+    }
+    .delivery-delete {
+      width: 120px;
+      color: var(--text-third-color);
+      .ico-btn {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+  .addition-div {
+    margin-top: 12px;
+    .content-name {
+      width: 148px;
+    }
+    .delivery-way {
+      width: 120px;
+      &.days {
+        width: 106px;
+      }
+      /deep/ .el-input__inner {
+        padding-right: 25px !important;
+      }
+    }
+    .delivery-delete {
+      width: 69px;
+    }
+    /deep/ .el-form-item__label {
+      text-align: left;
+      margin-left: 12px;
+    }
+  }
+  // /deep/.el-form .el-form-item .el-form-item__error {
+  //   line-height: 6px;
+  // }
+  /deep/.textarea-form-item .el-form-item__error {
+    line-height: 15px !important;
+  }
+  /deep/.tg-btn.tg-btn-small,
+  .tg-btn:not(.tg-btn-large):not(.tg-btn-mini) {
+    border-radius: 2px !important;
+  }
+}
+.form-footer {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  background-color: #f4f8ff;
+  button {
+    margin-right: 12px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

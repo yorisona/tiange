@@ -1,0 +1,121 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+.contract-form-modal {
+  .el-dialog__body {
+    .dialog-content {
+      .content-body {
+        .plan-table-wrap {
+          .add-table-line {
+            height: 32px;
+            border: #d5e1f3 dashed 1px;
+            text-align: center;
+            line-height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #396fff;
+            i {
+              margin-right: 6px;
+              font-size: 15px;
+              color: #396fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .attachment-icon {
+    width: 25px;
+    vertical-align: middle;
+  }
+  .el-select-dropdown__wrap {
+    max-width: 778px;
+  }
+
+  .subject {
+    width: 123px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 20px;
+    text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.06);
+  }
+  .contract-checkbox-group {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 108px));
+    > .el-checkbox {
+      .mg(0);
+    }
+  }
+
+  .upload-btn-wrap {
+    .d-ib();
+  }
+  .upload-tips {
+    .fc(12px, var(--text-third-color));
+  }
+
+  // 收款计划部分
+  .plan-item {
+    .pos-r();
+    .bgc(#f6f6f6);
+    .brdr(4px);
+    .pdb(1px);
+    .pdl(16px);
+    .pdr(16px);
+    .pdt(10px);
+    > .close-btn {
+      display: flex;
+      .bgc(white);
+      .wh(16px, 16px);
+      .pos-atr(100; -7px; -8px);
+      .brdr(50%);
+      cursor: pointer;
+      &:hover {
+        > svg.icon {
+          .fgc(var(--error-color));
+        }
+      }
+      > svg.icon {
+        .fs(16px);
+        .fgc(#ccc);
+      }
+    }
+
+    > .settlement-detail-item-grid {
+      width: 638px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  .plan-add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hlh(36px, 36px);
+    .brd(1px;dashed;#dcdfe6);
+    cursor: pointer;
+    .brdr(4px);
+    .mgb();
+    > svg.icon {
+      font-size: 10px;
+      font-weight: 600;
+      .fgc(var(--theme-color));
+    }
+    > span {
+      margin-left: 2px;
+      .fgc(var(--theme-color));
+    }
+    &:hover {
+      border-color:var(--theme-color);
+    }
+  }
+}
+
+.frame_contract_popper-custoner {
+  min-width: 522px;
+}

@@ -1,0 +1,182 @@
+.new-initiate-invoice {
+  padding: 18px 0 18px 18px;
+  max-height: 590px;
+  overflow-y: auto;
+  overflow-y: overlay;
+  & .basic-info {
+    & .title {
+      margin-bottom: 12px;
+    }
+    & .common-input,
+    & .common-select {
+      margin-bottom: 18px;
+      margin-right: 18px;
+      & .el-input__inner {
+        width: 170px;
+      }
+    }
+    & .common-date-picker {
+      margin-bottom: 12px;
+      & .el-date-editor {
+        width: 170px;
+      }
+      & .el-input__inner {
+        width: 170px;
+      }
+    }
+    .el-form-item:nth-child(3n) {
+      margin-right: 0;
+    }
+    & .invoice-upload-list {
+      width: 688px;
+      & .file-item {
+        width: 392px;
+      }
+      & .file-name {
+        max-width: 350px;
+      }
+    }
+  }
+  & .charge-details {
+    margin-top: 8px;
+    margin-right: 18px;
+    & .charge-table {
+      border: 1px solid var(--table-border-color);
+      & .charge-table-head {
+        & .charge-table-tr {
+          display: flex;
+          & .charge-table-td {
+            width: 196px;
+            line-height: 32px;
+            background: rgba(164, 178, 194, 0.1);
+            border-left: 1px solid var(--table-border-color);
+            border-bottom: 1px solid var(--table-border-color);
+            padding-left: 24px;
+            & .required {
+              color: var(--error-color);
+            }
+            & .label {
+              color: var(--text-color);
+              font-size: 12px;
+              font-weight: 600;
+            }
+            &.delete {
+              width: auto;
+              flex: 1;
+              padding-left: 0;
+              text-align: center;
+            }
+            &:first-child {
+              border-left: none;
+            }
+          }
+        }
+      }
+      & .charge-table-body {
+        & .charge-table-tr {
+          display: flex;
+          & .charge-table-td {
+            width: 196px;
+            line-height: 42px;
+            border-left: 1px solid var(--table-border-color);
+            border-bottom: 1px solid var(--table-border-color);
+            text-align: center;
+            padding: 0 12px;
+            &:first-child {
+              border-left: none;
+            }
+            &.delete {
+              width: auto;
+              flex: 1;
+              color: var(--text-third-color);
+              & .ico-btn {
+                font-size: 16px;
+                cursor: pointer;
+                color: var(--text-third-color);
+                &[disabled] {
+                 color: var(--disabled-color);
+                }
+                &:hover {
+                  color: var(--error-color);
+                }
+              }
+            }
+          }
+        }
+      }
+      & .charge-table-btn {
+        line-height: 32px;
+        text-align: center;
+        & button {
+          color: var(--theme-color);
+          font-size: 12px;
+          &:hover {
+            color: var(--theme-color);
+          }
+          &.is-disabled {
+            color: #c0c4cc;
+            font-size: 12px;
+            &:hover {
+              color: #c0c4cc;
+            }
+          }
+        }
+      }
+    }
+  }
+  & .charge-company {
+    margin-top: 12px;
+    .contract-type-explain {
+      padding-top: 3px;
+      .el-button.el-button--mini, .el-button.el-button--mini.is-round {
+        border: none;
+        padding: 0 4px;
+        height: 20px;
+      }
+    }
+    & .common-input-textarea {
+      display: block;
+      .el-form-item__content {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+  .charge-tools {
+    display: grid;
+    grid-template-columns: auto 240px auto 200px auto 1fr;
+    align-items: center;
+    margin: 12px 0;
+    grid-column-gap: 10px;
+  }
+  & .title {
+    color: var(--text-color);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    .tg-btn-link {
+      margin-left: 12px;
+    }
+  }
+  .file-tips {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--text-third-color);
+    //line-height: 1;
+    margin-top: -2px;
+    line-height: 26px;
+    margin-left: 12px;
+  }
+}
+.qnmlgb-sss,
+.send-type-option {
+  min-width: 170px !important;
+  width: auto !important;
+}
+.quick-add-dialog {
+  .tg-btn {
+    font-size: 12px !important;
+    height: 28px !important;
+    line-height: 26px !important;
+  }
+}

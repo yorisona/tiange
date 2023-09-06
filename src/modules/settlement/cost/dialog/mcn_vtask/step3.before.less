@@ -1,0 +1,137 @@
+@charset 'utf-8';
+
+
+.tg-cost-mcn-vtask-step3-before-container {
+  .step2-cost-layout-content {
+    grid-template-rows: 24px 440px 20px !important;
+  }
+    .expenditure-cost-list {
+        padding: 0 18px;
+        overflow-y: overlay;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 18px;
+        .expenditure-cost-list-row {
+            padding: 18px 0 12px;
+            border-bottom: 1px dashed rgba(var(--text-third-rgb-color), 0.30);
+            .cost-company-info {
+                display: flex;
+                .cost-company-name {
+                    color: var(--text-color);
+                    font-weight: 600;
+                }
+                .cost-list-company-operator {
+                    margin-left: 12px;
+                    .kol-data {
+                        color: var(--text-third-color);
+                      font-size: 12px;
+                    }
+                }
+            }
+
+            .settlement-amount-info {
+                margin-top: 12px;
+                .value {
+                    color: var(--text-color);
+                    font-weight: 600;
+                }
+            }
+            .commission-info {
+                margin-top: 12px;
+                display: flex;
+              font-size: 12px;
+                .commission-info-detail {
+                    .commission-amount {
+                        font-weight: 600;
+                        color: var(--text-color);
+                      font-size: 14px;
+                    }
+                    .commission-amount-desc {
+                        color: var(--text-third-color);
+                    }
+                }
+            }
+            .adjust-info {
+              font-size: 12px;
+                margin-top: 12px;
+                .adjust-info-flex {
+                    display: flex;
+                    .adjust-info-list {
+                        .adjust-info-list-row {
+                            display: flex;
+                            margin-top: 12px;
+                            > span {
+                                // min-width: 20px;
+                                flex-shrink: 0;
+                            }
+                            .adjust-row-detail {
+                            > div {
+                                &:first-of-type {
+                                    color: var(--text-color);
+                                }
+                                &:last-of-type {
+                                    color: var(--text-third-color);
+                                }
+                            }
+                            }
+                            &:first-of-type {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-of-type {
+                border: none;
+            }
+        }
+        .label {
+            color: var(--text-third-color);
+            width: 70px;
+            display: inline-block;
+            text-align: right;
+            flex-shrink: 0;
+          font-size: 12px;
+        }
+    }
+
+    .tg-cost-mcn-taobao-files {
+        display: flex;
+        align-items: center;
+        margin-left: 18px;
+        .titles {
+             font-size: 12px;
+             color: var(--text-third-color)
+        }
+        .uploaded-file {
+            display: flex;
+            .uploaded-file-btn {
+              display: flex;
+              word-break: break-all;
+              color: var(--text-color);
+              cursor: auto;
+              // &:hover {
+              //   color: var(--theme-color);
+              // }
+              .uploaded-file-btn-icon {
+                margin-right: 2px;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                flex-shrink: 0;
+              }
+            }
+            .uploaded-file-download {
+              margin-left: 12px;
+            }
+            .uploaded-file-del {
+              visibility: hidden;
+            }
+            &:hover {
+              .uploaded-file-del {
+                visibility: visible;
+              }
+            }
+          }
+    }
+}

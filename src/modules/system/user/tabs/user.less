@@ -1,0 +1,54 @@
+@backgroundColor: #f4f5f6;
+
+.tg-user-page-tab-user {
+  border-top: 1px solid #ebebeb;
+
+  .con-list-wrap {
+    // border-top: 10px solid @backgroundColor;
+    padding: 10px 20px;
+  }
+
+  /deep/.status-style {
+    // background-color: #f0f4fd;
+    color: #666;
+    width: 58px;
+    height: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 12px;
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+    .stop {
+      //background-color: #fef4ee;
+      color: #ff7a36;
+    }
+  }
+  .status-style-stop {
+    background-color: #fef4ee;
+  }
+}
+
+.contract-sale-chance-popover-user .contract-sale-chance ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contract-sale-chance-popover-user .contract-sale-chance li {
+  display: inline-block;
+  background: #f3f4f6;
+  margin: 3px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.contract-sale-chance-popover-user .contract-sale-chance li:last-child {
+  border-bottom: none;
+}
+
+.contract-sale-chance-popover-user {
+  max-width: 338px;
+  min-width: 78px;
+}

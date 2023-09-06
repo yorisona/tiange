@@ -1,0 +1,214 @@
+@charset 'utf-8';
+
+
+.rebates-register-drawer {
+    .el-drawer {
+        width: 520px !important;
+    }
+    .rebates-register-drawer-body {
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        .rebates-register-drawer-content {
+            overflow-y: auto;
+            overflow: overlay;
+            padding-top: 18px;
+            padding-bottom: 24px;
+            .rebates-register-customer-info {
+                margin-top: 6px;
+                margin-bottom: 18px;
+            }
+        }
+        .rebates-register-drawer-footer {
+            padding-right: 6px;
+            flex-shrink: 0;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: #F4F8FF;
+            .tg-btn {
+                margin-right: 18px;
+            }
+        }
+        .el-form {
+            .form-section {
+                padding: 0 30px;
+            }
+            .el-form-item {
+                margin-bottom: 0;
+                .el-form-item__label {
+                    padding: 0;
+                    margin-top: 18px;
+                    line-height: 16px;
+                    font-size: 12px;
+                    color: #6a7b92;
+                }
+                .el-form-item__content {
+                    margin-top: 6px;
+                }
+                .el-input-group__append {
+                    width: 38px;
+                    text-align: center;
+                  padding: 0 10px;
+                  background-color: #f6f6f6;
+                  color: var(--text-third-color);
+                }
+                .el-date-editor {
+
+                    width: 100%;
+                }
+            }
+            .el-upload {
+                width: 90px;
+                height: 90px;
+                line-height: 0px;
+                .upload-custom-content {
+                    > i {
+                        line-height: 28px;
+                        margin-top: 21px;
+                        margin-bottom: 8px;
+                        color: #6A7B92;
+                    }
+                    > div {
+                        font-size: 12px;
+                        color: #6A7B92;
+                        line-height: 16px;
+                    }
+                }
+
+            }
+            .el-upload-list {
+                .el-upload-list__item {
+                    .el-upload-list__item-status-label {
+                        display: none;
+                        // .el-icon-upload-success {
+                        //     position: absolute;
+                        //     right: 15px;
+                        //     top: 11px;
+                        //     margin-top: 0;
+                        // }
+                    }
+                }
+            }
+            .el-upload-list__item {
+                width: 90px;
+                height: 90px;
+                line-height: 90px;
+            }
+            .el-progress {
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                .el-progress-circle {
+                    width: 70px !important;
+                    height: 70px !important;
+                }
+            }
+            .drawer-upload {
+                position: relative;
+
+                .el-upload--picture-card {
+                    border-color: fade(#A4B2C2, 50);
+                    border-radius: 2px;
+                    background: white;
+                    .upload-custom-content {
+                        > svg {
+                            width: 28px;
+                            height: 28px;
+                            color: #6A7B92;
+                            padding: 4px;
+                            box-sizing: content-box;
+                            margin-top: 17px;
+                            margin-bottom: 4px;
+                        }
+                        > div {
+                            color: #6A7B92;
+                        }
+                    }
+                    &:hover {
+                        border-color: var(--theme-color);
+                        .upload-custom-content {
+                            > svg {
+                                color: var(--theme-color);
+                            }
+                            > div {
+                                color: var(--theme-color);
+                            }
+                        }
+
+                    }
+                }
+            }
+            .bank-card-uploaded {
+                position: relative;
+                height: 90px !important;
+                .el-upload--picture-card {
+                    // display: none;
+                    visibility: hidden;
+                }
+                .el-upload-list__item {
+                    border: 1px solid #A4B2C2;
+                    border-radius: 2px;
+                }
+            }
+            .id-card-uploaded {
+                position: relative;
+                height: 90px !important;
+                .el-upload--picture-card {
+                    // display: none;
+                    visibility: hidden;
+                }
+                .el-upload-list__item {
+                    border: 1px solid #A4B2C2;
+                    border-radius: 2px;
+                }
+            }
+            .el-upload__tip {
+                position: absolute;
+                color: #A4B2C2;
+                font-size: 12px;
+                line-height: 16px;
+                margin: 0;
+                left: 96px;
+                top: 74px;
+            }
+            .drawer-item-performance {
+                display: flex;
+                .el-select {
+                    width: 246px;
+                }
+                .drawer-item-performance-value {
+                    color: #6A7B92;
+                    display: inline-block;
+                    line-height: 30px;
+                    background: #f4f8ff;
+                    border: 1px solid fade(#A4B2C2, 50);
+                    border-top-right-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                    box-sizing: border-box;
+                    margin-left: -1px;
+                    padding: 0 12px;
+                    width: 214px;
+                    span {
+                        color: #FF7A36;
+                    }
+                }
+            }
+
+            .pic-container {
+                display: flex;
+                width: 100%;
+                align-items: flex-end;
+                .tips {
+                    height: 16px;
+                    line-height: 16px;
+                    font-size: 12px;
+                    color: #a4b2c2;
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+}

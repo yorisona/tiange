@@ -1,0 +1,164 @@
+@charset 'utf-8';
+
+
+.tg-cost-mcn-vtask-step2-before-container {
+  .expenditure-cost-info {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+    .expenditure-cost-info-list {
+      flex-grow: 1;
+      // height: 324px;
+      // padding: 0 18px;
+      overflow-y: overlay;
+      .expenditure-cost-info-list-row {
+        padding: 0px 0 18px;
+        border-bottom: 1px solid rgba(var(--tip-icon-rgb-color), 0.3);
+        .cost-list-company {
+          display: flex;
+          height: 42px;
+          align-items: center;
+          justify-content: space-between;
+          // border-bottom: 1px dashed rgba(var(--tip-icon-rgb-color), 0.3);
+          padding: 0 20px;
+          .company-cost {
+            margin-left: 18px;
+            color: var(--warning-color);
+            font-weight: 600;
+          }
+          .cost-list-company-operator {
+            .kol-data {
+              color: var(--text-third-color);
+              font-size: 12px;
+            }
+          }
+        }
+        .cost-list-company-kol {
+          margin: 0 20px 24px;
+          border-top: 1px dashed rgba(var(--tip-icon-rgb-color), 0.3);
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+        .origin-amount-info {
+          height: 28px;
+          align-items: center;
+          display: flex;
+          margin-top: 8px;
+          .origin-amount-info-detail {
+            display: flex;
+            font-size: 12px;
+            > .value {
+              font-weight: 600;
+            }
+            &:first-of-type {
+              .value {
+                width: 145px;
+              }
+            }
+            &:nth-last-child(3) {
+              .value {
+                width: 102px;
+              }
+            }
+            &:nth-last-child(2) {
+              margin-left: 18px;
+              margin-right: 18px;
+              .value {
+                width: 102px;
+              }
+            }
+            // &:last-of-type {
+            //     margin-left: 56px;
+            // }
+          }
+        }
+        .commission {
+          display: flex;
+          height: 28px;
+          align-items: center;
+          margin-top: 12px;
+          font-size: 12px;
+          .commission-item {
+            margin-right: 18px;
+            .el-input {
+              width: 145px;
+              .el-input-group__append {
+                text-align: center;
+                padding: 0;
+                width: 38px;
+                color: var(--text-second-color);
+                line-height: 26px;
+                height: 27px;
+                font-size: 12px;
+              }
+              .el-input__inner {
+                line-height: 26px;
+                height: 28px;
+                font-size: 12px;
+              }
+            }
+            // &:first-of-type {
+            //     .el-input {
+            //         width: 164px;
+            //     }
+            // }
+            &:last-of-type {
+              margin-right: 0;
+              .label {
+                width: 36px;
+              }
+            }
+          }
+        }
+        .expenditure-cost-summary {
+          display: flex;
+          height: 32px;
+          align-items: center;
+          margin-top: 12px;
+        }
+        &:last-of-type {
+          border: none;
+        }
+      }
+
+      .label {
+        flex-shrink: 0;
+        margin-right: 12px;
+        display: inline-block;
+        text-align: right;
+        width: 64px;
+        color: var(--text-second-color);
+      }
+      .value {
+        // display: inline-block;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+      .tg-page-empty {
+        margin-top: 80px;
+        > .tg-page-empty-title {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+    .expenditure-cost-info-operator {
+      display: flex;
+      height: 60px;
+      // line-height: 32px;
+      padding: 0 18px;
+      font-size: 12px;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(var(--tip-icon-rgb-color), 0.3);
+    }
+  }
+}
+
+.kol-company-map {
+  padding: 0;
+  min-width: auto;
+}

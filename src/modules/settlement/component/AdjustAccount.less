@@ -1,0 +1,103 @@
+@import '~@/styles/utils/index.less';
+.tg-adjust-account-container {
+   .el-form .el-form-item--mini {
+    margin-right: 0 !important;
+  }
+  .el-input--small .el-input__icon {
+    line-height: 28px;
+  }
+
+  .disabled-tg-ghost-button {
+    a,
+    svg.icon {
+      color: rgba(60, 82, 105, 0.4);
+    }
+  }
+  .disabled-tg-ghost-button:hover {
+    border: 1px dashed rgba(60, 82, 105, 0.3);
+    cursor: not-allowed;
+
+    a:hover,
+    svg.icon:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  .el-form-item__label {
+    width: 68px;
+  }
+
+  .el-textarea > textarea {
+    line-height: 18px;
+  }
+
+  .adjust-account-content {
+    flex: auto;
+    display: grid;
+    // grid-template-rows: 32px auto;
+  }
+
+  .item-container {
+    .pos-r();
+    flex: auto;
+    .pd(12px 18px);
+    overflow-y: auto;
+    overflow-y: overlay;
+
+    > .item-list {
+      // display: grid;
+      // row-gap: 18px;
+      > .one-item-block {
+        margin-bottom: 18px;
+        height: fit-content;
+        padding: 12px;
+        .bgc(rgba(var(--tip-icon-rgb-color), 0.09));
+        border-radius: 2px;
+        position: relative;
+        > .form-item-remove-btn {
+          position: absolute;
+          top: -6px;
+          right: -6px;
+          z-index: 100;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .inline-form-item {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .description {
+    margin-left: 0 !important;
+  }
+  .topBar {
+    width: 158px;
+    margin-right: 0;
+    margin-left: 68px;
+    height: 28px;
+
+    .el-form-item__content {
+      margin-left: 0 !important;
+      height: 28px;
+      line-height: 28px;
+    }
+    .el-input__inner {
+      height: 28px;
+      line-height: 28px;
+    }
+  }
+}
+
+.tg-adjust-component-top-select {
+  width: 158px;
+}
+
+.tg-adjust-component-select {
+  width: 190px;
+}

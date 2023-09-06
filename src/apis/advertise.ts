@@ -1,0 +1,20 @@
+// 广告主搜索
+export const ADVERTISE_QUERY = '/api/oceanengine/ad/advertiser_list';
+export const DOUYIN_QUERY = '/api/oceanengine/ad/aweme_list';
+export const ADVERTISE_GROUP_QUERY = '/api/oceanengine/ad_campaign/query';
+export const ADVERTISE_PLAN_QUERY = '/api/oceanengine/ad_plan/query';
+export const ADVERTISE_GROUP_UPDATE_STATUS = '/api/oceanengine/ad_campaign/modify_status';
+export const ADVERTISE_PLAN_UPDATE_STATUS = '/api/oceanengine/ad_plan/modify_status';
+export const ADVERTISE_PLAN_UPDATE_BUDGET = '/api/oceanengine/ad_plan/modify_budget';
+export const ADVERTISE_PLAN_UPDATE_BID = '/api/oceanengine/ad_plan/modify_bid';
+export const ADVERTISE_GROUP_UPDATE_INFO = '/api/oceanengine/ad_campaign/modify_campaign';
+export const ADVERTISE_INDUSTRY_QUERY = '/api/oceanengine/ad/industry_list';
+export const ADVERTISE_TAG_SAVE = '/api/oceanengine/ad_plan/save_ad_tag';
+export const ADVERTISE_TAG_QUERY = '/api/oceanengine/ad_plan/get_ad_tags';
+export const ADVERTISE_TAG_DEL = '/api/oceanengine/ad_plan/del_ad_tag';
+export const ADVERTISE_GROUP_UPDATE_ADMIN = '/api/oceanengine/ad_campaign/modify_admin';
+export const ADVERTISE_PLAN_UPDATE_ADMIN = '/api/oceanengine/ad_plan/modify_admin';
+export const ADVERTISE_GET_OPTIMIZER = '/api/oceanengine/ad/get_optimizer';
+export const ADVERTISE_PLAN_REFRESH = '/api/oceanengine/ad_plan/ad_refresh';
+export const ADVERTISE_COPY_AD_PLAN = '/api/oceanengine/ad_plan/copy_ad_plan';
+export const ADVERTISE_MODIFY_AD_NAME = '/api/oceanengine/ad_plan/modify_ad_name';

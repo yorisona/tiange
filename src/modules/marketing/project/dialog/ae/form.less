@@ -1,0 +1,133 @@
+@charset 'utf-8';
+
+
+.tg-marketing-project-ae-dialog {
+  max-height: 660px;
+
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-y: overlay;
+    > .el-form {
+      flex: auto;
+      padding: 24px 24px 18px 24px;
+      overflow-y: auto;
+      overflow-y: overlay;
+      display: grid;
+      grid-template-areas: '.';
+      grid-template-rows: 90px;
+      grid-auto-rows: 90px;
+      row-gap: 18px;
+      > .form-item {
+        position: relative;
+        width: 392px;
+        height: 90px;
+        background: rgba(164, 178, 194, 0.09);
+        border-radius: 2px;
+        padding: 18px;
+      }
+    }
+    .form-item-remove-btn {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      z-index: 100;
+    }
+    .added-btn-block {
+      cursor: pointer;
+      margin: 0;
+      width: 392px;
+      height: 32px;
+      line-height: 32px;
+      font-weight: 600;
+      text-align: center;
+      background: #ffffff;
+      color: rgba(var(--theme-rgb-color), 0.9);
+      border-radius: 3px;
+      border: 1px dashed rgba(60, 82, 105, 0.3);
+    }
+    .added-btn-block:hover {
+      color: var(--theme-color);
+      border: 1px dashed var(--theme-color);
+      > .el-icon-plus {
+        color: var(--theme-color);
+      }
+    }
+    .added-btn-disabled {
+      cursor: not-allowed;
+      pointer-events: all !important;
+      margin: 0;
+      width: 392px;
+      height: 32px;
+      line-height: 32px;
+      font-weight: 600;
+      text-align: center;
+      background: #ffffff;
+      color: rgba(60, 82, 105, 0.4);
+      > .el-icon-plus {
+        color: rgba(60, 82, 105, 0.4);
+      }
+      border: 1px dashed rgba(164, 178, 194, 0.4);
+    }
+    .added-btn-block:active {
+      color: #2570f1;
+      border: 1px dashed #2570f1;
+      > .el-icon-plus {
+        color: #2570f1;
+      }
+    }
+  }
+
+  .el-form {
+    flex: 1;
+
+    .el-form-item {
+      .el-form-item__label {
+        padding: 0;
+        line-height: 28px;
+        font-size: 12px;
+      }
+      .el-date-editor {
+        width: 100%;
+      }
+      .el-select {
+        display: block;
+      }
+    }
+    .date-picker-item {
+      display: inline-block;
+    }
+    .time-picker-item {
+      display: inline-block;
+    }
+
+    .remark-input {
+      .el-textarea__inner {
+        height: 94px;
+      }
+    }
+    .el-input-group__append {
+      padding: 0 10px;
+      background-color: #f6f6f6;
+      color: var(--text-third-color);
+    }
+  }
+  .two-item-left {
+    display: inline-block;
+    width: 169px;
+  }
+  .two-item-right {
+    display: inline-block;
+    width: 169px;
+    margin-right: 0 !important;
+  }
+}
+
+.tg-marketing-project-aeplus-form-dialog {
+  .el-dialog__body {
+    max-height: 570px;
+    overflow-y: auto;
+    overflow-y: overlay;
+  }
+}

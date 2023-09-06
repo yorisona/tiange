@@ -1,0 +1,15 @@
+// 排除掉新增的和最近维护的页面
+// 1. 客户列表
+.router-view-content:not(.tg-page-container) {
+  .el-table th.is-leaf {
+    border-bottom: none;
+  }
+  .el-table td.is-leaf {
+    border-bottom: 1px solid red;
+  }
+
+  .el-table th > .cell {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}

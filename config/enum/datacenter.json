@@ -1,0 +1,287 @@
+{
+  "version": "1.0.0",
+  "type": "enum",
+  "describe": "数据相关定义",
+  "enums": [
+    {
+      "name": "VideoSortType",
+      "describe": "视频排序类型",
+      "items": [
+        {
+          "key": "play_count",
+          "label": "播放量",
+          "value": 1
+        },
+        {
+          "key": "play_finish_ratio",
+          "label": "完播率",
+          "value": 2
+        },
+        {
+          "key": "play_avg_time",
+          "label": "平均播放时长",
+          "value": 3
+        },
+        {
+          "key": "digg_count",
+          "label": "点赞量",
+          "value": 4
+        },
+        {
+          "key": "comment_count",
+          "label": "评论量",
+          "value": 5
+        },
+        {
+          "key": "share_count",
+          "label": "分享量",
+          "value": 6
+        },
+        {
+          "key": "new_fans_count",
+          "label": "新增粉丝量",
+          "value": 7
+        },
+        {
+          "key": "effective_play_count",
+          "label": "有效播放量",
+          "value": 8
+        },
+        {
+          "key": "index_num",
+          "label": "短视频测款指数",
+          "value": 9
+        },
+
+        {
+          "key": "digg_count_rate",
+          "label": "点赞率",
+          "value": 10
+        },
+        {
+          "key": "comment_count_rate",
+          "label": "评论率",
+          "value": 11
+        },
+        {
+          "key": "share_count_rate",
+          "label": "分享率",
+          "value": 12
+        },
+        {
+          "key": "effective_play_rate",
+          "label": "有效播放率",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "name": "GoodsSortType",
+      "describe": "商品排序类型",
+      "items": [
+        {
+          "key": "shop_gmv",
+          "label": "销售额TOP",
+          "value": 1
+        },
+        {
+          "key": "shop_sale_count",
+          "label": "销量TOP"
+        },
+        {
+          "key": "danci",
+          "label": "单次讲解销量"
+        },
+        {
+          "key": "comprehensive_measurement_index",
+          "label": "综合测款指数"
+        }
+      ]
+    },
+    {
+      "name": "StatisticsSortType",
+      "describe": "搭配统计排序类型",
+      "items": [
+        {
+          "key": "sale_count",
+          "label": "连带成交",
+          "value": 1
+        },
+        {
+          "key": "talk_times",
+          "label": "搭配讲解次数"
+        },
+        {
+          "key": "liking_index",
+          "label": "受欢迎指数"
+        }
+      ]
+    },
+    {
+      "name": "ModelSortType",
+      "describe": "模特排序类型",
+      "items": [
+        {
+          "key": "shop_gmv",
+          "label": "短视频数量",
+          "value": 1
+        },
+        {
+          "key": "shop_sale_count",
+          "label": "总播放量"
+        },
+        {
+          "key": "danci",
+          "label": "总有效播放"
+        }
+      ]
+    },
+    {
+      "name": "CombinationType",
+      "describe": "搭配类型",
+      "items": [
+        {
+          "key": "use_recommend",
+          "label": "使用推荐",
+          "value": 1
+        },
+        {
+          "key": "use_not_recommend",
+          "label": "使用非推荐"
+        },
+        {
+          "key": "not_use_combination",
+          "label": "没有使用搭配"
+        }
+      ]
+    },
+    {
+      "name": "ModelVideoOrderType",
+      "describe": "模特视频数据查询的排序字段",
+      "items": [
+        {
+          "key": "play_count",
+          "label": "播放量",
+          "value": 1
+        },
+        {
+          "key": " play_finish_ratio",
+          "label": "完播率"
+        },
+        {
+          "key": "play_avg_time",
+          "label": "平均播放时长"
+        },
+        {
+          "key": "digg_count",
+          "label": "点赞量"
+        },
+        {
+          "key": "comment_count",
+          "label": "评论量"
+        },
+        {
+          "key": "share_count",
+          "label": "分享量"
+        },
+        {
+          "key": "new_fans_count",
+          "label": "粉丝增量"
+        },
+        {
+          "key": "effective_play_count",
+          "label": "有效播放量"
+        },
+        {
+          "key": "index_num",
+          "label": "短视频测款指数"
+        },
+        {
+          "key": "play_digg_ratio",
+          "label": "点赞率"
+        },
+        {
+          "key": "play_comment_ratio",
+          "label": "评论率"
+        },
+        {
+          "key": "play_share_ratio",
+          "label": "分享率"
+        },
+        {
+          "key": "effective_play_ratio",
+          "label": "有效播放率"
+        },
+        {
+          "key": "video_count ",
+          "label": "短视频数量"
+        }
+      ]
+    },
+    {
+      "name": "ExplainOrderKeyType",
+      "describe": "直播排序讲解字段",
+      "items": [
+        {
+          "key": "explain_datetime",
+          "label": "讲解时间",
+          "value": 1
+        },
+        {
+          "key": "num_change",
+          "label": "人数变化"
+        },
+        {
+          "key": "incr_fans_cnt",
+          "label": "新增粉丝"
+        },
+        {
+          "key": "avg_online_person",
+          "label": "平均在线人数"
+        },
+        {
+          "key": "comment_cnt",
+          "label": "评论数"
+        }
+      ]
+    },
+    {
+      "name": "FollowUpStatus",
+      "describe": "跟进状态",
+      "items": [
+        {
+          "key": "not_follow_up",
+          "label": "未跟进",
+          "value": 1
+        },
+        {
+          "key": "follow_up",
+          "label": "已跟进"
+        },
+        {
+          "key": "lived",
+          "label": "已直播"
+        },
+        {
+          "key": "not_live",
+          "label": "未直播"
+        }
+      ]
+    },
+    {
+      "name": "CommodityType",
+      "describe": "商品类型",
+      "items": [
+        {
+          "key": "new",
+          "label": "新款",
+          "value": 1
+        },
+        {
+          "key": "oldStyle",
+          "label": "老款翻单"
+        }
+      ]
+    }
+  ]
+}

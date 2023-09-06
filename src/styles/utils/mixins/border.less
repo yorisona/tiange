@@ -1,0 +1,188 @@
+/**
+ * mixins - border
+ * 边框相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-19
+ * @copyright 2017
+ */
+
+/**
+ * 无边框
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.no-brd(){
+	border: none;
+}
+
+/**
+ * 无边框 - 顶部
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.no-brd-t(){
+	border-top: none;
+}
+
+/**
+ * 无边框 - 右侧
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.no-brd-r(){
+	border-right: none;
+}
+
+/**
+ * 无边框 - 底部
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.no-brd-b(){
+	border-bottom: none;
+}
+
+/**
+ * 无边框 - 左侧
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.no-brd-l(){
+	border-left: none;
+}
+
+/**
+ * 边框参数0px - 无边框
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brd(@borderWidth; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0px) {
+	.no-brd();
+}
+/**
+ * 边框参数0 - 无边框
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brd(@borderWidth; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0) {
+	.no-brd();
+}
+/**
+ * 边框参数非0/0px - 有边框
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brd(@borderWidth: 1px; @borderStyle: solid; @borderColor: black)
+	when (@borderWidth > 0px){
+	border: @arguments;
+}
+/**
+ * 边框仅有颜色参数 - 默认 1px solod
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brd(@borderColor: black) when (iscolor(@borderColor)){
+	.brd(1px, solid, @borderColor);
+}
+
+.brd-t(@borderWidth ; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0px) {
+	.no-brd-t();
+}
+.brd-t(@borderWidth ; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0) {
+	.no-brd-t();
+}
+.brd-t(@borderWidth: 1px; @borderStyle: solid; @borderColor: black)
+	when (@borderWidth > 0px){
+	border-top: @arguments;
+}
+.brd-t(@borderColor: black) when (iscolor(@borderColor)){
+	.brd-t(1px, solid, @borderColor);
+}
+
+.brd-r(@borderWidth ; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0px) {
+	.no-brd-r();
+}
+.brd-r(@borderWidth ; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0) {
+	.no-brd-r();
+}
+.brd-r(@borderWidth: 1px; @borderStyle: solid; @borderColor: black)
+	when (@borderWidth > 0px){
+	border-right: @arguments;
+}
+.brd-r(@borderColor: black) when (iscolor(@borderColor)){
+	.brd-r(1px, solid, @borderColor);
+}
+
+.brd-b(@borderWidth ; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0px) {
+	.no-brd-b();
+}
+.brd-b(@borderWidth ; @borderStyle; @borderColor)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0) {
+	.no-brd-b();
+}
+.brd-b(@borderWidth: 1px; @borderStyle: solid; @borderColor: black)
+	when (@borderWidth > 0px){
+	border-bottom: @arguments;
+}
+.brd-b(@borderColor: black) when (iscolor(@borderColor)){
+	.brd-b(1px, solid, @borderColor);
+}
+
+.brd-l(@borderWidth ; @borderStyle; @borderColor;)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0px) {
+	.no-brd-l();
+}
+.brd-l(@borderWidth ; @borderStyle; @borderColor;)
+	when (isnumber(@borderWidth)) and (@borderWidth = 0) {
+	.no-brd-l();
+}
+.brd-l(@borderWidth: 1px; @borderStyle: solid; @borderColor: black)
+	when (@borderWidth > 0px){
+	border-left: @arguments;
+}
+.brd-l(@borderColor: black) when (iscolor(@borderColor)){
+	.brd-l(1px, solid, @borderColor);
+}
+
+// border-radius
+/**
+ * 无圆角
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.no-brdr(){
+	border-radius: none;
+}
+/**
+ * 无圆角
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brdr(@radius) when (isnumber(@radius)) and (@radius = 0){
+	.no-brdr();
+}
+/**
+ * 无圆角
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brdr(@radius) when (isnumber(@radius)) and (@radius = 0px){
+	.no-brdr();
+}
+/**
+ * 圆角
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-22
+ */
+.brdr(@radius) when (default()) {
+	border-radius: @radius;
+}

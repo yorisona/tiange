@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "type": "enum",
+  "describe": "资讯模块相关定义",
+  "enums": [
+    {
+      "name": "InfoSource",
+      "describe": "资讯来源",
+      "items": [
+        {
+          "key": "dianshangbao",
+          "label": "电商报",
+          "value": 0
+        },
+        {
+          "key": "yibangdongli",
+          "label": "亿邦动力"
+        },
+        {
+          "key": "yang36",
+          "label": "36氪",
+          "descript": "test2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+@charset 'utf-8';
+
+
+.tg-cost-mcn-taobao-step2-after-container {
+  .step2-cost-layout-content {
+    grid-template-rows: 118px 400px !important;
+    .adjust-account-content {
+      grid-template-rows: 44px 296px !important;
+    }
+  }
+    .expenditure-cost-info {
+        flex-grow: 1;
+        overflow-y: hidden;
+        .expenditure-cost-info-list {
+            padding: 0 18px;
+            overflow-y: overlay;
+            height: 100%;
+          font-size: 12px;
+            .expenditure-cost-info-list-row {
+                padding: 18px 0;
+                border-bottom: 1px dashed rgba(var(--tip-icon-rgb-color), 0.3);
+                .cost-list-company {
+                    display: flex;
+                    height: 28px;
+                    align-items: center;
+                    justify-content: space-between;
+                    .cost-list-company-operator {
+                        .kol-data {
+                            color: var(--text-third-color);
+                        }
+                    }
+                }
+                .commission {
+                    display: flex;
+                    height: 28px;
+                    align-items: center;
+                    margin-top: 12px;
+                    > .el-input {
+                        width: 164px;
+                        margin-right: 26px;
+                        .el-input-group__append {
+                            text-align: center;
+                            padding: 0;
+                            width: 38px;
+                          line-height: 26px;
+                          height: 27px;
+                          font-size: 12px;
+                            color: var(--text-second-color);
+                        }
+                      .el-input__inner {
+                        line-height: 26px;
+                        height: 28px;
+                        font-size: 12px;
+                        color: var(--text-color);
+                      }
+                    }
+                    .origin-income {
+                        color: var(--text-color);
+                    }
+                }
+                .expenditure-cost-summary {
+                    display: flex;
+                    height: 28px;
+                    align-items: center;
+                    margin-top: 12px;
+                }
+                &:last-of-type {
+                    border: none;
+                }
+            }
+
+            .label {
+                flex-shrink: 0;
+                margin-right: 4px;
+                display: inline-block;
+                text-align: right;
+                width: 64px;
+                color: var(--text-second-color);
+            }
+            .value {
+                font-weight: 600;
+                color: var(--text-color);
+            }
+        }
+    }
+}

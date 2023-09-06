@@ -1,0 +1,370 @@
+$color-primary: var(--theme-color);
+// paert 1 scss
+#personal-library {
+  .medium-operator {
+
+    background-color: #fff;
+    .medium-choose {
+      .choose-block {
+        position: relative;
+        min-height: 60px;
+        box-sizing: border-box;
+        font-size: 0;
+        padding: 15px 12px;
+        display: flex;
+        .name {
+          font-size: 16px;
+          color: var(--text-des-color);
+          line-height: 30px;
+          display: inline-block;
+          width: 84px;
+        }
+        .category-list {
+          display: inline-block;
+          flex: 1;
+          .category-item {
+            display: inline-block;
+            font-size: 16px;
+            color: var(--text-des-color);
+            line-height: 30px;
+            padding: 0 10px;
+            margin: 0 10px;
+            border-bottom: #fff solid 2px;
+            cursor: pointer;
+          }
+        }
+        .category-fold {
+          position: relative !important;
+          padding-right: 80px;
+        }
+        .category-height {
+          height: 30px;
+          overflow: hidden;
+          transition: all 0.5s;
+        }
+        .fold {
+          position: absolute;
+          cursor: pointer;
+          height: 26px;
+          width: 26px;
+          // top: 145px;
+          right: 30px;
+          font-size: 20px;
+          line-height: 25px;
+          color: var(--text-color);
+          text-align: center;
+          z-index: 1000;
+          background: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(222, 222, 222, 1);
+          border-radius: 4px;
+        }
+      }
+    }
+    .medium-search-bar {
+      padding: 14px 12px 0;
+      .medium-label {
+        color: #666;
+        font-size: 16px;
+      }
+      .range-input {
+        width: 100px;
+      }
+    }
+  }
+  // 搜索结果
+  .result-list {
+    padding: 12px;
+    background: #fff;
+    margin-top: 12px;
+    .opreate-btns {
+      margin-bottom: 12px;
+      .el-button {
+        width: 100px;
+        height: 36px;
+        border-radius: 10px;
+        &.sub-btn {
+          background: $color-primary;
+          border-color: $color-primary;
+          color: #fff;
+        }
+      }
+    }
+    .contract-pagination {
+      padding: 0;
+      margin-top: 12px;
+      ::v-deep .el-input.el-input--mini.el-input--suffix {
+        margin: 0;
+      }
+    }
+    // kol信息
+    .star-info {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .default {
+        object-fit: none;
+        border: 1px solid rgba(233, 228, 228, 0.979);
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+          font-size: 16px;
+          font-weight: 400;
+          color: rgba(68, 68, 68, 1);
+          margin-bottom: 6px;
+        }
+        .tags {
+          display: flex;
+          flex-direction: row;
+          height: 16px;
+          .iconfont {
+            margin: 0 2px;
+          }
+          .tag1 {
+            background: #ff5569;
+          }
+          .tag2 {
+            background-color: #ffb423;
+          }
+          .tag3 {
+            background: #396fff;
+          }
+          .tag4 {
+            background: #cccccc;
+          }
+          .tag {
+            border-radius: 10px;
+            margin-right: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #fff;
+            padding: 0px 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .is-cooperation {
+      height: 14px;
+      i {
+        background: #ffb423;
+        color: #fff;
+        font-size: 12px;
+        position: absolute;
+        height: 14px;
+        line-height: 14px;
+        padding: 1px 2px;
+        border-radius: 2px;
+      }
+    }
+    // 擅长领域
+    .good-at {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    // 擅长平台
+    .active-platform {
+      .first-active-platform {
+        vertical-align: middle;
+      }
+      .cooperation-platform {
+        color: #fff;
+        background: #ffb423;
+        font-size: 10px;
+        border-radius: 2px;
+        padding: 1px 2px;
+      }
+      .el-icon-arrow-down {
+        color: #abafc3;
+      }
+    }
+    // 粉丝数
+    .fans-count-wrap {
+      .el-icon-arrow-down {
+        color: #abafc3;
+      }
+    }
+    .fans-count-wrap .first-fans-count-platform {
+      font-size: 12px;
+      color: var(--text-des-color);
+    }
+    // 报价单
+    .quotation-wrap {
+      .el-icon-arrow-down {
+        color: #abafc3;
+      }
+    }
+    .quotation-wrap .first-quotation-platform {
+      font-size: 12px;
+      color: var(--text-des-color);
+    }
+    // 联系人
+    .connect-wrap {
+      .first-connect-persen {
+        color: var(--text-des-color);
+        font-size: 12px;
+      }
+      .el-icon-arrow-down {
+        color: #abafc3;
+      }
+    }
+    .empty-placeholder {
+      padding: 150px 0;
+      img {
+        width: 110px;
+        height: 110px;
+      }
+    }
+  }
+  .area_funs {
+    display: flex;
+    flex-direction: column;
+    .detail_info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 5px;
+      font-size: 14px;
+      img {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .klprice {
+    color: var(--text-des-color);
+    font-size: 14px;
+    .num {
+      color: #5c82ff;
+    }
+  }
+}
+.icon-zhuanpiao1-copy {
+  margin: 0 -2px !important;
+  width: 22px;
+}
+
+// part2 css
+/* 擅长领域 */
+.personal-library-good-at-popover {
+  max-width: 300px;
+  min-width: 300px;
+  text-align: left;
+}
+.personal-library-good-at-popover .good-at-category span {
+  display: inline-block;
+  background: #f2f2f2;
+  margin: 3px;
+  padding: 4px 6px;
+}
+/* 公用弹窗样式 */
+.personal-library-public-popover {
+  min-width: initial;
+  max-width: 220px;
+  /* padding: 10px 0; */
+}
+.personal-library-public-popover-content {
+  /* width: 360px; */
+  overflow: hidden;
+}
+.personal-library-public-popover-content-item {
+  display: block;
+  float: left;
+  line-height: 27px;
+  min-width: 135px;
+  overflow: hidden;
+  padding: 0 12px;
+}
+.personal-library-public-popover-content-item:nth-child(odd) {
+  border-right: #ebebeb dashed 1px;
+}
+.personal-library-public-popover-content-line {
+  padding: 0 12px;
+  line-height: 27px;
+}
+.personal-library-public-popover-content-line .line-param {
+  color: var(--text-des-color);
+}
+/* 擅长平台 */
+.personal-library-active-platform-popover .kol_areas {
+  display: inline-block !important;
+  background: #eef4fa;
+  margin: 3px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.personal-library-active-platform-popover .cooperation-platform {
+  color: #fff;
+  background: #ffb423;
+  font-size: 10px;
+  border-radius: 2px;
+  padding: 1px 2px;
+  margin-left: 6px;
+}
+/* 粉丝数 */
+.personal-library-fans-count-popover .fans-count-item {
+  display: block;
+  float: left;
+  line-height: 27px;
+  width: 155px;
+  overflow: hidden;
+  padding: 0 12px;
+  color: var(--text-des-color);
+  font-size: 12px;
+}
+.personal-library-fans-count-popover .fans-count-item .fans-count {
+  color: #666;
+  font-size: 14px;
+}
+/*  */
+.personal-library-klprice {
+  line-height: 27px;
+}
+/* 报价单 */
+.personal-library-quotation-popover .quotation-item {
+  display: block;
+  float: left;
+  line-height: 27px;
+  width: 155px;
+  overflow: hidden;
+  padding: 0 12px;
+  color: var(--text-des-color);
+  font-size: 12px;
+}
+.personal-library-quotation-popover .quotation-item .quotation {
+  color: #666;
+  font-size: 14px;
+}
+
+// part 3 scss
+.delete-kol-alert.el-message-box .el-message-box__content {
+  height: initial;
+}
+.delete-kol-alert.el-message-box .el-message-box__content .el-message-box__message {
+  top: 0;
+}
+.delete-kol-alert-red.el-message-box .el-message-box__content {
+  height: initial;
+}
+.delete-kol-alert-red.el-message-box .el-message-box__content .el-message-box__message {
+  top: 0;
+  color: rgb(242, 100, 103);
+}
+.btn {
+  width: 60px;
+  height: 30px;
+  padding: 0;
+}

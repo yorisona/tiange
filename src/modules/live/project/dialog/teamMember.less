@@ -1,0 +1,42 @@
+@charset 'utf-8';
+
+
+.tg-live-project-team-member {
+    .team-member-content {
+        padding: 24px;
+        .el-form {
+            .manager-row {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+            }
+            .el-select {
+                display: block;
+            }
+          .el-select--mini {
+            height: auto;
+          }
+            .el-form-item {
+                .el-form-item__label {
+                    font-size: 12px;
+                    color: var(--text-second-color);
+                    padding: 0;
+                    line-height: 16px;
+                    height: 24px;
+                }
+            }
+            .creator {
+                > span {
+                    &:first-of-type {
+                        color: var(--text-second-color);
+                        font-size: 12px;
+                    }
+                    &:last-of-type {
+                        color: var(--text-color);
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+    }
+}

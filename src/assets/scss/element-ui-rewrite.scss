@@ -1,0 +1,334 @@
+
+.el-table th div {
+  line-height: 20px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+.el-table thead > tr > th {
+  background: #f6f6f6 !important;
+}
+
+/**
+弹框局中,且不超过屏幕
+使用 <el-dialog class="el-dialog-center-rewrite"
+**/
+.el-dialog-center-rewrite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .el-dialog {
+    margin: 0 !important;
+  }
+
+  .el-dialog__body {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+  &.image-dialog {
+    .el-dialog__body {
+      min-height: 200px;
+    }
+  }
+}
+
+/** 局中,但不会出现滚动条,主要用于解决双滚动条问题,同时支持内部最大高度 **/
+.el-dialog-center-rewrite-noscroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .el-dialog {
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 100px);
+  }
+
+  .el-dialog__body {
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+}
+
+/** 天鸽弹框默认UI **/
+.tg-dialog-default {
+  // 对弹框进行局中处理
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .el-dialog {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    // 对容器布局进行调整,上中下,占比
+    display: grid;
+    grid-template-rows: 40px 1fr auto;
+
+    .el-dialog__header {
+      background: rgba(var(--theme-rgb-color), 0.06);
+      padding: 0 0 0 24px;
+      font-size: 14px;
+      color: var(--text-color);
+    }
+
+    .el-dialog__body {
+      padding: 24px;
+    }
+
+    .el-dialog__footer {
+      background: rgba(var(--theme-rgb-color), 0.05);
+      padding: 9px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .el-button {
+        padding: 8px 17px;
+        border-radius: 3px;
+
+        & + .el-button {
+          margin-left: 18px;
+        }
+      }
+    }
+  }
+}
+
+// 按钮组件样式修改
+.el-button {
+  color: var(--text-second-color);
+  &.el-button--primary {
+    border-color: var(--theme-color);
+    &:not([disabled]):not(.is-disabled):not(:hover) {
+      color: #ffffff;
+    }
+  }
+  &.el-button--primary[disabled],
+  &.el-button--primary.is-disabled {
+    background: rgba(var(--fail-rgb-color), 0.3);
+    border: none;
+  }
+  &.is-disabled {
+    color: var(--text-third-color);
+    background-color: #f9f9f9;
+    border: 1px solid rgba(164, 178, 194, 0.5);
+  }
+  .el-button--mini {
+    border-radius: 2px;
+  }
+  &.el-button--mini,
+  &.el-button--mini.is-round {
+    padding: 0 12px;
+    line-height: 26px;
+  }
+}
+
+/** 输入框样式 **/
+.el-input {
+  &.is-disabled .el-input__inner {
+    color: var(--text-third-color);
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-line-color);
+  }
+}
+/**
+定义默认表单样式
+**/
+.tg-form {
+  .el-radio-group {
+    column-gap: normal;
+    .el-radio-button {
+      // 取消激活的发光
+      box-shadow: none !important;
+      .el-radio-button__inner {
+        width: 100%;
+        font-size: 14px;
+        color: var(--text-color);
+      }
+      &.is-active {
+        .el-radio-button__inner {
+          color: var(--theme-color);
+          background-color: #fff;
+          border-color: var(--theme-color);
+        }
+      }
+      &.is-disabled {
+        .el-radio-button__inner {
+          color: #a4b2c2;
+        }
+      }
+      &:first-child .el-radio-button__inner {
+        border-radius: 2px 0 0 2px;
+      }
+      &:last-child .el-radio-button__inner {
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+}
+
+/** 天鸽组件样式重载 **/
+
+// 关闭按钮默认样式
+.ico-a-quseguanbiicon2x {
+  color: rgb(209, 216, 224);
+  cursor: pointer;
+  &:hover {
+    color: #ec1e1e !important;
+  }
+}
+.grid-filter-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 24px;
+
+  .grid-item {
+    min-width: 214px;
+    max-width: 274px;
+  }
+}
+
+.filter-form-div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  &.no-wrap {
+    flex-wrap: nowrap;
+  }
+  &:after {
+    content: '';
+    flex: 1;
+    min-width: 0;
+    margin-right: 24px;
+  }
+  .filter-form-item {
+    flex: 1;
+    min-width: 214px;
+    max-width: 314px;
+    &.single {
+      max-width: 394px;
+    }
+    &.double {
+      max-width: 274px;
+    }
+    &.more {
+    }
+  }
+  .el-form-item {
+    margin-bottom: 12px;
+  }
+  .filter-form-item-btn {
+    display: flex;
+    min-width: 165px;
+  }
+}
+.filter-item-btn-more {
+  display: flex;
+  justify-content: space-between;
+  &.right {
+    width: 250px;
+    float: right;
+    margin-bottom: 12px;
+  }
+}
+.flex-line-box {
+  display: flex;
+  column-gap: 0;
+  padding: 0;
+  max-width: 1450px;
+  min-width: 680px;
+  .flex-line-item {
+    flex: 1;
+    max-width: 324px;
+    min-width: 144px;
+  }
+  .single {
+    width: calc(25%);
+    max-width: 324px;
+    min-width: 144px;
+  }
+  .double {
+    width: calc(50%);
+    max-width: 648px;
+    min-width: 144px;
+  }
+}
+.div-default-btn {
+  display: inline-flex;
+  border-radius: 3px;
+  text-align: center;
+  transition: 0.1s;
+  cursor: pointer;
+  height: var(--default-height);
+  line-height: calc(var(--default-height) - 2px);
+  font-size: 12px;
+  padding: 0 10px;
+  border: 1px solid var(--border-line-color);
+  &:hover {
+    background-color: rgba(var(--theme-rgb-color), 0.1);
+    color: var(--theme-color);
+    border-color: var(--theme-color);
+  }
+}
+.div-primary-btn {
+  display: inline-flex;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  padding: 0 18px;
+  border-radius: 3px;
+  color: #ffffff;
+  border: 1px solid var(--theme-color);
+  text-align: center;
+  transition: 0.1s;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: var(--theme-color);
+  &:hover {
+    background-color: rgba(var(--theme-rgb-color), 0.85);
+    border-color: rgba(var(--theme-rgb-color), 0.85);
+  }
+}
+
+/** radio ,checkbox 选中时取消 文字颜色 **/
+.el-radio__input.is-checked + .el-radio__label {
+  color: var(--text-color);
+}
+.el-checkbox__input.is-checked + .el-checkbox__label {
+  color: var(--text-color);
+}
+
+/**  ----------- element-ui扩展 ---------------*/
+.el-table-container {
+  display: flex;
+  flex-direction: column;
+  & > .el-table {
+    flex: 1;
+  }
+}
+
+// label标签在上的表单, 调整跟输入框的距离
+.el-form--label-top,
+[label-position='top'] {
+  .el-form-item__label {
+    padding-bottom: 6px;
+    font-size: var(--default-font-size);
+  }
+}
+
+
+.el-checkbox {
+  .el-checkbox__label {
+    color: var(--text-color);
+  }
+}
+
+.el-radio {
+  .el-radio__label {
+    color: var(--text-color);
+  }
+}
+.el-checkbox-group {
+  line-height: 1;
+}

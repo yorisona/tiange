@@ -1,0 +1,224 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+.cell-price-max {
+  width: 100%;
+  max-width: 140px;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+}
+.tg-marketing-project-tab-achievement {
+  // display: flex;
+  // flex-direction: column;
+  // overflow-y: auto;
+  // overflow-y: overlay;
+  // padding: 12px 0;
+  .table_achievement {
+    width: 100%;
+    text-align: center;
+    padding-left: 10px;
+    .color-primary,
+    .color-secordary {
+      width: 80px;
+      text-align: left;
+    }
+  }
+  .btns-line {
+    flex: none;
+    // height: 32px;
+    margin-bottom: 0px;
+    height: 55px;
+    line-height: 55px;
+    > label {
+      line-height: 31px;
+      height: 31px;
+      font-size: 14px;
+      color: var(--text-third-color);
+    }
+    > label + span {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-color);
+      line-height: 31px;
+      height: 31px;
+      margin-right: 32px;
+    }
+  }
+
+  .account-info {
+    > label {
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--text-third-color);
+      align-content: right;
+    }
+    > label + span {
+      font-size: 12px;
+      color: var(--text-color);
+      line-height: 18px;
+    }
+  }
+
+  .table-container {
+    flex: auto;
+    overflow-y: auto;
+    overflow-y: overlay;
+    padding: 0 18px;
+  }
+
+  .pic-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    > .tips {
+      height: 16px;
+      line-height: 16px;
+      font-size: 12px;
+      color: var(--text-third-color);
+      .mgl(6px);
+    }
+  }
+
+  .gather_amount-th.is-leaf {
+    .pd(0);
+    svg.icon {
+      .fgc(#c4cbd2);
+      .mgl(4px);
+    }
+    &:hover {
+      svg.icon {
+        .fgc(var(--theme-color));
+      }
+    }
+    > .gather_amount-th.cell {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .pd(0);
+      > span {
+        display: flex;
+        align-items: center;
+        .pd(0);
+        > .el-popover__reference-wrapper {
+          display: flex;
+          align-items: center;
+          .pd(0);
+        }
+      }
+    }
+  }
+}
+
+.achievement-popover {
+  .account-info-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 18px;
+    grid-auto-rows: 18px;
+    row-gap: 12px;
+    padding: 6px;
+    > label {
+      height: 18px;
+      font-size: 14px;
+      line-height: 18px;
+      color: var(--text-third-color);
+      align-content: right;
+      text-align: right;
+    }
+    > label + span {
+      font-size: 14px;
+      color: var(--text-color);
+      line-height: 18px;
+    }
+  }
+}
+
+.achievement-drawer-content {
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+  overflow-y: overlay;
+
+  .form-inner-block {
+    .pd(18px);
+    .bgc(rgba(164, 178, 194, 0.09));
+    .brdr(2px);
+    display: grid;
+    column-gap: 18px;
+    grid-template-areas: '. .';
+  }
+}
+
+.incoice-dialog-content {
+  .pd(6px 24px 18px 24px);
+  max-height: 560px;
+  overflow-y: auto;
+  overflow-y: overlay;
+  display: grid;
+  row-gap: 18px;
+  .incoice-item {
+    display: grid;
+    grid-template-rows: 40px repeat(4, 18px);
+    grid-template-columns: 90px 1fr;
+    row-gap: 6px;
+    column-gap: 12px;
+    .item-name {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      align-self: center;
+      font-weight: 600;
+      .fc(14px, var(--text-color));
+    }
+    .item-pic {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 6;
+      > img {
+        .brd(1px; solid; var(--tip-icon-color));
+        .brdr(2px);
+        .wh(88px, 88px);
+      }
+    }
+    .item-num {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    .item-date {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .item-amount {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+    .item-institution {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 5;
+      grid-row-end: 6;
+    }
+    .item {
+      > label {
+        .hlh(18px, 18px);
+        .fc(14px,var(--text-third-color));
+      }
+      > span {
+        .hlh(18px, 18px);
+        .fc(14px, var(--text-color));
+      }
+    }
+  }
+}
+
+.gather_amount-popover {
+  .pd(6px 12px);
+}

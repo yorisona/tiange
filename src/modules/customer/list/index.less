@@ -1,0 +1,25 @@
+@import '~@/styles/utils/index.less';
+
+// 客户列表页面(tabs)
+.tg-customer-list-page {
+  flex: auto;
+  // 页面组件容器层
+  .tg-tab-pane-wrapper {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    overflow: auto;
+    overflow: overlay;
+  }
+
+  // 未使用页面内的样式，暂不用做优化
+  .tg-table-col-company-name {
+    > .cell {
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+    }
+  }
+}

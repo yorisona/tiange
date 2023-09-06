@@ -1,0 +1,23 @@
+{
+  "id": "1546589",
+  "name": "构美协同",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "853592",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "925312",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

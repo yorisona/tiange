@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+
+.live-case {
+  .el-dialog {
+    border-radius: 4px;
+  }
+
+  .el-dialog__body {
+    background: #f6f6f6;
+  }
+  .dialog-content {
+    background: #fff;
+    margin: 0;
+    padding: 24px 24px 12px 24px;
+    .case-title {
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+    .case-description {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--text-color);
+      line-height: 20px;
+      margin-bottom: 12px;
+    }
+    .case-block {
+      font-size: 14px;
+      color: var(--text-color);
+      line-height: 40px;
+      font-weight: 600;
+    }
+    .case-img {
+      display: flex;
+      flex-wrap: wrap;
+      .img-item {
+        width: 90px;
+        height: 90px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+      }
+    }
+    .case-video {
+      width: 178px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      .video-name {
+        font-size: 14px;
+        color: var(--text-color);
+        line-height: 18px;
+        width: 126px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

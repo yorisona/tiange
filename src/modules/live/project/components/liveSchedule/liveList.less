@@ -1,0 +1,49 @@
+@charset 'utf-8';
+
+
+.tg-live-project-livelist-page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-y: overlay;
+  padding: 0 18px;
+  .input-with-select .el-input-group__prepend {
+    background-color: #fff;
+    width: 88px;
+  }
+  .live-status {
+    > span {
+      &:first-of-type {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        margin-right: 6px;
+      }
+    }
+    .finished {
+      background-color: rgba(var(--success-rgb-color), 0.6);
+    }
+    .waiting {
+      background-color: var(--default-status-color);
+    }
+    .warning {
+      background-color: var(--error-color);
+    }
+  }
+  tr {
+    cursor: pointer;
+  }
+  .el-input {
+    color: var(--text-color);
+  }
+  > .tg-card {
+    height: 100%;
+    > .tg-card-bd {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+}

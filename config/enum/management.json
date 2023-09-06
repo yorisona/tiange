@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "type": "enum",
+  "describe": "经营管理",
+  "enums": [
+    {
+      "name": "BudgetProcess",
+      "describe": "预算进度",
+      "items": [
+        {
+          "key": "lag",
+          "label": "滞后",
+          "value": 1
+        },
+        {
+          "key": "normal",
+          "label": "正常"
+        },
+        {
+          "key": "finished",
+          "label": "完成"
+        },
+        {
+          "key": "excess",
+          "label": "超额"
+        }
+      ]
+    },
+    {
+      "name": "BusinessType",
+      "describe": "业务类型",
+      "items": [
+        {
+          "key": "ec",
+          "label": "电商",
+          "value": 1
+        },
+        {
+          "key": "local",
+          "label": "本地",
+          "value": 4
+        },
+        {
+          "key": "innovation",
+          "label": "创新",
+          "value": 2
+        },
+        {
+          "key": "marketing",
+          "label": "营销",
+          "value": 3
+        },
+        {
+          "key": "supplyChain",
+          "label": "供应链",
+          "value": 5
+        }
+      ]
+    }
+  ]
+}

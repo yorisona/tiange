@@ -1,0 +1,30 @@
+{
+	"name": "performance",
+	"describe": "绩效管理模块",
+	"version": "1.0.0",
+	"enums": [
+		{
+			"name": "Indicator_Type",
+			"describe": "指标类型",
+			"items": [
+				{
+					"key": "RATION",
+					"label": "定量指标",
+					"value": 1
+				},
+				{
+					"key": "QUALITATIVE",
+					"label": "定性指标"
+				},
+				{
+					"key": "BONUS",
+					"label": "加分项"
+				},
+				{
+					"key": "PENDING_UPLOAD",
+					"label": "扣分项"
+				}
+			]
+		}
+	]
+}

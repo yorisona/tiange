@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+@import '../utils/index.less';
+
+.tg-block {
+  .tg-block-hd {
+    .fc(var(--small-font-size), var(--text-color));
+    letter-spacing: 0;
+    line-height: 20px;
+    .pd(10px 0);
+  }
+}
+
+// 基于 el-card 版本
+.tg-block.el-card {
+  display: flex;
+  flex-direction: column;
+  > .el-card__body {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    > .tg-block-hd {
+      flex: none;
+    }
+    > .tg-block-bd {
+      flex: auto;
+    }
+  }
+}

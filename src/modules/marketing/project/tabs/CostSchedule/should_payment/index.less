@@ -1,0 +1,100 @@
+@charset 'utf-8';
+
+
+.marketing-project-cost-schedule-should {
+  .number-div {
+    display: flex;
+    justify-content: center;
+    .number-span {
+      width: 130px;
+      text-align: left;
+      margin-right: -25px;
+    }
+  }
+  .el-table__row {
+    > td {
+      cursor: auto !important;
+    }
+    &:hover {
+      .conbineItem {
+        color: var(--theme-color);
+      }
+    }
+  }
+  .cost-headers {
+    padding: 12px 0;
+    display: flex;
+    .cost-headers-operations {
+      margin-right: 24px;
+      .tg-btn {
+        &:first-of-type {
+          margin-right: 18px;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+    .cost-headers-sumary {
+      line-height: 32px;
+      display: flex;
+      .payment-btn {
+        margin-right: 18px;
+      }
+      .cost-headers-sumary-label {
+        color: var(--text-third-color);
+        font-size: var(--small-font-size);
+      }
+      .cost-headers-sumary-value {
+        color: var(--text-color);
+        font-weight: 400;
+        font-size: 16px;
+        margin-right: 32px;
+      }
+    }
+  }
+  .content-third-blue {
+    color: var(--tip-icon-color);
+  }
+
+  .achievement_uid {
+    color: var(--text-color);
+  }
+  .achievement_name {
+    color: var(--tip-icon-color);
+  }
+  .achievement_gather_amount {
+    color: var(--tip-icon-color);
+  }
+  .kol_name {
+    color: var(--text-color);
+  }
+  .company_name {
+    color: var(--tip-icon-color);
+  }
+  .gmt_create {
+    color: var(--tip-icon-color);
+  }
+  .is_pay,
+  .pay_date,
+  .pay_lookup {
+    display: inline-block;
+    text-align: right;
+    width: 70px;
+  }
+  .combine-invoices {
+    &:hover .conbineItem {
+      color: var(--theme-color);
+    }
+    .conbineItem {
+      color: var(--text-color);
+      &:hover {
+        color: #2570f1;
+      }
+    }
+  }
+
+  .invoices-link {
+    color: #a4b2b2;
+  }
+}

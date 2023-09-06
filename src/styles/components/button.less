@@ -1,0 +1,309 @@
+@import '../utils/index.less';
+
+// 按钮尺寸mini高
+@btnMiniHeight: 24px;
+// 按钮尺寸sm高
+@btnSmHeight: 28px;
+// 按钮尺寸Lg高
+@btnLgHeight: 32px;
+@sizeBetweenComponent: 8px;
+@mini-font-size: 12px;
+
+.tg-btn {
+  display: inline-flex;
+  justify-content: center;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  text-align: center;
+  align-items: center;
+  .ta-c();
+  transition: 0.1s;
+  cursor: pointer;
+  user-select: none;
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+  svg.icon {
+    transition: 0.1s;
+  }
+  /*  svg {
+    margin-right: 4px;
+  }*/
+
+  > .tg-btn-content {
+    display: grid;
+    grid-template-areas: 'icon content';
+    column-gap: 4px;
+    align-items: center;
+  }
+  :root {
+    --color: 255, 0, 0;
+  }
+  // 主要
+  &.tg-btn-primary {
+    .fgc(white);
+    background: var(--theme-color);
+    font-weight: 400;
+    border-width: 0;
+    svg.icon {
+      .fgc(white);
+      font-weight: 400;
+    }
+    &:hover {
+      .bgc(var(--primary-hover-color));
+      > .tg-btn-content > svg.icon {
+        .fgc(white);
+      }
+    }
+    &[disabled],
+    &.disabled {
+      opacity: 0.5;
+      border: 1px solid var(--border-line-color);
+    }
+  }
+
+  // 次要
+  &.tg-btn-default {
+    .fgc(var(--text-second-color));
+    .bgc(#fff);
+    .brd(1px; solid; var(--border-line-color));
+    font-weight: 400;
+    svg.icon {
+      .fgc(var(--text-second-color));
+      font-weight: 400;
+    }
+    &:not([disabled]):not(.disabled):hover {
+      .brd(1px; solid; var(--theme-color));
+      .fgc(var(--theme-color));
+      .bgc(rgba(var(--theme-rgb-color), 0.1));
+      svg.icon {
+        .fgc(var(--theme-color));
+      }
+    }
+    &[disabled],
+    &.disabled {
+      .bgc(#ffffff);
+      border-color: var(--border-line-color);
+      color: var(--disabled-color);
+      background-color: #f6f6f6;
+      svg.icon {
+        .fgc(var(--disabled-color));
+      }
+    }
+  }
+
+  // 负面的
+  &.tg-btn-negative {
+    .fgc(var(--text-color));
+    .bgc(white);
+    .brd(fade(#3c5269, 30));
+    font-weight: 400;
+    svg.icon {
+      .fgc(var(--text-second-color));
+      font-weight: 400;
+    }
+    &:hover {
+      .brd(1px; solid; var(--error-color));
+      .fgc(var(--error-color));
+      svg.icon {
+        .fgc(var(--error-color));
+      }
+    }
+    &[disabled],
+    &.disabled {
+      .bgc(#ffffff);
+      border-color: var(--border-line-color);
+      color: var(--disabled-color);
+      svg.icon {
+        .fgc(var(--disabled-color));
+      }
+    }
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+.tg-btn {
+  // * 默认尺寸(small对应DPL中尺寸)
+  &:not(.tg-btn-large):not(.tg-btn-mini) {
+    font-size: var(--default-font-size);
+    .pd(0 10px);
+    .brdr(3px);
+    height: var(--default-height);
+    line-height: calc(var(--default-height) - 2px);
+    svg.icon {
+      font-size: var(--default-font-size);
+    }
+  }
+
+  // * mini对应DPL小尺寸
+  &.tg-btn-mini {
+    font-size: @mini-font-size;
+    .pd(0 10px);
+    .brdr(2px);
+    svg.icon {
+      font-size: var(--default-font-size);
+    }
+  }
+
+  // * large对应DPL大尺寸
+  &.tg-btn-large {
+    font-size: var(--small-font-size);
+    .pd(0 32px);
+    .brdr(4px);
+    svg.icon {
+      font-size: calc(var(--default-font-size) + 4px);
+    }
+  }
+}
+
+// mini
+.tg-btn.tg-btn-mini {
+  .hlh(@btnMiniHeight, @btnMiniHeight - 2px);
+}
+
+// large
+.tg-btn.tg-btn-large {
+  .hlh(@btnLgHeight, @btnLgHeight - 2px);
+}
+
+.btn-capsule {
+  @height: 32px;
+  height: @height;
+  .brdr(@height / 2);
+  .brd(#dcdfe6);
+
+  display: inline-grid;
+  grid-template-columns: 1fr 1px 1fr;
+  .bgc(white);
+
+  .btn-capsule-left,
+  .btn-capsule-right {
+    justify-self: center;
+    align-self: center;
+    color: var(--text-second-color);
+    .pd(0 16px);
+    cursor: pointer;
+    &.active,
+    &:hover {
+      .fgc(var(--theme-color));
+    }
+  }
+  > .sep {
+    width: 1px;
+    .bgc(#dcdfe6);
+  }
+}
+
+.btn-capsuleGroup {
+  display: flex;
+  // 默认样式
+  @border: #e3e8ec;
+  @bac: #fff;
+  @color: #5a5a5a;
+  // 选中样式
+  @Sborder: #2877ff;
+  @Sbac: #e9f1ff;
+  @Scolor: #2877ff;
+
+  .btn-capsuleGroup_item {
+    padding: 5px 18px;
+    border: 1px solid @border;
+    background-color: @bac;
+    color: @color;
+    cursor: pointer;
+    // 第一个按钮和最后一个按钮需要有圆角
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    &:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &[selected] {
+      border-color: @Sborder;
+      color: @Scolor;
+      .bgc(@Sbac);
+      + .btn-capsuleGroup_item {
+        border-left: 1px solid @Sborder;
+      }
+    }
+  }
+}
+
+// 链接式按钮
+.tg-btn-link {
+  .fc(var(--default-font-size), var(--theme-color));
+  &[disabled='']:hover {
+    .fgc(var(--primary-hover-color));
+  }
+}
+
+@buttonLineRowGap: 10px;
+
+// 按钮专用行
+.button-line {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-auto-rows: max-content;
+  column-gap: @sizeBetweenComponent;
+  row-gap: @buttonLineRowGap;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.el-dialog__footer .button-line {
+  column-gap: 0;
+}
+
+// 按钮栏
+// 老式的写法
+.btns-line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  > .tg-btn,
+  > div {
+    .mgb(18px);
+    &.mgb-12 {
+      .mgb(12px);
+    }
+  }
+  > .tg-btn:not(:first-child),
+  > div:not(:first-child) {
+    .mgl(@sizeBetweenComponent);
+  }
+}
+
+// 幽灵按钮
+.tg-ghost-button {
+  .hlh(32px, 30px);
+  .brdr(3px);
+  border: 1px dashed fade(#3c5269, 30);
+  display: grid;
+  grid-template-areas: '. .';
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+  cursor: pointer;
+  svg.icon {
+    .fgc(var(--theme-color));
+  }
+  &:hover {
+    border-color: var(--theme-color);
+  }
+}

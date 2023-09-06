@@ -1,0 +1,100 @@
+/**
+ * mixins/layout
+ * 布局相关样式函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-18
+ * @copyright 2017
+ */
+
+// display
+/**
+ * display block
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.d-b(){
+	display: block;
+}
+
+/**
+ * display inline-block
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.d-ib(){
+	display: inline-block;
+}
+
+/**
+ * display inline
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.d-i(){
+	display: inline;
+}
+
+/**
+ * display none
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.d-n(){
+	display: none;
+}
+
+// float 浮动
+/**
+ * float left
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.fl-lt(){
+	float: left;
+}
+/**
+ * float right
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.fl-rt(){
+	float: right;
+}
+/**
+ * float none
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ */
+.no-fl(){
+	float: none;
+}
+
+// 清除浮动
+.clear-fix(){
+	.db();
+	clear: both;
+}
+
+// visibility	可视性
+/**
+ * [visibility description]
+ * @author Jerry <superzcj_001@163.com>
+ * @date   2017-09-18
+ * @param  @val        是否可见   visible/hidden/collapse
+ */
+.visibility(@val: visible) when ( iskeyword(@val) ){
+	visibility: @val;
+}
+
+// overflow
+.of(@val: auto) when ( iskeyword(@val) ){
+	overflow: @val;
+}
+.ofx(@val: auto) when ( iskeyword(@val) ){
+	overflow-x: @val;
+}
+.ofy(@val: auto) when ( iskeyword(@val) ){
+	overflow-y: @val;
+}

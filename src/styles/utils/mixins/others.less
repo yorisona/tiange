@@ -1,0 +1,313 @@
+/**
+ * mixins - others
+ * 其它常用函数
+ *
+ * @version 1.0.0
+ * @author Jerry <superzcj_001@163.com>
+ * @date 2017-09-23
+ * @copyright 2017
+ */
+
+// mixins 属性集
+
+// colors
+// 预生成背景色
+/**
+ * 颜色配置
+ * @author  Jerry <superzcj_001@163.com>
+ * @since   2020-10-23 21:17:34
+ */
+
+@dev_bg_blue: #49a1ff;
+@dev_bg_cyan: #3cd6d6;
+@dev_bg_orange: #ffa347;
+@dev_bg_yellow: #facd46;
+@dev_bg_red: #ff4c88;
+@dev_bg_pink: #f549d8;
+@dev_bg_purple: #db4cff;
+@dev_bg_darkpurple: #ac4cff;
+@dev_bg_green: #45cc39;
+@dev_bg_lightgreen: #9de03f;
+@dev_bg_yellowgreen: #c5e03f;
+@dev_bg_dodgerblue: #4785ff;
+@dev_bg_slateblue: #4757ff;
+
+.bgc-list(){
+  .bgc-maker(@bgName; @bgColor){
+    &-@{bgName}{
+      .bgc(@bgColor) !important;
+    }
+  }
+  .bgc{
+    .bgc-maker(black, #434348);
+    .bgc-maker(white, white);
+    .bgc-maker(blue, @dev_bg_blue);
+    .bgc-maker(cyan, @dev_bg_cyan);
+    .bgc-maker(orange, @dev_bg_orange);
+    .bgc-maker(yellow, @dev_bg_yellow);
+    .bgc-maker(red, @dev_bg_red);
+    .bgc-maker(pink, @dev_bg_pink);
+    .bgc-maker(purple, @dev_bg_purple);
+    .bgc-maker(darkpurple, @dev_bg_darkpurple);
+    .bgc-maker(green, @dev_bg_green);
+    .bgc-maker(lightgreen, @dev_bg_lightgreen);
+    .bgc-maker(yellowgreen, @dev_bg_yellowgreen);
+    .bgc-maker(dodgerblue, @dev_bg_dodgerblue);
+    .bgc-maker(slateblue, @dev_bg_slateblue);
+  }
+}
+
+.bg-list(){
+	.bgc-maker(@bgName; @bgColor){
+		&-@{bgName}{
+			.bgc(@bgColor) !important;
+		}
+	}
+	.bg{
+		.bgc-maker(blue, #7CB5EC);
+		.bgc-maker(darkgrey, #434348);
+		.bgc-maker(green, #90ED7D);
+		.bgc-maker(orange, #F7A35C);
+		.bgc-maker(purple, #8085E9);
+		.bgc-maker(pink, #F15C80);
+		.bgc-maker(yellow, #E4D354);
+		.bgc-maker(darkgreen, #2B908F);
+		.bgc-maker(red, #F45B5B);
+		.bgc-maker(cyan, #91E8E1);
+		.bgc-maker(lightgreen, #94E9E1);
+		.bgc-maker(white, white);
+	}
+}
+
+// 预生成前景色
+.fg-list(){
+	.fgc-maker(@fgName; @fgColor){
+		&-@{fgName}{
+			.fgc(@fgColor) !important;
+		}
+	}
+	.fg{
+		.fgc-maker(blue, #7CB5EC);
+		.fgc-maker(darkgrey, #434348);
+		.fgc-maker(green, #90ED7D);
+		.fgc-maker(orange, #F7A35C);
+		.fgc-maker(purple, #8085E9);
+		.fgc-maker(pink, #F15C80);
+		.fgc-maker(yellow, #E4D354);
+		.fgc-maker(darkgreen, #2B908F);
+		.fgc-maker(red, #F45B5B);
+		.fgc-maker(cyan, #91E8E1);
+		.fgc-maker(lightgreen, #94E9E1);
+		.fgc-maker(white, white);
+	}
+}
+
+// button maker
+.btn-maker(@name: normal;
+	@bgc: #C3C3C3;
+	@fontSize: @rootSize;
+	@color: white;
+	@width: auto;
+	@height: 38px;
+	@lineHeight: 38px;
+	@borderRadius: 4px;
+	@borderWidth: 0px;
+	@borderColor: inherit;
+	@hoverBgc: darken(@bgc, 10%);
+	@activeBgc: lighten(@bgc, 5%)){
+	.btn.@{name}{
+		.whlh(@width, @height, @lineHeight - @borderWidth * 2);
+		.pd(0);
+		.fc(@fontSize, @color);
+		.bgc(@bgc);
+		.brd(@borderWidth, solid, @borderColor);
+		.brdr(@borderRadius);
+	}
+	.btn.@{name}:hover{
+		.bgc(@hoverBgc);
+	}
+	.btn.@{name}:active{
+		.bgc(@activeBgc);
+	}
+}
+
+// 带前缀网格生成
+.cell-maker-prefix(@prefix; @col: 1; @cols: @colNumber) when (@col <= @cols) {
+	> .col-@{prefix}-@{col}{
+		.d-ib();
+		flex: 0 0 (@col * 100% / @cols);
+		width: @col * 100% / @cols;
+	}
+	.cell-maker-prefix(@prefix; @col + 1; @cols);
+}
+
+// 新网格生成
+.cell-maker(@col: 1; @cols: @colNumber) when (@col <= @cols){
+	> .col-@{col}{
+		.d-ib();
+		flex: 0 0 (@col * 100% / @cols);
+		width: @col * 100% / @cols;
+	}
+	.cell-maker(@col + 1; @cols);
+}
+
+
+// 新网格
+.grid(@cols: @colNumber) when (default()){
+	.sn-grid{
+		.pos-r();
+		display: flex;
+		width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.fs(0);
+		.pd(0 24px);
+		.ta-lt();
+
+		.cell-maker(1; @cols);
+
+		>.sn-cell{
+			.va-t();
+			.fs(@rootSize);
+		}
+	}
+}
+
+// 表格
+.form-maker(@type: base;
+	@fontSize: @rootSize;
+	@color: #c3c3c3;
+	@fieldHeight: 38px;
+	@labelWidth: 120px;
+	@inputWidth: auto;
+	@inputPaddingLeft: 10px;
+	@inpurBorderColor: @commonBorderColor;
+	@tipFontSize: 12px;
+	@tipHeight: 30px;
+	){
+	form.form{
+		.fc(@fontSize, @color);
+		>.field{
+			.pos-r();
+			.fc(@fontSize, @color);
+			// .mgb(@tipHeight);
+			height: @fieldHeight;
+			>label:first-child{
+				.pos-r();
+				.d-ib();
+				// .pdr(1em);
+				.ta-rt();
+				width: @labelWidth;
+				&.star:before{
+					.pos-atr(@zIndex: 1);
+					.d-b();
+					.wh(1em, 100%);
+					.fgc(#e7303e);
+					content: '*';
+					right: ~'-0.5em\9';
+				}
+			}
+			>input[type=text], >input[type=password], >input[type=email], >input[type=number], >select{
+				.whlh(@inputWidth, @fieldHeight, @fieldHeight);
+				.brd(1px, solid, @inpurBorderColor);
+				.brdr(5px);
+				.pdl(@inputPaddingLeft);
+				.pdr(@inputPaddingLeft);
+				// border-right: 3px;
+			}
+		}
+		> .field > .tip, > .field + .tip{
+			.fc(@tipFontSize, red);
+			.pdl(@labelWidth + @inputPaddingLeft + 1px);
+			.hlh(@tipHeight, @tipHeight);
+		}
+		> .field.verifyimg-box, > .field.verifytel-box{
+			> input{
+				width: 160px;
+			}
+			> img, > button{
+				.wh(78px, @fieldHeight);
+				.va-t();
+				.mgl(8px);
+			}
+			.btn-maker(@name: code;
+				@bgc: white;
+				@color: white;
+				@height: @fieldHeight;
+				@width: 78px;
+				);
+		}
+	}
+}
+
+// banner 轮播Banner
+.banner-slider-maker(@bannerHeight: 500px;
+	@radius: 6px;
+	@controllerBgColor: white;
+	@controllerActiveBgColor: white
+	){
+	.banner{
+		.pos-r();
+		.d-b();
+		.wh(100%, @bannerHeight);
+		z-index: 10;
+	}
+
+	.slider{
+		.pos-r();
+		.d-b();
+		height: @bannerHeight;
+		width: 100%;
+		z-index: 20;
+		> .slide{
+			.d-b();
+			.pos-a(@zIndex: 1);
+			.wh(100%, @bannerHeight);
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+		}
+		> .controller{
+			@controllerMargin: 9px;
+			.pos-abl(@bottom: -42px - @radius * 2; @left: 50%);
+			.ta-c();
+			.mg();
+			.pdt(21px);
+			.pdb(21px);
+			.pdl();
+			transform: translateX(-50%);
+			z-index: 30;
+			>li{
+				.d-ib();
+				.wh(@radius * 2, @radius * 2);
+				.brdr(@radius);
+				.mg(0, @controllerMargin, 0, @controllerMargin);
+				.bgc(white);
+				transition: background-color .2s;
+				cursor: pointer;
+				box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.35) inset;
+				&.active{
+					.bgc(@controllerActiveBgColor);
+				}
+			}
+		}
+	}
+}
+
+// 文字不换行，溢出自动隐藏
+.nowrap(@width: auto){
+	overflow: hidden;
+	width: @width;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+// ! 固定行数显示
+.line-clamp(@line: 1) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: @line;
+	word-break: break-all;
+}

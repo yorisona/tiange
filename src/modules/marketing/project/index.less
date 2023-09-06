@@ -1,0 +1,52 @@
+@charset 'utf-8';
+
+
+.tg-marketing-project-page {
+  flex: auto;
+  overflow-y: auto;
+  overflow-y: overlay;
+  .input-with-select{
+    .el-input-group__prepend {
+      background-color: #fff;
+      width: 88px;
+      .el-input .el-input__inner {
+        border-color: transparent;
+      }
+    }
+  }
+  tr {
+    cursor: pointer;
+  }
+}
+
+.el-popover.marketing-project-list {
+  width: 110px;
+  min-width: 110px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.el-select-dropdown__item {
+  color: var(--text-second-color);
+}
+.el-select-dropdown__item.selected {
+  color:var(--theme-color)!important;
+}
+
+.ae-popever-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 9px 0;
+  padding: 8px;
+  row-gap: 12px;
+
+  .item {
+    margin: 0;
+    width: 46px;
+    height: 18px;
+    line-height: 18px;
+  }
+}

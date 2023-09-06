@@ -1,0 +1,32 @@
+@import '~@/styles/utils/index.less';
+.finance-settlement {
+  .reason-dialog-content {
+    .fc(14px, var(--text-color));
+    line-height: 22px;
+    .pd(24px);
+  }
+  .number-div {
+    display: flex;
+    justify-content: center;
+    .number-span {
+      width: 140px;
+      text-align: left;
+      margin-right: -30px;
+    }
+  }
+  .el-input{
+    color: var(--text-color);
+    .el-input__inner {
+      border-color: var(--border-line-color);
+    }
+  }
+  .input-with-select .el-input-group__prepend {
+    width: 88px;
+    .el-select {
+      .el-input .el-input__inner {
+        border-color: transparent;
+      }
+    }
+  }
+}
+

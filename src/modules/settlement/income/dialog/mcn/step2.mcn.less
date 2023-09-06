@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+
+.tg-mcn-settlement-form {
+  height: 570px !important;
+  .mcn-settlement-form-income-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    .mcn-settlement-form-income-content-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 18px;
+      line-height: 18px;
+      // overflow: hidden;
+      .income-content-info-summary {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 18px;
+        > span {
+          &:first-of-type {
+            margin-right: 24px;
+            font-size: 12px;
+            color: var(--text-second-color);
+          }
+          &:last-of-type {
+            color: var(--text-color);
+            font-weight: 600;
+          }
+        }
+      }
+      .income-content-info-list {
+        overflow: auto;
+        overflow-y: overlay;
+        flex-grow: 1;
+        padding: 12px 18px 0;
+        .income-content-info-list-row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 8px;
+          line-height: 18px;
+          height: 18px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          > span {
+            font-size: 12px;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+    .mcn-settlement-form-income-content-operator {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 84px 28px 56px;
+      column-gap: 18px;
+      height: 18px;
+      line-height: 18px;
+      margin-top: 12px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.block-menu-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 186px);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+  > .block-menu {
+    width: 186px;
+    height: 70px;
+    .brdr(4px);
+    .pd(10px);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background: #f6f9ff;
+    }
+
+    > img {
+      @size: 44px;
+      .wh(@size, @size);
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    > span {
+      .fc(16px, #333);
+    }
+  }
+}

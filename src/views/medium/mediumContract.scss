@@ -1,0 +1,287 @@
+@import '@/assets/scss/public.scss';
+$color-primary: var(--theme-color);
+.icon-shangchuankaipiaopingzheng:before {
+  content: '\E620';
+  font-size: 24px;
+}
+.icon-zuofeihetong:before {
+  font-size: 24px;
+}
+#medium-contarct {
+  ::v-deep .el-table {
+    th.is-center {
+      text-align: center;
+    }
+  }
+  ::v-deep .el-table td {
+    padding: 17.5px 0;
+  }
+  // ::v-deep .el-table th {
+  //   padding: 22px 0;
+  // }
+  .condition {
+    border-radius: 2px;
+    background: #fff;
+    padding: 10px 20px;
+    .condition-line {
+      display: flex;
+      line-height: 46px;
+      .condition-label {
+        font-weight: 600;
+        color: var(--text-color);
+        display: inline-block;
+        min-width: 75px;
+      }
+      .condition-value {
+        ul {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          li {
+            color: #666;
+            padding: 0 8px;
+            margin-right: 10px;
+            cursor: pointer;
+            line-height: 22px;
+            margin-top: 12px;
+          }
+          .actives {
+            background: var(--theme-color);
+            color: white;
+            line-height: 22px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+    .condition-line-form {
+      padding: 10px 0;
+      color: #666;
+      margin-top: 5px;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          margin-bottom: 14px;
+          margin-right: 20px;
+          .contract-type-label {
+            display: inline-block;
+            text-align: right;
+            width: 86px;
+          }
+        }
+      }
+    }
+  }
+  .result-list {
+    border-radius: 2px;
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff;
+    .opreate-btns {
+      margin-bottom: 12px;
+      .button-icon {
+        position: relative;
+        top: 0.5px;
+        margin-right: 3px;
+        font-size: 13px;
+      }
+      .el-button {
+        font-size: 14px;
+        padding: 7px 0;
+        width: 100px;
+        height: 36px;
+        border-radius: 4px;
+        text-align: center;
+      }
+    }
+    // ::v-deep .el-table__header-wrapper {
+    //   height: 60px;
+    // }
+    ::v-deep .el-table__row {
+      color: var(--text-color);
+      height: 58px;
+      max-height: 80px;
+    }
+    ::v-deep .el-table th > .cell {
+      font-size: 14px !important;
+      color: var(--text-des-color);
+      font-weight: 600;
+    }
+    ::v-deep .el-table__row {
+      .cell {
+        margin: 0;
+        text-align: center;
+      }
+    }
+    .cell-left {
+      text-align: left;
+    }
+    .contract-sale-chance-reference {
+      cursor: pointer;
+      position: relative;
+      padding: 0 10px;
+      // display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      .icon-arrow {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        margin-left: 6px;
+      }
+    }
+    .one-sale-chance {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      vertical-align: middle;
+      &.status-dot-1 {
+        background-color: #ff9434;
+        color: #ff9434;
+      }
+      &.status-dot-2 {
+        background-color: #2877ff;
+        color: #2877ff;
+      }
+      &.status-dot-3 {
+        background-color: #f43846;
+        color: #f43846;
+      }
+      &.status-dot-4 {
+        background-color: #ff9434;
+        color: #ff9434;
+      }
+      &.status-dot-5 {
+        background-color: #aaa;
+        color: var(--text-des-color);
+      }
+    }
+    .status-dot-1 {
+      color: #ff9434;
+      font-size: 14px;
+    }
+    .status-dot-2 {
+      color: #3eaf90;
+      font-size: 14px;
+    }
+    .status-dot-3 {
+      color: #f43846;
+      font-size: 14px;
+    }
+    .status-dot-4 {
+      color: #ff9434;
+      font-size: 14px;
+    }
+    .status-dot-5 {
+      color: #aaa;
+      font-size: 14px;
+    }
+    .create-time {
+      color: var(--text-des-color);
+    }
+    .status-text {
+      vertical-align: middle;
+    }
+    .customer-name {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .contract_type_uid {
+      .type {
+        display: inline-block;
+        width: 40px;
+        text-align: center;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 20px;
+        border: 1px solid #6e6be9;
+        color: #6e6be9;
+        background: #e9eaf5;
+        margin-right: 5px;
+        font-size: 12px;
+      }
+      .type-cm {
+        border: 1px solid #1185e4;
+        color: #1185e4;
+        background: rgba(17, 133, 228, 0.1);
+      }
+    }
+    .contract-uid {
+      color: $color-primary;
+    }
+    .contract-pagination {
+      padding: 0;
+      margin-top: 12px;
+      ::v-deep .el-input.el-input--mini.el-input--suffix {
+        margin: 0;
+      }
+    }
+    .empty-placeholder {
+      padding: 150px 0;
+      img {
+        width: 110px;
+        height: 110px;
+      }
+    }
+    .approve-btn-wrap {
+      width: 34px;
+      display: inline-block;
+    }
+    .contract-file-check:hover {
+      color: var(--theme-color);
+    }
+  }
+}
+.color-y {
+  color: #ff8549;
+}
+.contract-sale-chance {
+  li {
+    background-color: #f3f4f6 !important;
+    border-radius: 4px !important;
+  }
+}
+::v-deep .el-dialog {
+  padding: 0 !important;
+  ::v-deep .el-dialog__header {
+    background-color: #f6f6f6;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  ::v-deep .el-dialog__body {
+    border-radius: 4px;
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+}
+
+::v-deep .el-table__header-wrapper {
+  .has-gutter {
+    tr {
+      line-height: 20px;
+    }
+    th {
+      background-color: #fafafa !important;
+    }
+  }
+}
+
+::v-deep .el-select__caret {
+  // height: 40px;
+}
+::v-deep .el-table__body-wrapper {
+  top: -1px;
+}
+::v-deep .el-dialog__close:hover {
+  color: #909399 !important;
+}

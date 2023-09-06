@@ -1,0 +1,40 @@
+.searchBar {
+  padding: 16px 0 4px 16px;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  .formItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    /*grid-row-gap: 12px;
+    grid-column-gap: 18px;*/
+
+    .formItem {
+      flex: 0 0 278px;
+      :global {
+        .el-form-item {
+          .el-form-item__content {
+            .el-input--suffix {
+              .el-input__suffix {
+                .el-input__suffix-inner {
+                  display: inline-block;
+                  width: 25px;
+                }
+              }
+            }
+          }
+        }
+        .el-input,
+        .el-select {
+          width: 100%;
+        }
+      }
+    }
+    .formItemSearchOperating {
+      white-space: nowrap;
+      flex: 1 1 auto;
+      margin-bottom: 12px;
+    }
+  }
+}

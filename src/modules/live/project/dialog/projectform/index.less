@@ -1,0 +1,226 @@
+@charset 'utf-8';
+
+
+.tg-live-project-form-dialog {
+  .tbLiveAccountFormItem {
+    padding: 18px;
+    border-radius: 2px;
+    background: #f7f8f9;
+    width: 552px;
+    min-height: 112px;
+    .LiveAccountFormItem {
+      display: grid;
+      grid-template-columns: repeat(2, 248px);
+      column-gap: 18px;
+      row-gap: 12px;
+      margin-bottom: 12px;
+      .live-div {
+        display: flex;
+        width: 248px;
+        height: 28px;
+        .icon {
+          align-self: center;
+        }
+        .el-input {
+          width: 228px;
+          margin: 0 4px 0 0;
+          padding: 0;
+        }
+        input {
+          margin: 0;
+          width: 228px;
+        }
+      }
+    }
+  }
+
+  .el-drawer {
+    width: 612px !important;
+
+    .tg-drawer-footer {
+      background: #f2f7ff;
+      height: 50px;
+      line-height: 50px;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      align-content: center;
+      justify-content: end;
+      //column-gap: 12px;
+      padding: 24px;
+    }
+  }
+
+  .tg-drawer-form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: visible;
+  }
+
+  .CooperationType-checkbox-group {
+    display: grid;
+    height: 32px;
+    line-height: 32px;
+    width: 100%;
+    margin: 0;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 78px));
+
+    > .CooperationType-checkbox {
+      width: 78px;
+      margin: 0;
+    }
+  }
+
+  .el-form {
+    flex: 1;
+    padding: 12px 12px 12px 30px;
+    overflow-y: auto;
+    overflow: overlay;
+    overflow-x: hidden;
+
+    .el-form-item {
+      margin-bottom: 18px;
+
+      .el-form-item__label {
+        line-height: 18px !important;
+        height: 24px !important;
+      }
+
+      .el-date-editor {
+        width: 100%;
+      }
+
+      .el-select {
+        display: block;
+      }
+      .el-input__suffix {
+        .el-input__suffix-inner {
+          width: 25px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .date-picker-item {
+      display: inline-block;
+    }
+
+    .time-picker-item {
+      display: inline-block;
+    }
+
+    .remark-input {
+      .el-textarea__inner {
+        height: 94px;
+      }
+    }
+
+    .el-input-group__append {
+      padding: 0 10px;
+      background-color: #f6f6f6;
+      color: var(--text-third-color);
+    }
+
+    .selection-target-sub-title {
+      height: 18px;
+      line-height: 18px;
+      margin: 6px 0 4px 0;
+
+      span {
+        font-size: 12px;
+        color: var(--text-third-color);
+      }
+
+      div {
+        border-top: 1px dashed rgba(var(--tip-icon-rgb-color), 0.3);
+        height: 1px;
+        overflow: hidden;
+        display: inline-block;
+        width: 510px;
+        margin-left: 6px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .one-item {
+    display: block;
+    width: 552px;
+  }
+
+  .two-item-left {
+    display: inline-block;
+    width: 262px;
+    margin-right: 18px;
+  }
+
+  .three-item {
+    .el-form-item {
+      display: inline-block;
+      margin-right: 18px;
+      width: 172px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .four-item {
+    .el-form-item {
+      display: inline-block;
+
+      &:nth-of-type(1) {
+        margin-right: 6px;
+        width: 141px;
+      }
+
+      &:nth-of-type(3) {
+        margin-right: 6px;
+        width: 141px;
+      }
+
+      &:nth-of-type(2) {
+        margin-right: 18px;
+        width: 120px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+        width: 120px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .mgb-18 {
+    margin-bottom: 18px !important;
+  }
+
+  .fileItem {
+    color: var(--text-color);
+    height: 18px;
+    line-height: 18px;
+  }
+
+  .fileItem:hover {
+    color: var(--theme-color);
+  }
+
+  .el-input.is-disabled .el-input__inner {
+    color: var(--text-color);
+  }
+}
+
+.live-department-tree-popper-class {
+  .department-tree {
+    margin-right: -18px;
+    padding-right: 18px;
+    max-height: 360px;
+    overflow-y: auto;
+    overflow-y: overlay;
+  }
+}

@@ -1,0 +1,207 @@
+@import '@/styles/vars.scss';
+
+// .live-arrange {
+.tg-live-project-user-schedule-dialog {
+
+  .descript {
+    .des-label {
+      color: var(--text-des-color);
+    }
+
+    .des-explain {
+      margin-left: 10px;
+    }
+  }
+
+  .error-form {
+    ::v-deep .el-input__inner {
+      border-color: var(--error-color) !important;
+    }
+  }
+
+  .content-container {
+    // margin-top: -20px;
+    height: 554px;
+    overflow: auto;
+    padding: 18px;
+  }
+
+  .content {
+    // margin-bottom: 60px;
+    // margin-top: 16px;
+
+    ::v-deep .el-timeline-item__content {
+      position: relative;
+      top: -9px;
+    }
+    ::v-deep .el-timeline-item__content:nth-child(n + 2) {
+      margin-top: 12px;
+    }
+    .el-timeline-item__timestamp.is-top {
+      padding-top: 18px;
+    }
+
+    ::v-deep .el-timeline-item__node--normal {
+      width: 8px;
+      height: 8px;
+    }
+    ::v-deep .el-timeline-item__node {
+      background-color: #bfbfbf;
+      border: 2px solid white;
+      box-sizing: content-box;
+      margin-left: -2px;
+      margin-top: 12px;
+    }
+    ::v-deep .el-timeline-item {
+      padding-bottom: 0;
+
+      &:first-of-type {
+        .el-timeline-item__node {
+          margin-top: -2px;
+        }
+      }
+      &:last-of-type {
+        .el-timeline-item__node {
+          margin-top: -2px;
+        }
+      }
+    }
+    .el-form-item {
+      .el-select {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+    }
+    ::v-deep .el-timeline-item__tail {
+      background-color: #ebebeb;
+    }
+    ::v-deep .el-timeline-item__tail {
+      left: 2px;
+      border-left: 2px solid #ebebeb;
+    }
+    ::v-deep .el-timeline-item__wrapper {
+      padding-left: 14px;
+    }
+    ::v-deep .el-timeline-item__timestamp.is-top {
+      padding-top: 1px;
+      color: var(--text-color);
+    }
+
+    .timeline-back {
+      width: 464px;
+      padding: 11px 16px;
+      background: #f6f6f6;
+      color: var(--text-second-color);
+      font-size: 12px;
+      margin-top: 10px;
+      border-radius: 4px;
+
+      ::v-deep .el-select .el-input--suffix {
+        width: 100%;
+      }
+      .title {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          .delete-btn {
+            color: #d2d4d9;
+            margin-left: 6px;
+          }
+
+          .ml70 {
+            margin-left: 70px;
+          }
+
+          ::v-deep .el-select {
+            width: 342px;
+            margin-bottom: 16px;
+            margin-left: 70px;
+
+            ::v-deep .el-input {
+              width: 100%;
+            }
+          }
+          .li-title {
+            margin-top: 8px;
+            position: absolute;
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+          }
+
+          .add-table-line {
+            width: 342px;
+            height: 36px;
+            border: #d5e1f3 dashed 1px;
+            text-align: center;
+            line-height: 32px;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #396fff;
+            border-radius: 4px;
+            i {
+              margin-right: 6px;
+              font-size: 15px;
+              color: #396fff;
+            }
+          }
+        }
+      }
+    }
+
+    .add-timeline {
+      display: inline-block;
+      margin-top: 16px;
+      color: #396fff;
+      cursor: pointer;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+  .delete-btn-time {
+    color: #d2d4d9;
+    margin-left: 10px;
+    font-size: var(--small-font-size);
+    &:hover {
+      color: var(--error-color);
+    }
+  }
+  .error-tips {
+    color: var(--error-color);
+    font-size: 12px;
+    position: absolute;
+    margin-top: -18px;
+    margin-left: 70px;
+  }
+  .anchor-time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 6px;
+
+    .el-date-editor {
+      width: 156px;
+    }
+    .el-date-editor:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  ::v-deep .dialog-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f6f6f6;
+    height: 60px;
+    border-radius: 4px;
+  }
+}
+
+.des-value {
+  color: var(--text-color);
+}

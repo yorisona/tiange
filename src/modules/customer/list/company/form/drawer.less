@@ -1,0 +1,66 @@
+@charset 'utf-8';
+@import '~@/styles/utils/index.less';
+
+.company-form {
+  .pd(18px 30px);
+  .upload-tips {
+    .fc(12px, var(--text-third-color));
+    .lh(normal);
+  }
+
+  .tg-file-uploader {
+    .pos-r();
+    .upload-tips {
+      .pos-atr(100; 9px; -252px);
+    }
+  }
+
+  .introduce-file {
+    display: flex;
+    align-items: center;
+    svg.ico-pdf,
+    svg.ico-picture {
+      font-size: 20px;
+      flex: none;
+    }
+
+    .filename {
+      margin-left: 8px;
+      margin-right: 12px;
+      .fgc(var(--text-color));
+    }
+
+    svg.ico-frm-delete,
+    svg.ico-frm-delete-active {
+      font-size: 16px;
+      flex: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.cols {
+  display: grid;
+  column-gap: 18px;
+}
+
+.col-1-2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.col-2-3 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.col-1-3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.company-drawer-content {
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+  overflow-y: overlay;
+}

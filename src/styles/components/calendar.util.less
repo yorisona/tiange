@@ -1,0 +1,45 @@
+@charset 'utf-8';
+
+
+.grid-column(@start, @end){
+  grid-column-start: @start;
+  grid-column-end: @end;
+}
+
+.grid-row(@start, @end){
+  grid-row-start: @start;
+  grid-row-end: @end;
+}
+
+.calendar-cell-maker(@num: 1) when (@num <= 24){
+  .cell-mon-@{num}{
+    .grid-column(2, 3);
+    .grid-row(@num + 1, @num + 2);
+  }
+  .cell-tue-@{num}{
+    .grid-column(3, 4);
+    .grid-row(@num + 1, @num + 2);
+  }
+  .cell-wed-@{num}{
+    .grid-column(4, 5);
+    .grid-row(@num + 1, @num + 2);
+  }
+  .cell-thu-@{num}{
+    .grid-column(5, 6);
+    .grid-row(@num + 1, @num + 2);
+  }
+  .cell-fri-@{num}{
+    .grid-column(6, 7);
+    .grid-row(@num + 1, @num + 2);
+  }
+  .cell-sat-@{num}{
+    .grid-column(7, 8);
+    .grid-row(@num + 1, @num + 2);
+  }
+  .cell-sun-@{num}{
+    .grid-column(8, 9);
+    .grid-row(@num + 1, @num + 2);
+  }
+
+  .calendar-cell-maker(@num + 1);
+}

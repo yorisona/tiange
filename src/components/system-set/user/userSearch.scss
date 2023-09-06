@@ -1,0 +1,99 @@
+.system-search {
+  padding: 0 0 0 16px;
+  .arrange {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      height: 28px !important;
+      margin-bottom: 12px;
+      margin-right: 18px;
+      display: flex;
+      align-items: center;
+      .s-title {
+        display: inline-block;
+        width: 60px;
+        font-size: 12px;
+        text-align: right;
+        // margin-top: -6px;
+        color: var(--text-second-color) !important;
+      }
+
+      .info-name-select {
+        width: 86px;
+        ::v-deep .el-input {
+          width: 100%;
+          ::v-deep .el-input__inner {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+          }
+        }
+      }
+      .info-name-input {
+        width: 118px;
+        position: relative;
+        left: -1px;
+        height: 28px;
+        font-size: 12px;
+        ::v-deep .el-input__inner {
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+          //border: 0px solid var(--border-line-color) !important;
+        }
+        .info-name-select {
+          ::v-deep .el-input__inner {
+            border: 0px solid var(--border-line-color) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .repain-select250 {
+    display: inline-block;
+    width: 204px;
+    position: relative;
+    ::v-deep .el-button {
+      width: 204px;
+      height: 28px;
+      margin-top: -6px;
+      padding: 0 10px;
+      text-align: left;
+      position: relative;
+      top: 1px;
+      font-weight: normal;
+      &:hover {
+        border-color: #c0c4cc !important;
+      }
+    }
+    ::v-deep .select-icon {
+      margin-top: 5px;
+    }
+
+    .el-button {
+      color: var(--text-color);
+      &:focus {
+        border-color: #dcdfe6;
+      }
+    }
+    .el-button.el-button--default:not([disabled]):not(.is-disabled):not(.el-button--primary):hover {
+      color: var(--text-color);
+      /* color: var(--theme-color); */
+    }
+  }
+
+  ::v-deep .el-input-group__prepend {
+    height: 28px;
+    background-color: #ffffff;
+    color: var(--text-color);
+    width: 76px;
+    .el-input {
+      height: 28px;
+      line-height: 27px;
+    }
+  }
+  ::v-deep .el-input__suffix {
+    height: 28px;
+    overflow: hidden;
+    line-height: 27px;
+  }
+}

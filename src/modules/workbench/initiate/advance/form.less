@@ -1,0 +1,39 @@
+.form-wrapper {
+  padding: 18px 0;
+  /deep/.el-textarea .el-input__count {
+    bottom: 7px !important;
+  }
+  .upload-box {
+    display: flex;
+    .file-tips {
+      margin-left: 12px;
+      font-size: 12px;
+      margin-top: 0;
+      line-height: 28px;
+      color: var(--text-third-color);
+    }
+    /deep/.el-loading-spinner {
+      .circular {
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+  .file-list-box {
+    width: 750px;
+    margin: 4px 0;
+    /deep/.file-name {
+      font-size: 12px;
+    }
+    /deep/.upload-file-list .file-item svg[data-v-b8204f64] {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  /deep/.tg-btn.tg-btn-small,
+  .tg-btn:not(.tg-btn-large):not(.tg-btn-mini) {
+    border-radius: 2px !important;
+  }
+}

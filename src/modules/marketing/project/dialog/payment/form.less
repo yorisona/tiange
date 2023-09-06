@@ -1,0 +1,291 @@
+.form-wrapper {
+  padding: 18px;
+  max-height: 616px;
+  overflow-y: scroll;
+  .base-title {
+    font-size: 14px;
+    color: var(--text-color);
+    //font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .settlementList-title {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+  /deep/ .el-form--inline .el-form-item {
+    margin-right: 0 !important;
+    .settlement-uid-select {
+      .el-input__inner {
+        padding-right: 35px;
+      }
+    }
+  }
+  /deep/ .el-input--prefix .el-input__inner {
+    padding-left: 12px;
+  }
+  /deep/ .el-input--suffix .el-input__inner {
+    padding-right: 0;
+  }
+  /deep/ .el-button--text {
+    color: var(--theme-color);
+    padding: 0;
+    text-align: center;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 18px;
+  }
+  .invoice-list-wrapper {
+    margin-bottom: 12px;
+    border: 1px solid #e3e8ec;
+    border-bottom: 0;
+    width: 1141px;
+    .header-box {
+      height: 32px;
+      display: flex;
+      line-height: 32px;
+      justify-content: space-between;
+      width: 1140px;
+      border-bottom: 1px solid #e3e8ec;
+      .header-item {
+        text-align: center;
+        background: rgba(164, 178, 194, 0.1);
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 12px;
+        border-left: 1px solid #e3e8ec;
+        .star {
+          color: var(--error-color);
+        }
+      }
+      .invoice-img {
+        width: 60px;
+        border-left: none;
+      }
+    }
+    .body-box {
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      width: 1140px;
+      border-bottom: 1px solid #e3e8ec;
+      .body-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-left: 1px solid #e3e8ec;
+        font-size: 12px;
+        .el-form-item {
+          margin-bottom: 0 !important;
+        }
+      }
+      .invoice-img {
+        width: 60px;
+        border-left: none;
+      }
+      .upload-box {
+        position: relative;
+        height: 32px;
+        width: 36px;
+        color: var(--text-third-color);
+        .ico-upload-btn {
+          font-size: 16px;
+          // color: var(--theme-color);
+          margin-left: 10px;
+        }
+        .invoice-icon {
+          display: block;
+          width: 35px;
+          height: 35px;
+          border-radius: 2px;
+          margin: 3px auto 0;
+        }
+        .delete-icon {
+          position: absolute;
+          top: -6px;
+          right: -8px;
+          color: #d1d8e0;
+          cursor: pointer;
+          &:hover {
+            color: #f04b4b !important;
+          }
+        }
+      }
+    }
+    .invoice-settlement-uid {
+      width: 180px;
+    }
+    .invoice-purchaser {
+      width: 128px;
+      padding: 0 4px;
+    }
+    .invoice-seller {
+      width: 128px;
+      padding: 0 4px;
+    }
+    .invoice-no {
+      width: 104px;
+    }
+    .invoice-date {
+      width: 104px;
+    }
+    .invoice-amount {
+      width: 104px;
+    }
+    .invoice-write-off-amount {
+      width: 132px;
+    }
+    .tax {
+      width: 96px;
+    }
+    .tax-rate {
+      width: 54px;
+    }
+    .no-tax {
+      width: 112px;
+    }
+    .invoice-type {
+      width: 102px;
+      // color: #a4b2c2;
+      // .ico-btn {
+      //   font-size: 18px;
+      //   cursor: pointer;
+      //   margin-top: 7px;
+      // }
+    }
+    .settlement-uid {
+      width: 310px;
+    }
+    .settlement-amount {
+      width: 170px;
+    }
+    .paid-amount {
+      width: 170px;
+    }
+    .pending_amount {
+      width: 170px;
+    }
+    .pay_amount {
+      width: 170px;
+    }
+    .upload-invoice {
+      width: 92px;
+      // display: flex;
+      // justify-content: center;
+      // margin-top: -3px;
+    }
+    .settlement-delete {
+      width: 59px;
+      color: var(--text-third-color);
+      .ico-btn {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+  .invoice-add-box {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  .table-box {
+    height: 90px;
+    margin-bottom: 18px;
+    border: 1px solid #e3e8ec;
+    border-right: none;
+    .form-item-wrapper {
+      width: 120px;
+      height: 89px;
+      border-right: 1px solid #e3e8ec;
+    }
+    /deep/ .el-form-item__error {
+      padding-left: 12px;
+    }
+    .label-box {
+      height: 38px;
+      text-align: center;
+      background: rgba(164, 178, 194, 0.1);
+      border-bottom: 1px solid #e3e8ec;
+      color: var(--text-color);
+      .star {
+        color: var(--error-color);
+      }
+    }
+    .input-box {
+      position: relative;
+      height: 50px;
+      .input {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      .invoice-img {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 2px;
+        margin: 9px auto 0;
+      }
+      .delete-icon {
+        position: absolute;
+        top: -6px;
+        right: 16px;
+        color: #d1d8e0;
+        cursor: pointer;
+        &:hover {
+          color: #f04b4b !important;
+        }
+      }
+    }
+  }
+  /deep/ .el-form-item__label {
+    color: var(--text-second-color);
+  }
+  // /deep/.el-form .el-form-item .el-form-item__error {
+  //   line-height: 6px;
+  // }
+  /deep/.textarea-form-item .el-form-item__error {
+    line-height: 15px !important;
+  }
+  .upload-box {
+    display: flex;
+    .file-tips {
+      margin-left: 12px;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--text-third-color);
+    }
+    /deep/.el-loading-spinner {
+      .circular {
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+  /deep/.tg-btn.tg-btn-small,
+  .tg-btn:not(.tg-btn-large):not(.tg-btn-mini) {
+    border-radius: 2px !important;
+  }
+  .file-list-box {
+    margin-top: 0;
+    width: 750px;
+  }
+  .upload-file-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /deep/ .file-item {
+      width: 360px;
+      .file-name {
+        flex: none;
+        max-width: 300px;
+      }
+    }
+  }
+}

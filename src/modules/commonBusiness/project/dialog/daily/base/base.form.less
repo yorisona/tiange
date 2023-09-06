@@ -1,0 +1,44 @@
+@charset 'utf-8';
+
+
+.tg-common-business-base-form-dialog {
+  .dialog-content {
+    padding: 16px 24px;
+    max-height: 542px;
+    overflow-y: scroll;
+    .el-form {
+      .tg-dialog-section-title {
+        height: 40px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 40px;
+        color: var(--text-color);
+        position: relative;
+        & > span {
+          position: absolute;
+          display: inline-block;
+          width: 3px;
+          height: 14px;
+          background: rgba(var(--theme-rgb-color), 0.8);
+          left: -9px;
+          top: 12.5px;
+          border-radius: 1px;
+        }
+      }
+      .line-box {
+        display: flex;
+        justify-content: space-between;
+        .el-form-item {
+          width: 184px;
+          .el-form-item__label {
+            padding: 0 0 6px 0 ;
+            line-height: 16px;
+            font-size: 12px;
+            color: var(--text-second-color);
+          }
+        }
+      }
+
+    }
+  }
+}

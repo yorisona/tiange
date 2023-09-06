@@ -1,0 +1,30 @@
+.customer-detail-dialog {
+  .detail-wrapper {
+    max-height: 600px;
+    overflow-y: scroll;
+    background: #ffffff;
+    .left-wrapper {
+      height: 100%;
+      flex: 1;
+      min-height: 510px;
+      border-right: 12px solid #f6f6f6;
+    }
+  }
+  .table-wrapper {
+    margin-bottom: 24px;
+    /deep/ .el-table--border {
+      border-left: none;
+    }
+    /deep/ .el-table thead > tr > th {
+      border-bottom: 1px solid var(--table-border-color);
+      border-left: 1px solid var(--table-border-color);
+    }
+    /deep/ .el-table tbody > tr > td {
+      border-bottom: 1px solid var(--table-border-color);
+      border-left: 1px solid var(--table-border-color);
+    }
+    /deep/ .el-table tbody tr:hover > td {
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,140 @@
+@charset 'utf-8';
+
+
+.tg-cost-mcn-vtask-step3-after-container {
+  .step2-cost-layout-content {
+    grid-template-rows: 118px 300px 56px !important;
+    column-gap: 16px !important;
+    row-gap: 16px !important;
+  }
+  .adjust-account-content {
+    grid-template-rows: 44px 276px !important;
+  }
+  .row-flex {
+    display: flex;
+    margin-bottom: 18px;
+    .label {
+      width: 70px;
+      text-align: right;
+      color: var(--text-second-color);
+    }
+    .value {
+      color: var(--text-color);
+      .value-item-2 {
+        color: var(--text-third-color);
+      }
+    }
+    .value-flex {
+      display: flex;
+      .value-no {
+        width: 20px;
+      }
+    }
+  }
+
+  .tg-files-container {
+    height: 320px;
+
+    .file-block-content {
+      padding: 0 0 0 18px;
+      min-height: 700px;
+
+      .fileItem {
+        font-size: 14px;
+        color: var(--text-color);
+        text-align: left;
+        line-height: 16px;
+        height: 18px;
+        font-weight: 400;
+
+        display: flex;
+        margin-bottom: 12px;
+        svg {
+          float: left;
+          width: 16px;
+          line-height: 18px;
+          height: 16px;
+        }
+        div {
+          float: left;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .statements-file-block {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    font-size: 14px;
+    color: var(--text-second-color);
+    font-weight: 400;
+    overflow-y: auto;
+
+    .statements-file {
+      flex: 1;
+      padding: 18px 0 12px 0;
+    }
+
+    .fileList {
+      .fileItem {
+        font-size: 14px;
+        color: var(--text-color);
+        text-align: left;
+        line-height: 20px;
+        height: 20px;
+        font-weight: 400;
+        flex-shrink: 0;
+        display: flex;
+        margin-bottom: 12px;
+
+        &:hover {
+          .file-delete-icon {
+            visibility: visible;
+          }
+        }
+
+        .file-delete-icon {
+          padding-top: 2px;
+          line-height: 20px;
+          height: 20px;
+          visibility: hidden;
+        }
+
+        svg {
+          float: left;
+          height: 16px;
+          width: 16px;
+          line-height: 16px;
+          display: flex;
+        }
+        div {
+          float: left;
+          padding: 0;
+          margin: 0;
+        }
+      }
+      .tg-btn.tg-btn-default svg.icon {
+        color: var(--text-second-color);
+        height: 16px;
+      }
+    }
+  }
+
+  .one-block {
+    display: flex;
+    margin-top: 12px;
+    .label {
+      display: inline-block;
+      width: 76px;
+      color: var(--text-second-color);
+      font-size: 12px;
+      text-align: right;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}

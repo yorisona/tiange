@@ -1,0 +1,49 @@
+.dialog-content {
+  ::v-deep .el-input,
+  ::v-deep .el-select {
+    width: 360px;
+  }
+
+  ::v-deep .el-form-item {
+    margin-bottom: 16px;
+    height: 36px;
+
+    ::v-deep .el-form-item__label {
+      width: 78px;
+      height: 36px;
+    }
+  }
+
+  .repain-select {
+    display: inline-block;
+    width: 175px;
+
+    ::v-deep .el-button {
+      width: 175px;
+      text-align: left;
+      position: relative;
+      top: 1px;
+
+      &:hover {
+        border-color: #c0c4cc !important;
+      }
+    }
+  }
+
+  .form-verify-position {
+    ::v-deep .el-form-item__error {
+      left: 183px;
+    }
+  }
+
+  .color-error {
+    border-color: var(--error-color);
+  }
+  .color-error-font {
+    color: var(--error-color);
+    font-size: 12px;
+    position: absolute;
+    margin-left: -176px;
+    top: 29px;
+  }
+}

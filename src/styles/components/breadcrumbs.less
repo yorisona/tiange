@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+@import '../utils/index.less';
+
+.tg-breadcrumbs {
+  display: flex;
+  height: 42px;
+  column-gap: 4px;
+  align-items: center;
+  .fc(12px, var(--text-third-color));
+  background: transparent;
+  //.pdl(18px);
+  line-height: 18px;
+  a {
+    .fc(12px, var(--text-third-color));
+    line-height: 18px;
+    .td();
+    &.breadcrumb-link:hover {
+      .fgc(var(--theme-color));
+    }
+    &.breakcrumb-no-link:hover {
+      color: var(--text-second-color);
+    }
+  }
+  > .tg-breadcrumbs-extra {
+    // * 实际间隔是 24px
+    // * 容器的 column-gap 设置了 4px，此处额外追加 20px
+    .mgl(20px);
+  }
+  > .breakcrumb-no-link{
+    cursor: auto;
+    color: var(--text-second-color);
+  }
+  svg.icon {
+    color: #98a7ba;
+  }
+  svg.icon:hover {
+    color: #98a7ba;
+  }
+}
+
+// ! 临时使用的额外样式
+// * 正常全局改动的话不使用该组件的页面都要添加跟顶部的间距
+// * 太麻烦了暂不考虑
+.tg-breadcrumbs.tg-mgt--12 {
+  margin-top: -12px;
+}

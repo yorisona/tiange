@@ -1,0 +1,236 @@
+@import '@/styles/vars.scss';
+$color-primary: var(--theme-color);
+// 排除掉新增的和最近维护的页面
+// 1. 客户列表
+.router-view-content:not(.tg-page-container) {
+  .product-detail-section {
+    background: #fff;
+    border-radius: 10px;
+    // margin-top: 8px;
+    padding: 10px;
+  }
+  .show-product-dialog {
+    section {
+      width: 90%;
+      margin: 10px auto 26px;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      .detail-left,
+      .detail-right {
+        width: 49%;
+        border-right: 1px dashed #d1d1d1;
+        p {
+          margin-top: 13px;
+          margin-bottom: 13px;
+        }
+        div {
+          height: 36px;
+          line-height: 36px;
+          white-space: nowrap;
+          .is-display {
+            font-style: normal;
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            padding: 0 1px;
+            border-radius: 2px;
+            font-size: 12px;
+            margin-left: 2px;
+            font-weight: 600;
+          }
+          .is-display-text {
+            font-style: normal;
+          }
+          .is-gray-color {
+            color: var(--text-des-color);
+            border-color: var(--text-des-color);
+          }
+          p {
+            display: inline-block;
+            color: #a5a5a5;
+            font-size: 14px;
+            width: 30%;
+            text-align: right;
+            height: 37.6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-left: 12%;
+          }
+          span {
+            display: inline-block;
+            width: 52%;
+            color: #666;
+            margin-left: 5%;
+            height: 51px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            strong {
+              color: $color-primary;
+              border: 1px solid $color-primary;
+              padding: 0 2px;
+              font-size: 12px;
+              border-radius: 2px;
+              vertical-align: top;
+              width: 30px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            a {
+              display: inline-block;
+              width: 19px;
+              height: 19px;
+              background: url(../../assets/img/display_sprite.png) -11px -456px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+  .input-with-select {
+    width: 120px;
+  }
+  .input-with-select .el-input-group__prepend {
+    background-color: #fff;
+  }
+  .is-top {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    font-size: 12px !important;
+    padding: 0 1px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .is-gray-color {
+    color: var(--text-des-color);
+    border-color: var(--text-des-color);
+  }
+  .edit-product-dialog {
+    .el-row {
+      width: 90%;
+      margin: 0 auto;
+      .el-form-item {
+        width: 47%;
+        margin: 0 1% 2px 1%;
+        position: relative;
+        span {
+          color: $color-primary;
+          font-size: 12px;
+          position: absolute;
+          top: -26px;
+          right: 0;
+          margin-right: 4%;
+        }
+        .el-input {
+          width: 90%;
+          margin: 0 5%;
+        }
+        .el-select {
+          width: 90%;
+          margin: 0 5%;
+        }
+      }
+    }
+  }
+
+  // 产品列表顶部新增场次详情
+  ::v-deep .el-dialog__body {
+    // background: #F2F6F9;
+  }
+  .display-detail {
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 8px;
+    margin-bottom: 8px;
+    .detail-header {
+      padding-left: 12px;
+      // border-bottom: #F5F5F5 solid 1px;
+      i,
+      h2,
+      p {
+        display: inline-block;
+        line-height: 54px;
+        margin: 0;
+        // vertical-align: middle;
+      }
+      i.el-icon-arrow-left {
+        color: #bfc1c8;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 5px;
+      }
+      h2 {
+        font-size: 14px;
+        color: var(--text-color);
+      }
+      p {
+        color: var(--text-des-color);
+        font-size: 12px;
+        margin-left: 20px;
+        span {
+          margin: 0 15px;
+        }
+      }
+      .opt-btns {
+        float: right;
+        margin-right: 10px;
+        .icon-bianji:before {
+          color: #396fff;
+        }
+        .icon-shanchu:before {
+          color: #f05765;
+        }
+        span {
+          display: inline-block;
+          padding: 0 3px;
+          // border-left: #F5F5F5 solid 1px;
+        }
+      }
+    }
+    .detail-content {
+      padding: 0 10px;
+      margin-left: 20px;
+      padding-bottom: 15px;
+      .detail-table {
+        table {
+          width: 100%;
+          td {
+            color: #666;
+            line-height: 25px;
+          }
+          span.label {
+            color: var(--text-des-color);
+          }
+          span.tag {
+            color: #396fff;
+            font-size: 11px;
+            border: solid 1px #396fff;
+            border-radius: 8px;
+            margin-left: 3px;
+            padding: 2px 5px;
+          }
+          span.status.active {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+  .product-list {
+    span.label {
+      color: var(--text-des-color);
+      font-size: 12px;
+    }
+    .product-title {
+      margin: 0px;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

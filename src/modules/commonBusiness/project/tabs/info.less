@@ -1,0 +1,228 @@
+
+.tg-common-business-project-detail-info {
+  background-color: #f6f6f6;
+  height: calc(100% - 48px);
+  padding-right: 12px;
+  overflow: overlay;
+  .project-info-scroll {
+    display: flex;
+    flex-grow: 1;
+    height: 1070px;
+    font-size: 12px;
+    .project-info-left {
+      background-color: white;
+      padding: 18px 12px 18px 18px;
+      width: 240px;
+      flex-shrink: 0;
+      margin-right: 12px;
+      > div {
+        display: flex;
+      }
+      .project-edit {
+        width: 72px;
+        display: inline-block;
+        padding: 0px !important;
+        height: 24px !important;
+        line-height: 22px !important;
+        text-align: center;
+        color: #19231d;
+        font-size: 12px !important;
+        background: #ffffff;
+        border: 1px solid var(--border-line-color);
+        border-radius: 2px;
+      }
+      .edit-button {
+        color: var(--warning-color);
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        > svg.icon {
+          margin-left: 5px;
+          width: 16px;
+          height: 15px;
+          color: var(--text-third-color);
+          padding: 0px 1px 1px 1px;
+        }
+      }
+      .edit-people-button {
+        > svg.icon {
+          width: 16px;
+          height: 15px;
+          color: var(--text-third-color);
+          padding: 0px 1px 1px 1px;
+        }
+      }
+      > .project-name-info {
+        display: flex;
+        justify-content: space-between;
+        .project-name {
+          color: var(--text-color);
+          font-weight: 600;
+          margin-right: 12px;
+          line-height: 20px;
+          max-width: 126px;
+          font-size: 14px;
+        }
+      }
+      .project-uid {
+        margin-top: 4px;
+        font-size: 12px;
+        color: var(--text-third-color);
+      }
+      .project-status {
+        margin-top: 8px;
+        display: block;
+        font-size: 12px;
+        line-height: 18px;
+        .status {
+          font-size: 12px;
+          color: var(--text-third-color);
+          .status-desc {
+            display: flex;
+          }
+        }
+        .project-rollback-edit {
+          flex-shrink: 0;
+          font-size: 12px;
+          margin-left: 22px;
+        }
+      }
+      .project-business-type {
+        margin-top: 24px;
+        align-items: center;
+      }
+      .project-base {
+        margin-top: 12px;
+        // span {
+        //   &:nth-child(2) {
+        //     color: var(--text-color);
+        //   }
+        // }
+      }
+      .project-team {
+        margin-top: 24px;
+      }
+      .project-manager {
+        margin-top: 12px;
+        &.mgt-24 {
+          margin-top: 24px;
+        }
+      }
+      .label {
+        text-align: left;
+        width: 62px;
+        flex-shrink: 0;
+        color: var(--text-third-color);
+      }
+    }
+    .project-info-right {
+      display: grid;
+      row-gap: 12px;
+      flex-grow: 1;
+      min-width: 932px;
+      grid-template-rows: 168px 354px minmax(360px, 1fr);
+      &.row-two {
+        grid-template-rows: 168px minmax(360px, 580px);
+      }
+      .title {
+        margin-top: 4px;
+        margin-left: 12px;
+        height: 40px;
+        line-height: 40px;
+        color: var(--text-color);
+        //font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        .bar {
+          display: inline-block;
+          width: 3px;
+          height: 12px;
+          background: var(--theme-color);
+          border-radius: 1px;
+          margin-right: 6px;
+        }
+      }
+      .project-info-income-contract {
+        display: flex;
+        justify-content: space-between;
+        .income {
+          padding-top: 4px;
+          background-color: white;
+          flex-grow: 1;
+          margin-right: 12px;
+          .income-row {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(160px, 1fr));
+            height: 60px;
+            .income-contract-item {
+              padding-left: 30px;
+            }
+          }
+        }
+        .contract {
+          padding-top: 4px;
+          background-color: white;
+          width: 280px;
+          .contract-row {
+            display: grid;
+            grid-template-columns: repeat(2, 128px);
+            height: 60px;
+            .income-contract-item {
+              padding-left: 24px;
+            }
+          }
+          .contract-tip {
+            display: flex;
+            margin: 0 12px;
+            color: var(--warning-color);
+            border: 1px solid rgba(var(--warning-rgb-color), 0.50);
+            background: rgba(var(--warning-rgb-color), 0.06);
+            border-radius: 2px;
+            font-size: 12px;
+            padding: 7px 12px;
+            > svg.icon {
+              width: 20px;
+              height: 20px;
+              margin-right: 4px;
+            }
+          }
+          .contract-no-customer {
+            color: var(--warning-color) !important;
+          }
+        }
+        .income-contract-item {
+          > div {
+            &:first-of-type {
+              color: var(--text-color);
+              //font-weight: 600;
+              font-size: 18px;
+            }
+            &:last-of-type {
+              margin-top: 2px;
+              color: var(--text-third-color);
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .taobao-empty {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 80px;
+        background: #ffffff;
+        text-align: center;
+        img {
+          width: 225px;
+          height: 177px;
+        }
+        .empty-text {
+          color: #a4b2b2;
+        }
+      }
+    }
+  }
+}
